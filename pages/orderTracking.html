@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://www.strawberrynet.com/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <title>Track your order | Strawberrynet INEN</title>
+    <script src="https://kit.fontawesome.com/2c8c344524.js" crossorigin="anonymous"></script>
+</head>
+<style>
+* {
+    font-family: 'Lato',sans-serif;
+}
+#sample{
+    /* position:relative; */
+    z-index:999;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.head {
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    /* background-image: url(https://a.cdnsbn.com/images/common/2016headerbg.jpg?v=2); */
+    
+}
+.head>img{
+    height: 100%;
+    width: 28%;
+    float: left;
+}
+.contain_elements{
+    height: 40px;
+    width: auto;
+    float: right;
+    color: #b53788;
+    margin-right: 110px;
+    margin-top: 15px;
+}
+
+#contain_elements_text{
+    float: left;
+    margin-top: 14px;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 540;
+}
+#contain_elements_text:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#contain_signin{
+    height: 40px;
+    width: 140px;
+    float: right;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+    /* border: 1px solid black; */
+}
+
+
+#contain_wishlist{
+    height: 40px;
+    width: 120px;
+    float: right;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+    /* border: 1px solid black; */
+}
+#contain_bag{
+    height: 40px;
+    width: 100px;
+    float: right;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+    /* border: 1px solid black; */
+}
+
+#contain_bag:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#contain_wishlist:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#contain_signin:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.head > input {
+    float: left;
+    margin-top: 30px;
+    margin-left: 130px;
+    font-size: 14px;
+    border: 2px solid #623381;
+    padding-left: 1%;
+    height: 38px;
+    width: 380px;
+    border-radius: 5px;
+} 
+::placeholder{
+    color: #623381;
+}
+.contain_rs{
+    text-align: center;
+    justify-content: center;
+    display:grid ;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    float: right;
+    /* border: 2px solid yellowgreen; */
+    height: 15px;
+    width: auto;
+    margin-right: 150px;
+    margin-top: 14px;
+}
+
+#rs{
+
+    /* border: 1px solid red; */
+    font-size: 12px;
+    color: #b53788;
+    font-weight: bold;
+}
+#rs:hover{
+    text-shadow: 0 0 1px #b53788;
+     cursor: pointer;
+}
+
+#tracking{
+    /* border: 1px solid red; */
+    font-size: 12px;
+    color: #b53788;
+    font-weight: bold;
+}
+
+#tracking:hover{
+    text-shadow: 0 0 1px #b53788;
+    cursor: pointer;
+}
+
+.nav ul {
+    list-style: none;
+    background: #623381;
+    text-align: center;
+    padding: 0%;
+    margin: 0;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav a {
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fff;
+    width: 100px;
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 540;
+}
+
+.nav a:hover {
+    background: white;
+    text-decoration: underline;
+    color: #623381;
+    transition: 0.2s;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* header css ends here*/
+
+
+
+
+    #checkoutoder {
+        display: flex;
+    }
+
+    #inp {
+        width: 200px;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 34px;
+        margin-top: 10px;
+
+    }
+
+    #btn {
+        padding: 3px 10px;
+        height: 30px;
+        margin-top: 15px;
+        background-color: #e82e74;
+        border-color: #e82e74;
+        border-radius: 5px;
+        color: white;
+    }
+
+    #head {
+        font-family: Lato, sans-serif;
+        font-weight: 500;
+        color: #80429b;
+        font-size: 20px;
+    }
+
+    h3 {
+        font-weight: 500;
+        color: #80429b;
+        font-size: 20px;
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    #track {
+        color: #000;
+
+        letter-spacing: 6px;
+
+
+    }
+
+    .main {
+        display: flex;
+        margin-left: 50px;
+    }
+    #addprod{
+        display: flex;
+    }
+    .step1{
+        
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: rgb(45, 0, 128);
+    }
+    .step2{
+        height: 5px;
+        
+        width: 12%;
+        margin-top: 6px;
+    background-color:  rgb(161, 241, 241);
+
+    }
+    .step2-1{
+        height: 5px;
+        
+        width: 12%;
+        margin-top: 6px;
+    background-color:   rgb(45, 0, 128);
+
+    }
+    .step3{
+        
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: rgb(161, 241, 241);
+
+    }
+    .add_icon{
+        display: flex;
+        color: grey;
+        font-weight: bold;
+
+    }
+    #main2{
+        display: none;
+    }
+    #trackContainer{
+        width:55%;
+        margin:auto;
+    }
+
+
+
+    
+/*footer css*/
+
+body{
+    margin:0px !important;
+}
+
+.logo{
+    display: flex;
+    margin-top: 22px;
+}
+.log{
+    height: 25px;
+    width:25px;
+    /* margin-left: 22px; */
+    /* margin-right: 2%; */   
+}
+.img-bottle {
+    width: 75px;
+    height: 95px;
+    background: url('https://a.cdnsbn.com/images/common/2016CommonSprite.png') -89px -381px no-repeat;
+    position: absolute;
+    left: 43.5%;
+    margin-top: 12px;
+    
+}
+
+/* .img-bottle, .img-plane {   
+    display: block;
+} */
+
+.banner-bottle {
+    float:left;
+    padding-left: 120px;
+    /* position: relative; */
+    font-size: 18px;
+    line-height: 1em;
+    padding-bottom: 10px;
+    /* margin-top: 50px; */
+}
+.banner-bottle, .banner-plane {
+    font-weight: 300;
+    margin-top: 20px;
+    margin-left:50px;
+}
+.img-plane {
+    width: 84px;
+    height: 91px;
+    background: url('https://a.cdnsbn.com/images/English/shippingicon_1.png') -10px -5px no-repeat;
+    position: absolute;
+    left: 71%;
+    margin-top: -20px;
+    
+    
+}
+/* .img-bottle, .img-plane {
+    display: block;
+} */
+.cont{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap:20px;
+    color: white;
+    background: url(https://a.cdnsbn.com/images/common/2016footer.jpg) center top no-repeat #702f80;
+    color: #fff;
+    padding: 32px 0;
+    margin-top: 50px;
+    letter-spacing: .09em;
+    font-size: 14px;
+    font-family: Lato,sans-serif;
+}
+    .cont h5 {
+    font-size: 24px;
+    margin: 5px 0 25px;
+}
+
+.first{
+    margin-left: 8%;
+}
+.second{
+    margin-left: 15%;
+    /* padding-top:10px; */
+}
+.third{
+    margin-left: 21%;
+    margin-top: 15px;
+    font-weight: 300;
+    
+}
+#subscribe{
+    letter-spacing: .09em;
+    font-size: 14px;
+    font-family: Lato,sans-serif;
+    
+    color: #fff;
+    height: 50px;
+    padding: 0 10px;
+    line-height: 50px;
+    font-weight: 700;
+}
+
+#signup{
+    height: 50px;
+    font-size: 16px;
+}
+#marginDiv{
+    width:100%;
+    height:137px;
+}
+ul{
+    list-style: none;
+    /* display: flex; */
+    font-size: 18px;
+}
+ul.footer-cs-shortcut li {
+    border-left: 1px solid #ee2c72;
+    padding-left: 20px;
+}
+ul.footer-cs-shortcut li {
+    
+    padding-right: 20px;
+}
+li a{
+    text-decoration: none;
+}
+.change-currency-icon {
+    width: 27px;
+    height: 27px;
+    background: url('https://a.cdnsbn.com/images/common/2016CommonSprite.png') -325px -478px no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.part1-child2{
+    margin-left: 29%;
+    margin-top: 2%;
+    font-size: 22px;
+     font-family: Lato,sans-serif;
+}
+.part1{
+    display: flex;
+    
+   
+    color: rgb(0, 0, 0);
+}
+.payment-imgs h6{
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 23px;
+    letter-spacing: .09em;
+}
+.part2-class1{
+    width: 17%;
+    line-height: 2.3em;
+    
+}
+.imagep2{
+    margin: 2%; 
+}
+.part2-class2{
+    line-height: 2.3em;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.part2-class3{
+    line-height: 2.3em;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.part2-class4{
+    line-height: 2.3em;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.part2-class5{
+    line-height: 2.3em;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.iphoneapp {
+    background: url('https://a.cdnsbn.com/images/common/2016CommonSprite.png') -133px -595px;
+}
+.androidapp {
+    background: url('https://a.cdnsbn.com/images/common/2016CommonSprite.png') -235px -597px;
+}
+ .iphoneapp {
+    width: 1px;
+    padding-top: 40px;
+    padding-left: 100px;
+    margin-left: -2px;
+    margin-bottom: -15px;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 0;
+    color: transparent;
+}
+.androidapp {
+    width: 1px;
+    padding-top: 40px;
+    padding-left: 100px;
+    margin-left: -2px;
+    margin-bottom: -15px;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 0;
+    color: transparent;
+}
+.part2{
+    display: flex;
+    justify-content: center;
+}
+hr.pink {
+    border-color: #ee2c72;
+    border-width: 5px;
+    margin: 30px 0;
+    width: 82%;
+}
+.light{
+    font-weight: 300;
+    font-size: 11px;
+}
+.last{
+    margin-left: 12%;
+}
+.cont2{
+    background-color: #52246d;
+    color: #fff;
+    padding: 30px 0;
+}
+.whit{
+    color: white;
+}
+
+.inputEmail{
+    /* border:5px solid black; */
+    height:25px;
+    border-radius:5px;
+}
+#social-media-links{
+    margin-top:20px;
+}
+.social-media-icon{
+    width: 31px;
+    height:31px;
+    padding-top: 51px;
+    vertical-align: middle;
+    margin-right: 20px;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 0;
+    color: transparent;
+    
+    text-decoration: none;
+    display: inline-block;
+    padding: 0px 0px 0px 0px;
+
+    
+    box-sizing: border-box;
+}
+
+.btnFacebook, .btnFacebook:link {
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -36px -478px no-repeat;
+}
+
+.btnTwitter, .btnTwitter:link {
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -213px -478px no-repeat;
+}
+
+.btnPinterest, .btnPinterest:link {
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -107px -478px no-repeat;
+}
+
+.btnInstagram, .btnInstagram:link {
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -142px -478px no-repeat;
+}
+
+.btnYoutube, .btnYoutube:link {
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -153px -112px no-repeat;
+}
+
+
+
+
+
+#userNameDisplay{
+    float: left;
+    margin-top: 14px;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 540;
+}
+#userNameDisplay:hover{
+  
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+</style>
+
+<body>
+<div id="sample" class="sticky">
+    <div class="head">
+            <img src="\images\header-logo.jfif">
+        <input type="search" placeholder="SEARCH BRAND / PRODUCT" />
+        <div class="contain_rs">
+            <div id="tracking">Rs. INR India: English <i class="fas fa-angle-down"></i></div>
+            <div style="font-size: small;"> | </div>
+            <div id="rs"  onclick="window.location.href='orderTracking.html'">Order Tracking</div>
+        </div>
+        <div class="contain_elements">
+            <div id="contain_bag" onclick="window.location.href='bag.html'"><i class="fa fa-shopping-bag"
+                    style="font-size: 30px;margin-top: 5px; float: left;margin-left: 10px;"></i>
+                <div id="contain_elements_text"> Bag</div>
+            </div>
+            <div id="contain_wishlist" onclick="window.location.href='wishlist.html'"><i class="fas fa-heart"
+                    style="font-size: 30px;margin-top: 5px;float: left; margin-left: 10px;"></i>
+                <div id="contain_elements_text"> Wishlist</div>
+            </div>
+            <div id="contain_signin" onclick="window.location.href='SignIn.html'"><i class="fas fa-user-circle"
+                    style="font-size: 30px;margin-top: 5px;float: left;margin-left: 10px;"></i>
+                <div id="userNameDisplay"> Sign in</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="nav">
+        <ul id="navbar">
+            <li><a href="\pages\skincare.html"><i class="fas fa-bars"></i> BY BRAND</a></li>
+            <li><a href="\pages\skincare.html">SKINCARE</a></li>
+            <li><a href="\pages\skincare.html">MAKEUP</a></li>
+            <li><a href="\pages\skincare.html">HAIRCARE</a></li>
+            <li><a href="\pages\skincare.html">PERFUME</a></li>
+            <li><a href="\pages\skincare.html">SKINCARE</a></li>
+            <li><a href="\pages\skincare.html">COLONGE</a></li>
+            <li><a href="\pages\skincare.html">SCENTS</a></li>
+            <li><a href="\pages\skincare.html">NATURAL</a></li>
+            <li><a href="\pages\skincare.html"><i class="fas fa-gift"></i> SPECIALS</a></li>
+            <li><a href="\pages\skincare.html"><i class="fas fa-star"></i> NEW</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+<div id="marginDiv"></div>
+
+
+    <div id="trackContainer">
+    <div class="main" id="main1">
+        <div class="container">
+            <h1 id="track">TRACK YOUR ORDER</h1>
+            
+            <div id="checkoutoder">
+                <h3 id="head">ORDER NUMBER:</h3>
+                <input type="text" name="" id="inp">
+                <input type="submit" onclick="Track_prod()" name="" id="btn" value="Track Your Order">
+            </div>
+            <div id="classm10">To check multiple orders, please use a comma "," to separate your order numbers</div>
+            <h3>Have questions about your shipment?</h3>
+            <div id="linklist">
+                <ul>
+                    <li>
+                        <a href="" id="list1">How long will it
+                            take to get my
+                            order delivered?</a>
+                    </li>
+                    <li>
+                        <a href="" id="list2">What if my order hasn't arrived
+                            after 14 working days?</a>
+                    </li>
+                    <li>
+                        <a href="" id="list3">Which shipment methods can be
+                            tracked?</a>
+                    </li>
+                    <li>
+                        <a href="" id="list4">Will there be any taxes /
+                            customs duties</a>
+                    </li>
+                </ul>
+            </div>
+            <p>If you still have questions about your order you can <a class="link" href="">send us an enquiry</a>.</p>
+
+        </div>
+    </div>
+    <div id="main2" style=" line-height: 3;">
+        <div>
+           
+            <h1 style="color: gray;font-family: Lato,sans-serif;"><span style="color: red;">#76265</span> In Transit</h1>
+            <div id="addprod" style="margin-left:30px !important">
+                <div class="step1"></div>
+                <div class="step2-1"></div>
+                <img style="height:25px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9DwWPjh4t7qoBKzNNfZAIOvaMY3JFdRWhi65yCsJgEpx4PAYcwVB1_bQ4gJLG5G4HBxo&usqp=CAU" alt="">
+                <div class="step2"></div>
+                <div class="step3"></div>
+                <div class="step2"></div>
+                <div class="step3"></div>
+                
+            </div>
+            <div class="add_icon">
+                <div style="font-size:10px">Order Confirmed</div>
+                <div style="margin-left: 20px; font-size:10px">Transit</div>
+                <div style="margin-left: 40px; font-size:10px">Out Of Delivery</div>
+                <div style="margin-left: 40px; font-size:10px">Delivered</div>
+            </div>
+            <img src="https://media1.tenor.com/images/b2f0a6459d4ed1a590d1789b6e454f40/tenor.gif?itemid=11380380" alt="">
+            <div style="display: flex;">
+                <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVH5XTeya4pDLqDP41AySNUHSEENxtEVBYKjdjSq0GWb4D2yiUtXHpHcc1kboWbaakChw&usqp=CAU"
+                    alt=""></div>
+                    <div>
+                        <div style="margin-top:18px !important;margin-bottom:0px !important; height:40px;color: gray;">Tracking code</div>
+                        <p style="margin-top: 0px; color: rgb(93, 93, 223);">9402873829182928</p>
+                    </div>
+                    <div style="margin-left: 5%;" >
+                        <div style="margin-top:18px !important;margin-bottom:0px !important; height:40px;color:gray;">Estimated Delivery Date</div>
+                        <p  style="margin-top: 0px;color: rgb(93, 93, 223);">July 27</p>
+                    </div>
+                    
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+<!-- ______________________________________________________________________ -->
+<div class="cont">
+    <div class="first">
+        <h5>STAY CONNECTED</h5>
+        <div class="signup">
+            <div class="form-group input-group"><input type="email" class="inputEmail" id="signUp" maxlength="50"
+                    size="30" name="signUp" placeholder="Enter your email for exclusive offers"><span
+                    class="input-group-btn"><a id="subscribe">Sign
+                        Up</a></span></div>
+        </div>
+        <span id="social-media-links">
+            <a href="https://www.facebook.com/pages/StrawberryNET/56607929065" rel="noreferrer"
+                class="btnFacebook social-media-icon" target="_blank" title="Facebook">Facebook</a>
+            <a href="https://twitter.com/strawberrynet" rel="noreferrer" class="btnTwitter social-media-icon"
+                target="_blank" title="Twitter">Twitter</a>
+            <a href="https://www.pinterest.com/strawberrynet/" rel="noreferrer" class="btnPinterest social-media-icon"
+                target="_blank" title="pinterest">pinterest</a>
+            <a href="https://www.instagram.com/strawberrynetofficial/" rel="noreferrer"
+                class="btnInstagram social-media-icon" target="_blank" title="Instagram">Instagram</a>
+            <a href="https://www.youtube.com/user/TheStrawberryNET" rel="noreferrer"
+                class="btnYoutube social-media-icon" target="_blank" title="Youtube">Youtube</a>
+        </span>
+    </div>
+
+
+    <div class="second">
+        <div>
+            <div class="img-bottle"></div>
+            <div class="banner-bottle">Over<br><b>33,000</b><br>products from<br><b>800</b>
+                brands
+            </div>
+        </div>
+
+    </div>
+    <div class="third">
+        <div class="col-xs-4 hidden-xs">
+            <div class="banner-plane"><span class="img-plane"></span><b>FREE Shipping Anywhere</b><br>in the
+                <b>world!</b><br><span class="fs15">Conditions apply</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cont2">
+    <div class="part1">
+        <div class="part1-child1">
+            <ul class="footer-cs-shortcut">
+                <li><a class="whit" href="">Shipping &amp; Tax</a></li>
+                <li><a class="whit" href="" title="Returns Policy">Returns Policy</a></li>
+                <li><a class="whit" href="" title="FAQ">FAQ</a></li>
+                <li><a class="whit" href="" title="Contact Us">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="part1-child2">
+            <div class="col-xs-12 col-sm-4 text-right"><span class="change-currency-icon"></span><b
+                    style="color: white;">Change Country/Currency</b></a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="part2">
+        <div class="part2-class1">
+            <div class="col">
+                <div class="payment-imgs">
+                    <h6>Pay With:</h6>
+
+                    <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/Visa_16.png" alt="Visa" width="62"
+                        height="43" src="https://a.cdnsbn.com/images/common/Visa_16.png">
+                    <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/Master_16.png" alt="Master"
+                        width="62" height="43" src="https://a.cdnsbn.com/images/common/Master_16.png">
+                    <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/Paypal_16.png" alt="Paypal"
+                        width="62" height="43" src="https://a.cdnsbn.com/images/common/Paypal_16.png">
+                    <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/JCB_16.png" alt="JCB" width="62"
+                        height="43" src="https://a.cdnsbn.com/images/common/JCB_16.png">
+                    <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/AmericanExpress_16.png" alt="AMEX"
+                        width="62" height="43" src="https://a.cdnsbn.com/images/common/AmericanExpress_16.png">
+
+                    <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/Discover_16.png" alt="Discover"
+                        width="62" height="43" src="https://a.cdnsbn.com/images/common/Discover_16.png">
+                    <a href="/en-in/customer-service/price-and-payment/" title="see more >"><img
+                            data-src="https://a.cdnsbn.com/images/common/DiscoverMore.png"
+                            alt="Discover More beauty products Button" width="62" height="43"
+                            src="https://a.cdnsbn.com/images/common/DiscoverMore.png"></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="part2-class2">
+            <div class="col-2">
+                <h2>My Account</h2>
+                <div>Track Order</div>
+                <div>Order History</div>
+                <div>My Reviews</div>
+                <div>Birthday Treat Program</div>
+
+
+            </div>
+
+        </div>
+        <div class="part2-class3">
+            <div class="col-3">
+                <h2>Our Company</h2>
+                <div>Point Rewards Program</div>
+                <div>Contact Us</div>
+                <div>Affiliates</div>
+                <div>Partners</div>
+                <div>Student Discount</div>
+
+
+            </div>
+
+        </div>
+        <div class="part2-class4">
+            <div class="col4">
+                <h2>Download</h2>
+                <div class="iphoneapp"></div>
+                <br>
+                <div class="androidapp"></div>
+            </div>
+
+        </div>
+        <div class="part2-class5">
+            <div class="col5">
+                <div>
+                    <h2>Rated Excellent</h2>
+                </div>
+                <div style="display: flex;">
+                    <div>
+                        <div><img src="https://medals.bizrate.com/medals/dynamic/27609_medal.gif" alt=""></div>
+                        <b>9.0 out of 10</b>
+                    </div>
+                    <div><img src="https://a.cdnsbn.com/images/common/HK-Trust-Mark_resize.png" alt=""></div>
+
+                </div>
+                <div style="display: flex;">
+                    <div><img src="https://a.cdnsbn.com/images/common/2021Premiumeshop.png" alt=""></div>
+                    <div><img src="https://a.cdnsbn.com/images/common/2021TRUSTeshop.jpg" alt=""></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="last">
+        <hr class="pink">
+        <p class="small mt-25 ">
+            <a>Privacy &amp; Security</a> | <a>Terms &amp; Conditions</a> | <a>Point Rewards Program Terms &amp;
+                Conditions</a><br>
+            <span class="light">1998 - 2021 © StrawberryNET.com All Rights Reserved.</span>
+
+        </p>
+    </div>
+</div>
+</div>
+
+
+
+</body>
+
+</html>
+<script>
+
+    
+        var user = JSON.parse(localStorage.getItem("users"));
+        // console.log(user);
+        if (user != null) {
+            // console.log(user[0].fName);
+            var userNameDisplay = document.getElementById("userNameDisplay");
+            userNameDisplay.innerHTML = `${user[0].fName}`;
+        }
+
+            // Navigation Bar Script Starts Here
+            window.onscroll = function () { myFunction() };
+
+            var navbar = document.getElementById("sample");
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+// Navigation Bar Scrip Ends Here
+
+
+
+    function Track_prod(){
+        input=document.getElementById('inp').value
+        main=document.getElementById('main2')
+        main1 = document.getElementById('main1')
+        if(input=="76265"){
+            main1.style.display = 'none'
+            main.style.display = 'block'
+        }else{
+            alert('Order not found! or Invalid order ID!')
+        }
+    }
+</script>

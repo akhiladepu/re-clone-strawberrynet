@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" href="https://www.strawberrynet.com/favicon.ico" />
+    <script src="https://kit.fontawesome.com/2c8c344524.js" crossorigin="anonymous"></script>
+    <title>SignIn</title>
+</head>
+<style>
+ 
+* {
+    font-family: Lato,sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.head {
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    
+}
+.head>img{
+    height: 100%;
+    width: 28%;
+    float: left;
+}
+.contain_elements{
+    height: 40px;
+    width: auto;
+    float: right;
+    color: #b53788;
+    margin-right: 110px;
+    margin-top: 15px;
+}
+
+#contain_elements_text{
+    float: left;
+    margin-top: 14px;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 540;
+}
+#contain_elements_text:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#contain_signin{
+    height: 40px;
+    width: 100px;
+    float: right;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+    background-color: #623381;
+    color: white;
+}
+#contain_signin:hover{
+    background-color: white;
+    color: #b53788;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+#contain_wishlist{
+    height: 40px;
+    width: 100px;
+    float: right;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+#contain_wishlist:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#contain_bag{
+    height: 40px;
+    width: 100px;
+    margin-right: 10px;
+    float: right;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+#contain_bag:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+#inp {
+    float: left;
+    margin-top: 30px;
+    margin-left: 130px;
+    font-size: 14px;
+    border: 2px solid #623381;
+    padding-left: 1%;
+    height: 38px;
+    width: 380px;
+    border-radius: 5px;
+} 
+::placeholder{
+    color: #623381;
+}
+.contain_rs{
+    text-align: center;
+    justify-content: center;
+    display:grid ;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    float: right;
+    height: 15px;
+    width: auto;
+    margin-right: 150px;
+    margin-top: 14px;
+}
+
+#rs{
+    font-size: 12px;
+    color: #b53788;
+    font-weight: bold;
+}
+#rs:hover{
+    text-shadow: 0 0 1px #b53788;
+     cursor: pointer;
+}
+
+#tracking{
+    font-size: 12px;
+    color: #b53788;
+    font-weight: bold;
+}
+
+#tracking:hover{
+    text-shadow: 0 0 1px #b53788;
+    cursor: pointer;
+}
+
+.nav ul {
+    list-style: none;
+    background: #623381;
+    text-align: center;
+    padding: 0%;
+    margin: 0;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav a {
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fff;
+    width: 100px;
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 540;
+}
+
+.nav a:hover {
+    background: white;
+    text-decoration: underline;
+    color: #623381;
+    transition: 0.2s;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.container{
+    margin: auto;
+    margin-top: 160px;
+    margin-bottom: 2%;
+    height: 500px;
+    width: 30%;
+    border: 2px solid #623381;
+    transition: .4s;
+}
+.container form input{ 
+    margin-top: 3%;
+    margin-left: 8%;
+    font-size: 14px;
+    border: 2px solid #623381;
+    height: 38px;
+    width: 80%;
+    border-radius: 2px;
+    transition: .2s;
+    font-size: 18px;
+    color: black;
+}
+.container:hover{
+    box-shadow: 0 4px 8px 0 #623381, 0 4px 8px 0 #623381;
+}
+
+.container form input:hover{
+    border: 3px solid #623381;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.ele{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: auto;
+    height: 50px;
+    width: 80%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sign{
+    height: 50px;
+    transition: .1s;
+}
+
+#si{
+    margin-top: 20px;
+    font-size: 25px;
+    margin-top: 10px;
+    transition: .2s;
+}
+
+#new{
+    font-size: 25px;
+    float: left; 
+    margin-top: 20px;
+}
+
+.sign:hover{
+    box-shadow: 0 5px 5px -6px #000000;
+    border-bottom: 3px solid #623381;
+}
+
+#na{
+    float: left;
+    margin-left: 60px;
+    margin-top: 30px;
+    font-size: 14px;
+    border: 2px solid #623381;
+    padding-left: 1%;
+    height: 38px;
+    width: 380px;
+    border-radius: 2px;
+    transition: .2s;
+    font-size: 18px;
+    color: black;
+}
+
+#na:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input+a{
+    float: left;
+    margin-top: 30px;
+    margin-left: 60px;
+    transition: .4s;
+}
+
+.container form a:hover{
+    text-shadow: 0 0 1px red;
+    color: red;
+}
+#na+a:hover {
+    text-shadow: 0 0 1px red;
+    color: red;
+}
+
+.signIn{
+    margin: auto;
+    border: 1px solid rgba(0, 0, 0, 0);
+    margin-top: 100px;
+    background-color: #623381;
+    color: white;
+    height: 45px;
+    width: 170px;
+    text-align: center;
+    transition: .2s;
+}
+
+.signIn:hover{
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+}
+</style>
+
+<body>
+
+<div id="sample" class="sticky">
+    <div class="head">
+        <img src="\images\header-logo.jfif">
+        <input  id="inp" type="search" placeholder="SEARCH BRAND / PRODUCT" />
+        <div class="contain_rs">
+            <div id="tracking">Rs. INR India: English <i class="fas fa-angle-down"></i></div>
+            <div style="font-size: small;"> | </div>
+            <div id="rs" onclick="window.location.href='orderTracking.html'">Order Tracking</div>
+        </div>
+        <div class="contain_elements">
+            <div id="contain_bag" onclick="window.location.href='bag.html'"><i class="fa fa-shopping-bag" style="font-size: 30px;margin-top: 5px; float: left;margin-left: 10px;"></i><div id="contain_elements_text"> Bag</div></div>
+            <div id="contain_wishlist" onclick="window.location.href='wishlist.html'"><i class="fas fa-heart" style="font-size: 30px;margin-top: 5px;float: left; margin-left: 10px;"></i><div id="contain_elements_text"> Wishlist</div></div>
+            <div id="contain_signin" onclick="window.location.href='SignIn.html'"><i class="fas fa-user-circle" style="font-size: 30px;margin-top: 5px;float: left;margin-left: 10px;"></i><div id="contain_elements_text"> Sign in</div></div>
+        </div>
+    </div>
+
+     <div class="nav">
+        <ul id="navbar">
+            <li><a href="\pages\skincare.html"><i class="fas fa-bars"></i> BY BRAND</a></li>
+            <li><a href="\pages\skincare.html">SKINCARE</a></li>
+            <li><a href="\pages\skincare.html">MAKEUP</a></li>
+            <li><a href="\pages\skincare.html">HAIRCARE</a></li>
+            <li><a href="\pages\skincare.html">PERFUME</a></li>
+            <li><a href="\pages\skincare.html">SKINCARE</a></li>
+            <li><a href="\pages\skincare.html">COLONGE</a></li>
+            <li><a href="\pages\skincare.html">SCENTS</a></li>
+            <li><a href="\pages\skincare.html">NATURAL</a></li>
+            <li><a href="\pages\skincare.html"><i class="fas fa-gift"></i> SPECIALS</a></li>
+            <li><a href="\pages\skincare.html"><i class="fas fa-star"></i> NEW</a></li>
+        </ul>
+    </div> 
+</div>
+
+
+<div class="container">
+    <form id="myForm">
+        <div class="ele">
+        <div class="sign">
+            <div id="si">Sign In</div>
+        </div>
+        <div class="sign">
+            <div id="si" onclick="location.href='NewUser.html'">New Here ?</div>
+        </div>
+    </div>
+
+        <input class="na" id="email" type="text" placeholder="Email address">
+        <br>
+        <br>
+        <input class="na" id="password" type="password" placeholder="Password">
+        <a href="https://www.google.com">Forgot Password ?</a>
+    </form>
+    <div class="signIn"><div onclick="signIn()" id="si">SIGN IN</div></div>
+
+</div>
+
+</body>
+</html>
+
+<script>
+
+window.onscroll = function () { myFunction() };
+
+var navbar = document.getElementById("sample");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
+}
+
+    function signIn() {
+        const form = document.getElementById('myForm');
+        const email = form.email.value;
+        if (email.length == 0) {
+            alert("Email Field is Empty");
+            return false;
+        }
+        const password = form.password.value;
+        if (password.length == 0) {
+            alert("Password Field is Empty");
+            return false;
+        }
+
+        let users = JSON.parse(localStorage.getItem('users'));
+        let bool = true;
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].email === email && users[i].password === password) {
+                bool = false;
+                window.location.href = "home.html";
+                break;
+            }
+
+        }
+        if (bool == true) {
+            alert("Wrong Email or Password");
+        }
+    }
+</script>

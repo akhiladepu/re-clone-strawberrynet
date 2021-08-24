@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" href="https://www.strawberrynet.com/favicon.ico" />
+    <link rel="stylesheet" href="\styles\userlogin.css" >
+    <script src="https://kit.fontawesome.com/2c8c344524.js" crossorigin="anonymous"></script>
+    
+    <title>NewUser?</title>
+</head>
+<style>
+    p{
+        font-size:5px;
+    }
+</style>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+<body>
+
+<div id="sample" class="sticky">
+    <div class="head">
+        <img src="\images\header-logo.jfif">
+        <input  id="inp" type="search" placeholder="SEARCH BRAND / PRODUCT" />
+        <div class="contain_rs">
+            <div id="tracking">Rs. INR India: English <i class="fas fa-angle-down"></i></div>
+            <div style="font-size: small;"> | </div>
+            <div id="rs" onclick="window.location.href='orderTracking.html'">Order Tracking</div>
+        </div>
+        <div class="contain_elements">
+            <div id="contain_bag" onclick="window.location.href='bag.html'"><i class="fa fa-shopping-bag" style="font-size: 30px;margin-top: 5px; float: left;margin-left: 10px;"></i><div id="contain_elements_text"> Bag</div></div>
+            <div id="contain_wishlist" onclick="window.location.href='wishlist.html'"><i class="fas fa-heart" style="font-size: 30px;margin-top: 5px;float: left; margin-left: 10px;"></i><div id="contain_elements_text"> Wishlist</div></div>
+            <div id="contain_signin" onclick="window.location.href='SignIn.html'"><i class="fas fa-user-circle" style="font-size: 30px;margin-top: 5px;float: left;margin-left: 10px;"></i><div id="contain_elements_text"> Sign in</div></div>
+        </div>
+    </div>
+
+     <div class="nav">
+        <ul id="navbar">
+            <li><a href="\pages\skincare.html"><i class="fas fa-bars"></i> BY BRAND</a></li>
+            <li><a href="\pages\skincare.html">SKINCARE</a></li>
+            <li><a href="\pages\skincare.html">MAKEUP</a></li>
+            <li><a href="\pages\skincare.html">HAIRCARE</a></li>
+            <li><a href="\pages\skincare.html">PERFUME</a></li>
+            <li><a href="\pages\skincare.html">SKINCARE</a></li>
+            <li><a href="\pages\skincare.html">COLONGE</a></li>
+            <li><a href="\pages\skincare.html">SCENTS</a></li>
+            <li><a href="\pages\skincare.html">NATURAL</a></li>
+            <li><a href="\pages\skincare.html"><i class="fas fa-gift"></i> SPECIALS</a></li>
+            <li><a href="\pages\skincare.html"><i class="fas fa-star"></i> NEW</a></li>
+        </ul>
+    </div> 
+</div>
+
+<div class="container">
+    <form id="myForm">
+        <div class="ele">
+            <div class="sign" onclick="location.href='SignIn.html'"><div id="si">Sign In</div></div>
+            <div class="sign"><div id="si">New Here ?</div></div>
+        </div>
+
+        <input class="na" id="fName" type="text" placeholder="First Name">
+        <br>
+        <br>
+        <input class="na" id="lName" type="text" placeholder="Last Name">
+        <br>
+        <br>
+        <input class="na" id="email" type="email" placeholder="Email address">
+        <br>
+        <br>
+        <input class="na" id="password" type="password" placeholder="Password">
+    </form>
+    <P>Please enter a minimum of 8 characters, including at least 1 letter and 1 number</P>
+ 
+    <input type="password" placeholder="Re-enter you Password">
+
+
+    <div id="cap" style="float: left; margin-left: 35px;">
+        <form id="DemoForm" action="https://www.SnapHost.com/captcha/send.aspx" method="post" target="_top">
+            <input id="skip_SnapHostID" name="skip_SnapHostID" type="hidden" value="DEMO12345678">
+            <input id="skip_WhereToSend" name="skip_WhereToSend" type="hidden" value="support[[]]snaphost.com">
+            <input id="skip_WhereToReturn" name="skip_WhereToReturn" type="hidden" value="https://www.snaphost.com/captcha/ThankYou.aspx?isSent=success">
+            <input id="skip_Subject" name="skip_Subject" type="hidden" value="Subject test">
+            
+            <table border="0" cellpadding="5" cellspacing="0">
+                <tbody>
+
+                    <tr>
+                        <td colspan="2" align="center">  </td>
+                    </tr>
+            
+                </tbody>
+            </table>
+
+            <br>
+
+            <table cellspacing="0" border="0" cellpadding="8">
+
+            <tbody>
+
+            <tr style="background-color:#ffcc66; vertical-align:bottom;">
+                <td>
+                    <input id="skip_CaptchaCode" name="skip_CaptchaCode" type="text" style="width:130px;height:48px;font-size:38px;" maxlength="6">
+                    <br>
+                    <i>Enter web form code</i>
+                </td>
+
+                <td>
+                    <a href="#" onclick="return ReloadCaptchaImage('CaptchaImage');">
+                        <span style="font-size:12px;">reload image</span>
+                    </a>
+                    <br>
+                    <a href="https://www.SnapHost.com/captcha/ProCaptchaOverview.aspx">
+                        <img id="CaptchaImage" alt="Web Form Code" style="border-width:0px;" src="https://www.SnapHost.com/captcha/CaptchaImage.aspx?id=DEMO12345678">
+                    </a>
+                    <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
+                    <script type="text/javascript">
+
+                        function ReloadCaptchaImage(captchaImageId) {
+                            var obj = document.getElementById(captchaImageId);
+                            var src = '' + obj.src;
+                            obj.src = '';
+                            var date = new Date();
+                            var pos = src.indexOf('&rad=');
+                            if (pos >= 0) { src = src.substr(0, pos); }
+                            obj.src = src + '&rad=' + date.getTime();
+                            return false;
+                        }
+
+                    </script>
+                </td>
+            </tr>
+            </tbody></table>
+
+            
+        </form>
+        <button id="skip_DemoSubmit" name="skip_DemoSubmit" type="submit" onclick="newUser()">REGISTER</button>
+    </div>
+    
+</div>
+
+
+
+</body>
+</html>
+
+<script>
+window.onscroll = function () { myFunction() };
+
+var navbar = document.getElementById("sample");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
+}
+
+
+      function ReloadCaptchaImage(captchaImageId) 
+      {
+        var obj = document.getElementById(captchaImageId);
+        var src = '' + obj.src;
+        obj.src = '';
+        var date = new Date();
+        var pos = src.indexOf('&rad=');
+        if (pos >= 0) { src = src.substr(0, pos); }
+        obj.src = src + '&rad=' + date.getTime();
+        return false;
+    }
+
+
+
+    function newUser(e) {
+
+        const form = document.getElementById('myForm');
+        const fName = form.fName.value;
+        if (fName.length == 0) {
+            alert("First Name Field is Empty");
+            return false;
+        }
+
+        const lName = form.lName.value;
+        if (lName.length == 0) {
+            alert("Last Name Field is Empty");
+            return false;
+        }
+        const email = form.email.value;
+        if (email.length == 0) {
+            alert("Email Field is Empty");
+            return false;
+        }
+        const password = form.password.value;
+        if (password.length == 0) {
+            alert("Password Field is Empty");
+            return false;
+        }
+
+        const user =
+        {
+            fName,
+            lName,
+            email,
+            password
+        };
+
+        let arr;
+        if (localStorage.getItem('users') == null) {
+            arr = [];
+        }
+        else {
+            arr = JSON.parse(localStorage.getItem('users'));
+        }
+        arr.push(user);
+        localStorage.setItem('users', JSON.stringify(arr));
+        alert("Form Submitted");
+        window.location.href = "SignIn.html";
+    }
+</script>

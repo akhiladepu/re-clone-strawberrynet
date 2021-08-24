@@ -1,0 +1,325 @@
+* {
+    font-family: Lato,sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.head {
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    
+}
+.head>img{
+    height: 100%;
+    width: 28%;
+    float: left;
+}
+.contain_elements{
+    height: 40px;
+    width: auto;
+    float: right;
+    color: #b53788;
+    margin-right: 110px;
+    margin-top: 15px;
+}
+
+#contain_elements_text{
+    float: left;
+    margin-top: 14px;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 540;
+}
+#contain_elements_text:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#contain_signin{
+    height: 40px;
+    width: 100px;
+    float: right;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+}
+#contain_signin:hover{
+
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+#contain_wishlist{
+    height: 40px;
+    width: 100px;
+    float: right;
+    margin-right: 10px;
+
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+#contain_wishlist:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#contain_bag{
+    height: 40px;
+    width: 100px;
+    margin-right: 10px;
+    float: right;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+#contain_bag:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+
+#inp {
+    float: left;
+    margin-top: 30px;
+    margin-left: 130px;
+    font-size: 14px;
+    border: 2px solid #623381;
+    padding-left: 1%;
+    height: 38px;
+    width: 380px;
+    border-radius: 5px;
+} 
+::placeholder{
+    color: #623381;
+}
+.contain_rs{
+    text-align: center;
+    justify-content: center;
+    display:grid ;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    float: right;
+    height: 15px;
+    width: auto;
+    margin-right: 150px;
+    margin-top: 14px;
+}
+
+#rs{
+    font-size: 12px;
+    color: #b53788;
+    font-weight: bold;
+}
+#rs:hover{
+    text-shadow: 0 0 1px #b53788;
+     cursor: pointer;
+}
+
+#tracking{
+    font-size: 12px;
+    color: #b53788;
+    font-weight: bold;
+}
+
+#tracking:hover{
+    text-shadow: 0 0 1px #b53788;
+    cursor: pointer;
+}
+
+.nav ul {
+    list-style: none;
+    background: #623381;
+    text-align: center;
+    padding: 0%;
+    margin: 0;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav a {
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fff;
+    width: 100px;
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 540;
+}
+
+.nav a:hover {
+    background: white;
+    text-decoration: underline;
+    color: #623381;
+    transition: 0.2s;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+    .container{
+        margin: auto;
+        margin-top: 150px;
+        margin-bottom: 1%;
+        height: 720px;
+        width: 30%;
+        border: 2px solid #623381;
+        transition: .4s;
+    }
+    .container:hover{
+        box-shadow: 0 4px 8px 0 #623381, 0 4px 8px 0 #623381;
+    }
+
+    .container form input{ 
+        margin-top: 3%;
+        margin-left: 8%;
+        font-size: 14px;
+        border: 2px solid #623381;
+        height: 38px;
+        width: 80%;
+        border-radius: 2px;
+        transition: .2s;
+        font-size: 18px;
+        color: black;
+    }
+
+    .container form input:hover{
+        border: 3px solid #623381;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    p+input{
+        margin-top: 3%;
+        margin-left: 8%;
+        font-size: 14px;
+        border: 2px solid #623381;
+        height: 38px;
+        width: 80%;
+        border-radius: 2px;
+        transition: .2s;
+        font-size: 18px;
+        color: black;
+    }
+
+    p+input:hover{
+        border: 3px solid #623381;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+
+    .ele{
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: auto;
+        height: 50px;
+        width: 80%;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .sign{
+        height: 50px;
+        transition: .1s;
+    }
+
+    #si{
+       margin-top: 20px;
+        font-size: 25px;
+        margin-top: 10px;
+        transition: .2s;
+    }
+
+    #new{
+        font-size: 25px;
+        float: left; 
+        margin-top: 20px;
+    }
+
+    .sign:hover{
+        box-shadow: 0 5px 5px -6px #000000;
+        border-bottom: 3px solid #623381;
+    }
+
+    #na{
+        float: left;
+        margin-left: 60px;
+        margin-top: 30px;
+        font-size: 14px;
+        border: 2px solid #623381;
+        padding-left: 1%;
+        height: 38px;
+        width: 380px;
+        border-radius: 2px;
+        transition: .2s;
+        font-size: 18px;
+        color: black;
+    }
+
+    #na:hover{
+        border: 3px solid #623381;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+
+    .signIn{
+        margin: auto;
+        border: 1px solid rgba(0, 0, 0, 0);
+        margin-top: 250px;
+        background-color: #623381;
+        color: white;
+        height: 45px;
+        width: 170px;
+        text-align: center;
+        transition: .2s;
+    }
+
+    .signIn:hover{
+        cursor: pointer;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+    }
+
+    p{
+        height: auto;
+        width: 70%;
+        float: left;
+        margin-left: 60px;
+    }
+
+    #skip_DemoSubmit{
+        height: 50px;
+        width: 40%;
+        background-color: #623381;
+        color: white;
+        float: left;
+        margin-left: 35%;
+        margin-top: 20px;
+        font-size: 20px;
+        transition: .2s;
+    }
+
+    #skip_DemoSubmit:hover{
+        cursor: pointer;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+    }

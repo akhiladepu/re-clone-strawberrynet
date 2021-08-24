@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="https://www.strawberrynet.com/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+<title>Payment</title>
+<script src="https://kit.fontawesome.com/2c8c344524.js" crossorigin="anonymous"></script>
+    <style>
+        .main_pay{
+            display: flex;
+        }
+        body{
+            
+            background-image: url('https://a.cdnsbn.com/images/common/2016CompanyLogo.png');
+            
+            background-repeat: no-repeat;
+        }
+        .main_first_pay img{
+            width:100px !important;
+            height:100px !important;
+        }
+        .main_second_pay img{
+            width:100px !important;
+            height:100px !important;
+        }        
+        .main_third_pay img{
+            width:100px !important;
+            height:100px !important;
+        }
+        .main_first_pay{
+            width:100px;
+            height:100px;
+            margin-left: 28%;
+        }
+        .main_second_pay{
+            width:100px;
+            height:100px;
+            margin-left: 2%;
+        }
+        .main_third_pay{
+            width:100px;
+            height:100px;
+            margin-left: 2%;
+        }
+        .main_first_pay:hover{
+            border: solid blueviolet;
+        }
+        .main_second_pay:hover{
+            border: solid blueviolet;
+        }
+        .main_third_pay:hover{
+            border: solid blueviolet;
+        }
+        .exp_cvv{
+            display: flex;
+        }
+        .user_input {
+    display: block;
+    width: 88%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #623380;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+  .usercard_input {
+    display: block;
+    width: 88%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #623380;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+ .exp_input {
+    display: block;
+    width: 44%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #623380;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+body{
+    font-family: Lato,sans-serif;
+    letter-spacing: 0.03em;
+    font-size: 14px;
+    color: #2c2c2c;
+   
+}
+.info{
+    font-size: 22px;
+}
+.proceed{
+    display: flex;
+}
+.design{
+    border-radius: 50%;
+    height: 34px;
+    width:20px;
+    background-color: #673ab752;
+    font-weight: 900;
+}
+.pay_info{
+    line-height: 3.2;
+    width:60%;;
+    margin:auto;
+    padding-left: 4%;
+    padding-bottom: 50px;
+    background-color: #955d5d12;
+    margin-bottom: 200px;
+    border-radius:10px;
+}
+.button2{
+     background-color: #623381;
+    font-weight: bold;
+   
+    text-align: center;
+    color: #fff;
+    border-radius: 0;
+    text-transform: uppercase;
+    padding: 8px;
+    width: 100%;
+    margin: 30px auto 0 auto;
+    display: block;
+}
+.button1{
+    background-color: #646464;
+    padding: 8px !important;
+    text-align: center;
+    color: #fff;
+    border-radius: 0;
+    text-transform: uppercase;
+    padding: 4px;
+    width: 100%;
+    margin: 30px auto 0 auto;
+    display: block;
+}
+.proceed_main{
+    margin-left: 2%;
+}
+.payment_container{
+    width: 50%;
+   
+    margin-left: 22%;
+}
+.none{
+    display: none;
+}
+#thank{
+    display: none;
+    justify-content: center;
+    padding-top: 2%;
+    padding-left: 35%;
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="cont" class="payment_container">
+        
+        <img style="height: 80px;" src="https://cdn.newswire.com/files/x/d4/1f/0f4e8bf20db3485fa3b8e5f9ee35.png" alt="">
+        <div style="font-weight: bold;">
+            Choose a payment method below
+        </div>
+        <div class="main_pay">
+            <div class="main_first_pay">
+                <img style="height: 226px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTldVyinIVqMcW6zCxJSS6UBm2bT_kzUjVTmvrgLxRdd0446jEkoGqXtF09Y3OA_yywyyE&usqp=CAU" alt="">
+            </div>
+            <div class="main_second_pay">
+                <img style="width: 225px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpNHMc4NJNZgYRR_HQKS9UbZeh8Q_Hj8HGGGQZqkdcxGxN7oTbEY0GJbK2QG3RRC-Q4z8&usqp=CAU" alt="">
+            </div>
+            <div class="main_third_pay">
+                <img style="height: 226px;" src="https://aniportalimages.s3.amazonaws.com/media/details/Razorpay_july19.jpg" alt="">
+            </div>
+
+        </div>
+        <div class="pay_info">
+            <div class="info">Credit Card Information</div>
+            <div class="card_name">Card Holder Name</div>
+            <input class="user_input" type="text" id="name"  placeholder="John Den">
+            <div class="card_num">Card Number</div>
+            <input class="usercard_input" type="text" id="cardno" placeholder="1234 5678 1232 4721">
+            <div class="exp_cvv">
+                <div>
+                    <div class="exp">Expiry Month</div>
+                    <input class="exp_input" type="text" name="" id="" placeholder="22/21">
+                </div>
+                <div>
+                    <div class="exp">CVV</div>
+                    <input class="exp_input"_input" type="text" name="" id="cvv" placeholder="123">
+
+                </div>
+                
+            </div>
+            <div class="proceed">
+                <div class="proceed_main"><button onclick="proceed()" class="button2">PAY NOW</button></div>
+                <img style="height: 28px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzFaaZaaEvR6rJDCz7IhhJxQu_HQ7Id0Va09PCYjf074M-1sQOg1ExXMUbywwdjJo3g_Q&usqp=CAU" alt="">
+            <div><button class="button1" onclick="window.location.href='checkout.html'">Back to Checkout Page</button></div>
+            </div>
+        </div>
+    </div>
+    <div id="none1" class="none"><img src="https://i.gifer.com/YCZH.gif" alt=""></div>
+    <div id="thank">
+        <img style="height: 422px;" src="https://thumbs.dreamstime.com/b/approved-icon-profile-verification-accept-badge-quality-check-mark-sticker-tick-vector-illustration-136617543.jpg" alt="">
+        <br>
+      <h1 style="width:300px;margin-left:50px !important;text-align: center;">Order Confirmed <br/>Your Order ID: 76265</h1>
+      <br>
+      <button onclick="back2home()" style=" background-color: #623381;font-weight: bold;text-align: center;color: #fff;    border-radius: 0;    text-transform: uppercase;    padding: 8px;    width: 44%;    margin: 30px auto 0 auto;">Back to Home</button>
+    </div>
+    
+</body>
+</html>
+<script>
+    const data = [
+            {
+                cardno: "1234 1234 1234 1234",
+                cvv: "123",
+                expiredate: "12/34"
+            }
+
+        ]
+
+        if (localStorage.getItem('card') == null) {
+            localStorage.setItem('card', JSON.stringify(data));
+        }
+        function proceed() {
+            
+
+            let cardno = document.getElementById("cardno").value
+            let cvv =document.getElementById('cvv').value
+            let CardHolder =document.getElementById('name').value 
+            let cont = document.getElementById('cont')
+            let none=document.getElementById('none1')
+            let thank = document.getElementById('thank')
+
+            flag = false;
+
+            for (i = 0; i < data.length; i++) {
+                let u = data[i].cardno;
+                let p = data[i].cvv;
+                if (u == cardno && p == cvv) {
+                    prompt("Enter OTP")
+                    cont.style.display='none'
+                    none.style.display="flex"
+                    none.style.justifyContent="center"
+                    none.style.paddingTop="18%"
+                    
+                        setTimeout(function () {
+                            alert("Successfull!  Click here to continue")
+                            none.style.display="none"
+                            thank.style.display = "block"
+                            thank.style.justifyContent = "center"
+                          
+                           localStorage.removeItem("bag");
+
+
+                        }, 4000)
+                    
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag == false) {
+                alert("Check your card details");
+
+            }
+       }
+       function back2home(){
+           window.location.href="home.html"
+       }
+</script>

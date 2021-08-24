@@ -1,0 +1,698 @@
+* {
+    font-family: 'Lato',sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+#sample{
+    z-index: 9999;
+}
+.head {
+    height: 100px;
+    width: 100%;
+    background-color: white;
+}
+.head>img{
+    height: 100%;
+    width: 28%;
+    float: left;
+}
+.contain_elements{
+    height: 40px;
+    width: auto;
+    float: right;
+    color: #b53788;
+    margin-right: 110px;
+    margin-top: 15px;
+}
+
+#contain_elements_text{
+    float: left;
+    margin-top: 14px;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 540;
+}
+#contain_elements_text:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#contain_signin{
+    height: 40px;
+    width: 140px;
+    float: right;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+
+#contain_wishlist{
+    height: 40px;
+    width: 120px;
+    float: right;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+}
+#contain_bag{
+    height: 40px;
+    width: 100px;
+    float: right;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+#contain_bag:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#contain_wishlist:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#contain_signin:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.head input {
+    float: left;
+    margin-top: 30px;
+    margin-left: 130px;
+    font-size: 14px;
+    border: 2px solid #623381;
+    padding-left: 1%;
+    height: 38px;
+    width: 380px;
+    border-radius: 5px;
+} 
+::placeholder{
+    color: #623381;
+}
+.contain_rs{
+    text-align: center;
+    justify-content: center;
+    display:grid ;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    float: right;
+    height: 15px;
+    width: auto;
+    margin-right: 150px;
+    margin-top: 14px;
+}
+
+#rs{
+    font-size: 12px;
+    color: #b53788;
+    font-weight: bold;
+}
+#rs:hover{
+    text-shadow: 0 0 1px #b53788;
+     cursor: pointer;
+}
+
+#tracking{
+    font-size: 12px;
+    color: #b53788;
+    font-weight: bold;
+}
+
+#tracking:hover{
+    text-shadow: 0 0 1px #b53788;
+    cursor: pointer;
+}
+
+.nav ul {
+    list-style: none;
+    background: #623381;
+    text-align: center;
+    padding: 0%;
+    margin: 0;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav a {
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fff;
+    width: 100px;
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 540;
+}
+
+.nav a:hover {
+    background: white;
+    text-decoration: underline;
+    color: #623381;
+    transition: 0.2s;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#marginDiv{
+    width:100%;
+    height:137px;
+}
+
+.page-title{
+    margin-left:70px;
+}
+#ImportantNotices {
+    margin: 0 -25px;
+    padding: 0 25px;
+    
+    max-height: 205px;
+    overflow-y: auto;
+}
+body{
+    font-family: Lato,sans-serif;
+    letter-spacing: 0.03em;
+    font-size: 14px;
+    color: #2c2c2c;
+    background-color: #F5F5F5;
+}
+.col2{
+    background-color: #fff;
+    border-bottom: solid 1px #e0e0e0 !important;
+    border-radius: 3px 3p;
+    padding: 25px;
+    
+    line-height: 3.2em;
+}
+#js img{
+    height: 100px;
+}
+
+.div_final{
+    display: flex;
+    line-height: 0.9em;
+}
+.demo2{
+   width: 515px;
+    min-height: 8px;
+    padding-left: 24.5px;
+    padding-right: 7.5px;
+}
+.demo4{
+    letter-spacing: .09em;
+    font-family: Lato,sans-serif;
+    font-weight: bold;
+    margin-left: 109px;
+    margin-top: 23px;
+    margin-right:40px;
+}
+#js h2{
+    letter-spacing: 0.1em;
+    font-family: Lato,sans-serif;
+}
+#js{
+    margin-top: 0%;
+    background-color: white;
+}
+.main-cont{
+    
+    width: 58%;
+    margin-left: 5%;
+}
+#js3{
+    display:flex;
+    background-color: white;
+    
+}
+.final_repo{
+    width: 80%;
+}
+
+.final_repo > h3{
+    margin-left:40px;
+    font-size:18px;
+}
+.currsymbol {
+    font-size: 9px;
+    vertical-align: top;
+    font-weight: bold;
+}
+.total_write{
+    font-size: 30px !important;
+}
+#discount_promo{
+    width:100px;
+    float:left;
+}
+
+.main-cont2{
+    position: fixed;
+    z-index:10;
+    top: 4px;
+    max-height:550px;
+    overflow: auto;
+    background-color: #fff;
+    border-bottom: solid 1px #e0e0e0 !important;
+    border-radius: 3px 3p;
+    padding: 25px;
+    width: 23%;
+    margin-top: 200px;
+    margin-left: 67%;
+}
+.coupnfield h2{
+    font-weight: 900;
+    font-size: 18px;
+    margin: 0px;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 27px;
+}
+.form-control {
+    display: block;
+    width: 88%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #623380;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.btnbtnCouponApply{
+    background-color: #623381;
+    font-weight: bold;
+    font-size: 18px !important;
+    text-align: center;
+    color: #fff;
+    border-radius: 0;
+    text-transform: uppercase;
+    padding: 8px;
+    width: 60%;
+    margin: 30px auto 0 auto;
+    display: block;
+}
+.upper-main{
+    display: flex;
+}
+.coupnfield{
+    text-align: center;
+}
+.child-1{
+    
+    height: 223px;
+}
+.child-2{
+    line-height: 2.2;
+}
+
+.last1{
+    color: red;
+}
+
+.provide_width{
+    width: 87%;
+}
+#provide_width1{
+     width: 70%;
+     color:red;
+     float:left;
+}
+
+#provide_width1 span{
+     width: 70%;
+     color:red;
+     float:left;
+}
+.second1{
+    color: red;
+}
+.final_answer{
+    display: flex;
+    font-weight: bold;
+    font-size: 22px;
+}
+#shippingInfo{
+    width: 50%;
+}
+.address{
+    margin-left: 5%;
+    position: relative;
+    padding: 25px;
+    width: 50%;
+    background-color: white;
+    position: relative;
+
+}
+#shippingInfo {
+    width: 112%;
+    align-items: center;
+    text-align: center;
+}
+#ddlsCountry{
+    width: 91%;
+}
+.form-group{
+    margin-bottom: 15px;
+}
+.btnbtnSaveAddr {
+    background-color: rgb(98, 51, 129);
+    font-weight: bold;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    width: 60%;
+    display: block;
+    font-size: 18px !important;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 30px auto 0px;
+    margin-right: 241px;
+}
+.gift{
+    background-color: rgb(231, 230, 230) !important;
+    width: 595px;
+    height: 0px;
+    text-align: center;
+    margin-left: 6%;
+    padding-top: 7%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    padding-bottom: 4%;
+    font-weight: bold;
+    line-height: 0.3;
+    font-size: 22px;
+    
+}
+.demo3{
+    padding-top: 3%;
+}
+
+
+body{
+    margin:0px !important;
+}
+
+.logo{
+    display: flex;
+    margin-top: 22px;
+}
+.log{
+    height: 25px;
+    width:25px;  
+}
+.img-bottle {
+    width: 75px;
+    height: 95px;
+    background: url('https://a.cdnsbn.com/images/common/2016CommonSprite.png') -89px -381px no-repeat;
+    position: absolute;
+    left: 43.5%;
+    margin-top: 12px;
+    
+}
+.banner-bottle {
+    float:left;
+    padding-left: 120px;
+    font-size: 18px;
+    line-height: 1em;
+    color:white;
+}
+.banner-bottle, .banner-plane {
+    font-weight: 300;
+    margin-top: 20px;
+    margin-left:50px;
+}
+.img-plane {
+    width: 84px;
+    height: 91px;
+    background: url('https://a.cdnsbn.com/images/English/shippingicon_1.png') -10px -5px no-repeat;
+    position: absolute;
+    left: 71%;
+    margin-top: -20px;
+    
+    
+}
+.cont{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap:20px;
+    color: white;
+    background: url(https://a.cdnsbn.com/images/common/2016footer.jpg) center top no-repeat #702f80;
+    color: #fff;
+    padding: 32px 0;
+    margin-top: 50px;
+    letter-spacing: .09em;
+    font-size: 14px;
+    font-family: Lato,sans-serif;
+}
+    .cont h5 {
+    font-size: 24px;
+    margin: 5px 0 25px;
+}
+
+.first{
+    margin-left: 8%;
+}
+.second{
+    margin-left: 15%;
+}
+.third{
+    margin-left: 21%;
+    margin-top: 15px;
+    font-weight: 300;
+    
+}
+#subscribe{
+    letter-spacing: .09em;
+    font-size: 14px;
+    font-family: Lato,sans-serif;
+    
+    color: #fff;
+    height: 50px;
+    padding: 0 10px;
+    line-height: 50px;
+    font-weight: 700;
+}
+
+#signup{
+    height: 50px;
+    font-size: 16px;
+}
+
+ul{
+    font-size: 12px;
+}
+ul.footer-cs-shortcut li {
+    list-style-type: none;
+    border-left: 1px solid #ee2c72;
+    padding-left: 20px;
+}
+ul.footer-cs-shortcut li {
+    
+    padding-right: 20px;
+}
+li a{
+    text-decoration: none;
+}
+.change-currency-icon {
+    width: 27px;
+    height: 27px;
+    background: url('https://a.cdnsbn.com/images/common/2016CommonSprite.png') -325px -478px no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.part1-child2{
+    margin-left: 29%;
+    margin-top: 2%;
+    font-size: 22px;
+     font-family: Lato,sans-serif;
+}
+.part1{
+    display: flex;
+    
+   
+    color: rgb(0, 0, 0);
+}
+.payment-imgs h6{
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 23px;
+    letter-spacing: .09em;
+}
+.part2-class1{
+    width: 17%;
+    line-height: 2.3em;
+    
+}
+.imagep2{
+    margin: 2%; 
+}
+.part2-class2{
+    line-height: 2.3em;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.part2-class3{
+    line-height: 2.3em;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.part2-class4{
+    line-height: 2.3em;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.part2-class5{
+    line-height: 2.3em;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.iphoneapp {
+    background: url('https://a.cdnsbn.com/images/common/2016CommonSprite.png') -133px -595px;
+}
+.androidapp {
+    background: url('https://a.cdnsbn.com/images/common/2016CommonSprite.png') -235px -597px;
+}
+ .iphoneapp {
+    width: 1px;
+    padding-top: 40px;
+    padding-left: 100px;
+    margin-left: -2px;
+    margin-bottom: -15px;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 0;
+    color: transparent;
+}
+.androidapp {
+    width: 1px;
+    padding-top: 40px;
+    padding-left: 100px;
+    margin-left: -2px;
+    margin-bottom: -15px;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 0;
+    color: transparent;
+}
+.part2{
+    display: flex;
+    justify-content: center;
+}
+hr.pink {
+    border-color: #ee2c72;
+    border-width: 5px;
+    margin: 30px 0;
+    width: 82%;
+}
+.light{
+    font-weight: 300;
+    font-size: 11px;
+}
+.last{
+    margin-left: 12%;
+}
+.cont2{
+    background-color: #52246d;
+    color: #fff;
+    padding: 30px 0;
+}
+.whit{
+    color: white;
+}
+
+.inputEmail{
+    height:25px;
+    border-radius:5px;
+}
+#social-media-links{
+    margin-top:20px;
+}
+.social-media-icon{
+    width: 31px;
+    height:31px;
+    padding-top: 51px;
+    vertical-align: middle;
+    margin-right: 20px;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 0;
+    color: transparent;
+    
+    text-decoration: none;
+    display: inline-block;
+    padding: 0px 0px 0px 0px;
+
+    
+    box-sizing: border-box;
+}
+
+.btnFacebook, .btnFacebook:link {
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -36px -478px no-repeat;
+}
+
+.btnTwitter, .btnTwitter:link {
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -213px -478px no-repeat;
+}
+
+.btnPinterest, .btnPinterest:link {
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -107px -478px no-repeat;
+}
+
+.btnInstagram, .btnInstagram:link {
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -142px -478px no-repeat;
+}
+
+.btnYoutube, .btnYoutube:link {
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -153px -112px no-repeat;
+}
+
+.provide_width{
+    max-width:250px;
+    max-height: 30px;
+    overflow: hidden;
+    float:left;
+}
+
+.provide_width + div{
+    max-width:250px;
+    max-height: 30px;
+    float:left;
+}
+
+
+
+
+#userNameDisplay{
+    float: left;
+    margin-top: 14px;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 540;
+}
+#userNameDisplay:hover{
+  
+    cursor: pointer;
+    text-decoration: underline;
+}
