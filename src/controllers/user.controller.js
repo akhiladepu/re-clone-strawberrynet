@@ -23,6 +23,16 @@ router.get("/:id", async (req, res) => {
     return res.send(user);
 });
 
+router.patch("", async (req, res) => {
+
+    let updateValue = { wishlist: req.body.wishlist };
+    
+    const user = await User.findByIdAndUpdate(req.body._id, updateValue, {new:true});
+
+
+    return res.send(user);
+});
+
 router.delete("/:id", async (req, res) => {
     const user = await User.findByIdAndDelete(req.params.id);
 

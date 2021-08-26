@@ -1,78 +1,4 @@
-// const user = {
-//     "wishlist": [
-//         {
-//             "_id": "6125ab6f9b580e1dfcdb4815",
-//             "brand": "Lancome",
-//             "name": "GrandeLash MD (Lash Enhancing Serum) 2ml/0.07oz",
-//             "discount": 10,
-//             "price": 2916,
-//             "image": "https://b.cdnsbn.com/images/products/250/25390680914.jpg",
-//             "deal": "None",
-//             "category": "Make Up",
-//             "createdAt": "2021-08-25T02:31:11.392Z",
-//             "updatedAt": "2021-08-25T02:31:11.392Z"
-//         },
-//         {
-//             "_id": "6125ab6f9b580e1dfcdb4816",
-//             "brand": "L'Occitane",
-//             "name": "Aqua Allegoria Granada Salvia Eau De Toilette Spray 75ml/2.5oz",
-//             "discount": 18,
-//             "price": 3584,
-//             "image": "https://d.cdnsbn.com/images/products/250/25737530744.jpg",
-//             "deal": "New",
-//             "category": "New Arrivals",
-//             "createdAt": "2021-08-25T02:31:11.393Z",
-//             "updatedAt": "2021-08-25T02:31:11.393Z"
-//         },
-//         {
-//             "_id": "6125ab6f9b580e1dfcdb4817",
-//             "brand": "Biotherm",
-//             "name": "Homme Aquapower Cleanser 125ml/4.22oz",
-//             "discount": 0,
-//             "price": 3194.5,
-//             "image": "https://c.cdnsbn.com/images/products/250/11459976721.jpg",
-//             "deal": "Best",
-//             "category": "Men's Skincare",
-//             "createdAt": "2021-08-25T02:31:11.394Z",
-//             "updatedAt": "2021-08-25T02:31:11.394Z"
-//         }
-//     ],
-//     "bag": [
-//         {
-//             "_id": "6125ab6f9b580e1dfcdb4813",
-//             "brand": "Serge Lutens",
-//             "name": "La Fille De Berlin Eau De Parfum Spray 50ml/1.6oz",
-//             "discount": 37,
-//             "price": 7401.5,
-//             "image": "https://a.cdnsbn.com/images/products/250/15728689106.jpg",
-//             "deal": "Editor",
-//             "category": "Perfume",
-//             "createdAt": "2021-08-25T02:31:11.389Z",
-//             "updatedAt": "2021-08-25T02:31:11.389Z"
-//         },
-//         {
-//             "_id": "6125ab6f9b580e1dfcdb4814",
-//             "brand": "Jo Malone",
-//             "name": "Wood Sage & Sea Salt Scented Candle 200g (2.5inch)",
-//             "discount": 12,
-//             "price": 6428,
-//             "image": "https://a.cdnsbn.com/images/products/250/18384289516.jpg",
-//             "deal": "None",
-//             "category": "Home Scents",
-//             "createdAt": "2021-08-25T02:31:11.391Z",
-//             "updatedAt": "2021-08-25T02:31:11.391Z"
-//         }
-//     ],
-//     "_id": "6127123537633b50040b9f0f",
-//     "first_name": "Test",
-//     "last_name": "Test",
-//     "email": "test@test.com",
-//     "password": "test@000",
-//     "createdAt": "2021-08-26T04:01:57.735Z",
-//     "updatedAt": "2021-08-26T04:01:57.735Z"
-// }
-
-
+const userId = "6127b702753da83a44362409";
 var brandsObject = {};
 var categoryObject = {};
 
@@ -91,7 +17,7 @@ function myFunction() {
 
 var data_div = document.getElementById("wishlistProductsShowCase");
 
-var wishlistProducts = [];
+var wishlistProducts;
 
 async function getUser(id) {
     
@@ -118,47 +44,47 @@ async function getUser(id) {
 
 }
 
-async function main() {
-
-    var user = await getUser("6127123537633b50040b9f0f");
+async function main(userId) {
     
+
+    data_div.innerHTML = "";
+
+    var user = await getUser(userId);
+
     console.log('user:', user)
 
     if (user != null) {
         var userNameDisplay = document.getElementById("userNameDisplay");
         userNameDisplay.innerHTML = `${user.first_name}`;
     }
-
+    wishlistProducts = [];
     for (let i = 0; i < user.wishlist.length; i++) {
 
         wishlistProducts.push(user.wishlist[i]);
 
     }
 
-    showProducts(wishlistProducts);
-    
+    showProducts(wishlistProducts, userId);
 }
 
-main();
+main(userId);
 
-function showProducts(data) {
-
-    data_div.innerHTML = "";
+function showProducts(data, userId) {
 
     data.forEach(function (object) {
-        addProductsToBrowser(object);
+        addProductsToBrowser(object, userId);
     });
 
 }
 
-function addProductsToBrowser(object) {
+function addProductsToBrowser(object, userId) {
 
     var div = document.createElement("div");
     div.setAttribute("class", "product");
 
 
     let wishlistIcon = document.createElement("div");
-    wishlistIcon.innerHTML = `<div class="heartimg"><button onclick="removeFromWishlist('${object.name}','${object.brand}','${object.price}','${object.category}')" class="wishlist-icon-fill" id="whishlistItem"></button></div>`;
+    wishlistIcon.innerHTML = `<div class="heartimg"><button onclick="removeFromWishlist('${object.name}','${object.brand}','${object.price}','${object.category}', '${userId}')" class="wishlist-icon-fill" id="whishlistItem"></button></div>`;
     let pImage = document.createElement("img");
     pImage.setAttribute("class", "productImage")
     pImage.src = object.image;
@@ -246,45 +172,36 @@ function addProductsToBrowser(object) {
 
 }
 
-function removeFromWishlist(objName, objBrand, objPrice, objCategory) {
-    var newWishlistProducts = [];
-    var product = {};
-    let i = 0;
-    for (i = 0; i < wishlistProducts.length; i++) {
-        if (wishlistProducts[i].brand == objBrand && wishlistProducts[i].name == objName && wishlistProducts[i].category == objCategory && wishlistProducts[i].price == objPrice) {
-            product = wishlistProducts[i];
-        } else {
-            newWishlistProducts.push(wishlistProducts[i]);
-        }
+async function updateWishlist(newProductsArray, userId) {
+
+    let data = {
+        _id: userId,
+        wishlist: newProductsArray
     }
-
-    updateWishlist(product);
-    
-    main();
-}
-
-async function updateWishlist(productsObj) {
 
     try {
         
-        var res = await fetch("http://localhost:2345/users", {
+        await fetch("http://localhost:2345/users", {
         
-            method: "DELETE",
+            method: "PATCH",
         
-            body: JSON.stringify(productsObj),
+            body: JSON.stringify(data),
 
             headers: {
-
+                'Accept': 'application/json',
                 'Content-Type': 'application/json'
 
             }
 
-
         });
     
-        var reqData = await res.json();
+        //var reqData = await res.json();
+
+        // data_div.innerHTML = "";
+        
+        await main(userId);
     
-        return reqData;
+        //return reqData;
 
     }
     catch (err) {
@@ -294,6 +211,22 @@ async function updateWishlist(productsObj) {
     }
 
 }
+
+async function removeFromWishlist(objName, objBrand, objPrice, objCategory, userId) {
+    var newWishlistProducts = [];
+    let i = 0;
+    for (i = 0; i < wishlistProducts.length; i++) {
+        if (wishlistProducts[i].brand == objBrand && wishlistProducts[i].name == objName && wishlistProducts[i].category == objCategory && wishlistProducts[i].price == objPrice) {
+
+        } else {
+            newWishlistProducts.push(wishlistProducts[i]);
+        }
+    }
+
+    await updateWishlist(newWishlistProducts, userId);
+}
+
+
 
 function addToBag(obj) {
 
