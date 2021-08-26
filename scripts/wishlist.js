@@ -1,76 +1,76 @@
-const user = {
-    "wishlist": [
-        {
-            "_id": "6125ab6f9b580e1dfcdb4815",
-            "brand": "Lancome",
-            "name": "GrandeLash MD (Lash Enhancing Serum) 2ml/0.07oz",
-            "discount": 10,
-            "price": 2916,
-            "image": "https://b.cdnsbn.com/images/products/250/25390680914.jpg",
-            "deal": "None",
-            "category": "Make Up",
-            "createdAt": "2021-08-25T02:31:11.392Z",
-            "updatedAt": "2021-08-25T02:31:11.392Z"
-        },
-        {
-            "_id": "6125ab6f9b580e1dfcdb4816",
-            "brand": "L'Occitane",
-            "name": "Aqua Allegoria Granada Salvia Eau De Toilette Spray 75ml/2.5oz",
-            "discount": 18,
-            "price": 3584,
-            "image": "https://d.cdnsbn.com/images/products/250/25737530744.jpg",
-            "deal": "New",
-            "category": "New Arrivals",
-            "createdAt": "2021-08-25T02:31:11.393Z",
-            "updatedAt": "2021-08-25T02:31:11.393Z"
-        },
-        {
-            "_id": "6125ab6f9b580e1dfcdb4817",
-            "brand": "Biotherm",
-            "name": "Homme Aquapower Cleanser 125ml/4.22oz",
-            "discount": 0,
-            "price": 3194.5,
-            "image": "https://c.cdnsbn.com/images/products/250/11459976721.jpg",
-            "deal": "Best",
-            "category": "Men's Skincare",
-            "createdAt": "2021-08-25T02:31:11.394Z",
-            "updatedAt": "2021-08-25T02:31:11.394Z"
-        }
-    ],
-    "bag": [
-        {
-            "_id": "6125ab6f9b580e1dfcdb4813",
-            "brand": "Serge Lutens",
-            "name": "La Fille De Berlin Eau De Parfum Spray 50ml/1.6oz",
-            "discount": 37,
-            "price": 7401.5,
-            "image": "https://a.cdnsbn.com/images/products/250/15728689106.jpg",
-            "deal": "Editor",
-            "category": "Perfume",
-            "createdAt": "2021-08-25T02:31:11.389Z",
-            "updatedAt": "2021-08-25T02:31:11.389Z"
-        },
-        {
-            "_id": "6125ab6f9b580e1dfcdb4814",
-            "brand": "Jo Malone",
-            "name": "Wood Sage & Sea Salt Scented Candle 200g (2.5inch)",
-            "discount": 12,
-            "price": 6428,
-            "image": "https://a.cdnsbn.com/images/products/250/18384289516.jpg",
-            "deal": "None",
-            "category": "Home Scents",
-            "createdAt": "2021-08-25T02:31:11.391Z",
-            "updatedAt": "2021-08-25T02:31:11.391Z"
-        }
-    ],
-    "_id": "6127123537633b50040b9f0f",
-    "first_name": "Test",
-    "last_name": "Test",
-    "email": "test@test.com",
-    "password": "test@000",
-    "createdAt": "2021-08-26T04:01:57.735Z",
-    "updatedAt": "2021-08-26T04:01:57.735Z"
-}
+// const user = {
+//     "wishlist": [
+//         {
+//             "_id": "6125ab6f9b580e1dfcdb4815",
+//             "brand": "Lancome",
+//             "name": "GrandeLash MD (Lash Enhancing Serum) 2ml/0.07oz",
+//             "discount": 10,
+//             "price": 2916,
+//             "image": "https://b.cdnsbn.com/images/products/250/25390680914.jpg",
+//             "deal": "None",
+//             "category": "Make Up",
+//             "createdAt": "2021-08-25T02:31:11.392Z",
+//             "updatedAt": "2021-08-25T02:31:11.392Z"
+//         },
+//         {
+//             "_id": "6125ab6f9b580e1dfcdb4816",
+//             "brand": "L'Occitane",
+//             "name": "Aqua Allegoria Granada Salvia Eau De Toilette Spray 75ml/2.5oz",
+//             "discount": 18,
+//             "price": 3584,
+//             "image": "https://d.cdnsbn.com/images/products/250/25737530744.jpg",
+//             "deal": "New",
+//             "category": "New Arrivals",
+//             "createdAt": "2021-08-25T02:31:11.393Z",
+//             "updatedAt": "2021-08-25T02:31:11.393Z"
+//         },
+//         {
+//             "_id": "6125ab6f9b580e1dfcdb4817",
+//             "brand": "Biotherm",
+//             "name": "Homme Aquapower Cleanser 125ml/4.22oz",
+//             "discount": 0,
+//             "price": 3194.5,
+//             "image": "https://c.cdnsbn.com/images/products/250/11459976721.jpg",
+//             "deal": "Best",
+//             "category": "Men's Skincare",
+//             "createdAt": "2021-08-25T02:31:11.394Z",
+//             "updatedAt": "2021-08-25T02:31:11.394Z"
+//         }
+//     ],
+//     "bag": [
+//         {
+//             "_id": "6125ab6f9b580e1dfcdb4813",
+//             "brand": "Serge Lutens",
+//             "name": "La Fille De Berlin Eau De Parfum Spray 50ml/1.6oz",
+//             "discount": 37,
+//             "price": 7401.5,
+//             "image": "https://a.cdnsbn.com/images/products/250/15728689106.jpg",
+//             "deal": "Editor",
+//             "category": "Perfume",
+//             "createdAt": "2021-08-25T02:31:11.389Z",
+//             "updatedAt": "2021-08-25T02:31:11.389Z"
+//         },
+//         {
+//             "_id": "6125ab6f9b580e1dfcdb4814",
+//             "brand": "Jo Malone",
+//             "name": "Wood Sage & Sea Salt Scented Candle 200g (2.5inch)",
+//             "discount": 12,
+//             "price": 6428,
+//             "image": "https://a.cdnsbn.com/images/products/250/18384289516.jpg",
+//             "deal": "None",
+//             "category": "Home Scents",
+//             "createdAt": "2021-08-25T02:31:11.391Z",
+//             "updatedAt": "2021-08-25T02:31:11.391Z"
+//         }
+//     ],
+//     "_id": "6127123537633b50040b9f0f",
+//     "first_name": "Test",
+//     "last_name": "Test",
+//     "email": "test@test.com",
+//     "password": "test@000",
+//     "createdAt": "2021-08-26T04:01:57.735Z",
+//     "updatedAt": "2021-08-26T04:01:57.735Z"
+// }
 
 
 var brandsObject = {};
@@ -93,7 +93,36 @@ var data_div = document.getElementById("wishlistProductsShowCase");
 
 var wishlistProducts = [];
 
+async function getUser(id) {
+    
+    try {
+            
+        var res = await fetch("http://localhost:2345/users");
+        
+        var reqData = await res.json();
+
+        let user = [];
+
+        for (let i = 0; i < reqData.length; i++){
+            if (reqData[i]._id == id) {
+                user = reqData[i];
+                break;
+            }
+        }
+        
+        return user;
+
+    } catch (err) {
+        
+    }
+
+}
+
 async function main() {
+
+    var user = await getUser("6127123537633b50040b9f0f");
+    
+    console.log('user:', user)
 
     if (user != null) {
         var userNameDisplay = document.getElementById("userNameDisplay");
@@ -219,20 +248,19 @@ function addProductsToBrowser(object) {
 
 function removeFromWishlist(objName, objBrand, objPrice, objCategory) {
     var newWishlistProducts = [];
+    var product = {};
     let i = 0;
     for (i = 0; i < wishlistProducts.length; i++) {
         if (wishlistProducts[i].brand == objBrand && wishlistProducts[i].name == objName && wishlistProducts[i].category == objCategory && wishlistProducts[i].price == objPrice) {
-            pro = {};
+            product = wishlistProducts[i];
         } else {
             newWishlistProducts.push(wishlistProducts[i]);
         }
     }
 
-    wishlistProducts = newWishlistProducts;
-
-    updateWishlist(pro);
-
-    showProducts(newWishlistProducts);
+    updateWishlist(product);
+    
+    main();
 }
 
 async function updateWishlist(productsObj) {
@@ -271,7 +299,7 @@ function addToBag(obj) {
 
     // console.log(obj);
 
-    
+
 
     let array;
 

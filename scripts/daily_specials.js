@@ -2,11 +2,7 @@ async function getData() {
 
     try {
             
-        var res = await fetch("http://localhost:2345/products", {
-            method: "POST",
-            body: JSON.stringy(data),
-            headers: {'Content-type':'application/json'}
-        });
+        var res = await fetch("http://localhost:2345/products");
         
         var reqData = await res.json();
         
