@@ -1,13 +1,26 @@
+// var user = JSON.parse(localStorage.getItem("users"));
 
-var user = JSON.parse(localStorage.getItem("users"));
-if (user != null) {
-    var userNameDisplay = document.getElementById("userNameDisplay");
-    userNameDisplay.innerHTML = `${user[0].fName}`;
+var products;
+
+const connect = async () => {
+    try {
+        res = await fetch('http://localhost:2345/products');
+        products = await res.json();
+        showProducts(products);
+    }
+    catch(err) {
+        console.log(err.message);
+    }
 }
+connect();
+// if (user != null) {
+//     var userNameDisplay = document.getElementById("userNameDisplay");
+//     userNameDisplay.innerHTML = `${user[0].fName}`;
+// }
 
 
 
-        window.onscroll = function () { myFunction() };
+window.onscroll = function () { myFunction() };
 
 var navbar = document.getElementById("sample");
 var sticky = navbar.offsetTop;
@@ -20,7 +33,6 @@ function myFunction() {
     }
 }
 
-var products = JSON.parse(localStorage.getItem('products'));
 var i = 0;
 var numProd = 0;
 var singleProduct;
@@ -30,10 +42,10 @@ var body = document.getElementById('productContainer');
 var singleContainer = document.getElementById('single-container');
 
 function showProducts(p) {
-    let mov = p;
+    console.log(p);
     numProd = 0;
     singleContainer.innerHTML = null;
-    mov.forEach(function (el) {
+    p.forEach(function (el) {
         if (el.category == "Skincare")
             appendProduct(el);
     });
@@ -99,7 +111,7 @@ function appendProduct(el) {
     let price = document.createElement('p');
     price.setAttribute('class', 'price');
 
-    let price_comma = el.price.trim().split("");
+    let price_comma = String(el.price).split("");
     if (price_comma.length > 6) {
         price_comma = price_comma[0] + "," + price_comma[1] + price_comma[2] + price_comma[3] + price_comma[4] + price_comma[5] + price_comma[6];
     }
@@ -129,26 +141,22 @@ function appendProduct(el) {
 }
 
 function lowestPrice() {
-    let products = JSON.parse(localStorage.getItem('products'));
-    products = products.sort(function (a, b) {
+    let prod = products.sort(function (a, b) {
         if (a.category == 'Skincare')
             return a.price - b.price;
     });
-    showProducts(products);
+    showProducts(prod);
 }
 
 function biggestDiscount() {
-    let products = JSON.parse(localStorage.getItem('products'));
-    products = products.sort(function (a, b) {
+    let prod = products.sort(function (a, b) {
         if (a.category == 'Skincare' && a.discount != '0' && a.discount != 'None')
             return b.discount - a.discount;
     });
-    showProducts(products);
+    showProducts(prod);
 }
 
 function brandAZ() {
-    let products = JSON.parse(localStorage.getItem('products'));
-    let prod = products.sort(function (a, b) {
         if (a.category == 'Skincare') {
             let A = a.brand.toLowerCase();
             let B = b.brand.toLowerCase();
@@ -160,12 +168,10 @@ function brandAZ() {
             }
             return 0;
         }
-    });
     showProducts(prod);
 }
 
 function nameAZ() {
-    let products = JSON.parse(localStorage.getItem('products'));
     let prod = products.sort(function (a, b) {
         if (a.category == 'Skincare') {
             let A = a.name.toLowerCase();
@@ -182,7 +188,7 @@ function nameAZ() {
     showProducts(prod);
 }
 
-showProducts(products);
+// showProducts(products);
 
 function filterLine(n) {
     let clarins = document.getElementById('Clarins');
@@ -194,7 +200,6 @@ function filterLine(n) {
     let marvis = document.getElementById('Marvis');
     let dermadoctor = document.getElementById('DERMAdoctor');
     let laRocheyPosay = document.getElementById('La Rochey Posay');
-    let products = JSON.parse(localStorage.getItem('products'));
     let prod = [];
     let i = 0;
     if (clarins.checked == true) {
@@ -275,7 +280,6 @@ function filterLine(n) {
 function filterDeals() {
     let low = document.getElementById('Low');
     let best = document.getElementById('Best');
-    let products = JSON.parse(localStorage.getItem('products'));
     let prod = [];
     let i = 0;
     if (low.checked == true) {
