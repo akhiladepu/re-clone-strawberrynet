@@ -23,14 +23,24 @@ router.get("/:id", async (req, res) => {
     return res.send(user);
 });
 
-router.patch("", async (req, res) => {
+router.patch("/:key", async (req, res) => {
 
-    let updateValue = { wishlist: req.body.wishlist };
+    if (req.params.key == "wishlist") {
+
+        let updateValue = { wishlist: req.body.wishlist };
     
-    const user = await User.findByIdAndUpdate(req.body._id, updateValue, {new:true});
+        const user = await User.findByIdAndUpdate(req.body._id, updateValue, {new:true});
 
+        return res.send(user);        
+    }else if (req.params.key == "bag") {
 
-    return res.send(user);
+        let updateValue = { bag: req.body.bag };
+    
+        const user = await User.findByIdAndUpdate(req.body._id, updateValue, {new:true});
+
+        return res.send(user);        
+    }
+
 });
 
 router.delete("/:id", async (req, res) => {
