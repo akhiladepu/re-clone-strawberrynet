@@ -1,4 +1,4 @@
-const userId = "6127c2e4023380096ce271b8";
+const userId = "6128846b3883541e980dee48";
 var brandsObject = {};
 var categoryObject = {};
 
@@ -18,6 +18,7 @@ function myFunction() {
 var data_div = document.getElementById("wishlistProductsShowCase");
 
 var wishlistProducts;
+var bagProducts = [];
 
 async function getUser(id) {
     
@@ -61,6 +62,12 @@ async function main(userId) {
     for (let i = 0; i < user.wishlist.length; i++) {
 
         wishlistProducts.push(user.wishlist[i]);
+
+    }
+
+    for (let i = 0; i < user.bag.length; i++) {
+
+        bagProducts.push(user.bag[i]);
 
     }
 
@@ -144,7 +151,7 @@ function addProductsToBrowser(object, userId) {
     btn.setAttribute("class", "productButton");
     btn.textContent = "Add to bag";
     btn.addEventListener("click", function () {
-        addToBag(object);
+        addToBag(object, userId);
     });
     btn.style.display = "block";
 
@@ -172,16 +179,25 @@ function addProductsToBrowser(object, userId) {
 
 }
 
-async function updateWishlist(newProductsArray, userId) {
+async function updateUser(newProductsArray, userId, str) {
 
-    let data = {
-        _id: userId,
-        wishlist: newProductsArray
+    let data;
+    
+    if (str == "wishlist") {
+        data = {
+            _id: userId,
+            wishlist: newProductsArray
+        }        
+    }else if (str == "bag") {
+        data = {
+            _id: userId,
+            bag: newProductsArray
+        }        
     }
 
     try {
         
-        await fetch("http://localhost:2345/users", {
+        await fetch(`http://localhost:2345/users/${str}`, {
         
             method: "PATCH",
         
@@ -223,49 +239,21 @@ async function removeFromWishlist(objName, objBrand, objPrice, objCategory, user
         }
     }
 
-    await updateWishlist(newWishlistProducts, userId);
+    await updateUser(newWishlistProducts, userId, "wishlist");
 }
 
 
 
-function addToBag(obj) {
+async function addToBag(obj, userId) {
 
     // console.log(obj);
 
+    bagProducts.push(obj);
 
+    console.log('bagProducts:', bagProducts);
 
-    let array;
+    await updateUser(bagProducts, userId, "bag");
 
-    array = localStorage.getItem("bag");
-
-    if (array == null) {
-
-        array = [];
-        array.push(obj);
-
-        localStorage.setItem("bag", JSON.stringify(array));
-
-    } else {
-
-        array = JSON.parse(localStorage.getItem("bag"));
-
-        let found = false;
-
-        for (var i = 0; i < array.length; i++) {
-            if (array[i].name == obj.name) {
-                found = true;
-                break;
-            }
-        }
-
-        if (found == false) {
-
-            array.push(obj);
-
-        }
-
-        localStorage.setItem("bag", JSON.stringify(array));
-    }
 }
 
 
