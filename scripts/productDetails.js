@@ -4,8 +4,6 @@ if (user != null) {
     userNameDisplay.innerHTML = `${user.name}`;
 }
 
-
-
         window.onscroll = function () { myFunction() };
 
 var navbar = document.getElementById("sample");
@@ -18,7 +16,39 @@ function myFunction() {
         navbar.classList.remove("sticky");
     }
 }
+var bagged;
+var wishlist;
+let getBag = async () => {
+    try {
+        const res = await fetch('http://localhost:2345/users');
+        const data = await res.json();
+        data.forEach((el) => {
+            if (el._id === user.id) {
+                bagged = el.bag;
+            }
+        })
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+getBag();
 
+let getWishlist = async () => {
+    try {
+        const res = await fetch('http://localhost:2345/users');
+        const data = await res.json();
+        data.forEach((el) => {
+            if (el._id === user.id) {
+                wishlist = el.wishlist;
+            }
+        })
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+getWishlist();
 
 var product = JSON.parse(localStorage.getItem('singleProduct'));
 var productContainer = document.getElementById('productContianer');
@@ -90,8 +120,9 @@ function showProduct(el) {
 
     let price = document.createElement('p');
     price.setAttribute('id', 'price');
-    let pnum = el.price.slice(0,el.price.length - 3);
-    let decimal = el.price.slice(-3);
+    elprice = String(el.price);
+    let pnum = elprice.slice(0,elprice.length - 2);
+    let decimal = elprice.slice(-2) + "0";
     if (pnum.length > 3) {
         pnum = pnum[0] + "," + pnum[1] + pnum[2] + pnum[3];
     }
@@ -125,37 +156,65 @@ function cutting(str) {
         }
     }
 }
-function addToBAg(e) {
-    console.log(e);
-    
-    let bag;
-   
-    if (localStorage.getItem('bag') == null) {
-        bag = [];
-    }
-    else {
-        bag = JSON.parse(localStorage.getItem('bag'));
-    }
-        
-    bag.push(e);
-    
-    localStorage.setItem('bag', JSON.stringify(bag));
-}
 
-let wishlist = document.getElementById('wishlist');
-wishlist.addEventListener('click', function () {
+const addToBAg = async (e) => {
+    for (let i = 0; i < bagged.length; i++) {
+        if (bagged[i]._id == e._id) {
+            alert("Product Already In the Bag");
+            return false;
+        }
+    }
+    bagged.push(e);
+    let data = {
+        _id: user.id,
+        bag: bagged
+    }
+    try {
+        await fetch('http://localhost:2345/users/bag', {
+            method: "PATCH",
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+    
+
+let wish = document.getElementById('wishlist');
+wish.addEventListener('click', function () {
     addToWishList(product);
 });
-var wish;
-function addToWishList(e) {
-    if (localStorage.getItem('wishlist') == null) {
-        wish = [];
+
+const addToWishList = async (e) => {
+    for (let i = 0; i < wishlist.length; i++) {
+        if (wishlist[i]._id == e._id) {
+            alert("Product Already In the Wishlist");
+            return false;
+        }
     }
-    else {
-        wish = JSON.parse(localStorage.getItem('wishlist'));
+    wishlist.push(e);
+    let data = {
+        _id: user.id,
+        wishlist: wishlist
     }
-    wish.push(e);
-    localStorage.setItem('wishlist', JSON.stringify(wish));
+    try {
+        await fetch('http://localhost:2345/users/wishlist', {
+            method: "PATCH",
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
 }
 
  function themePromoContentToggle() {
@@ -166,13 +225,14 @@ function addToWishList(e) {
         div = document.createElement('div')
         div.innerHTML = '<ul><li>BE THE FIRST TO REVIEW THIS PRODUCT!UNDEFINED</li></ul>'
         div_li.append(div)
-    }
+        }
+        
     function Toggle1() {
         div_li = document.getElementById('discription')
         div_c = document.getElementById('extraL')
         div_c.style["margin-left"] = "0px";
         div_li.innerHTML = null
         div = document.createElement('div')
-        div.innerHTML = '<ul><li class="prodDetail2"> An instant moisture - boosting facial mask</li><li class="prodDetail2"> Formulated with new Glacier Water, Hyaluronic Acid &amp; Apricot</li><li class="prodDetail2"> Instantly boosts moisture levels in just ten minutes</li><li class="prodDetail2"> Quenches thirsty skin &amp; delivers superfood-infused hydration to extra dry spots</li><li class="prodDetail2">Leaves skin soft, smooth, comfortable, conditioned &amp; healthy-looking</li><li class="prodDetail2">100% vegetarian &amp; vegan</li><li class="prodDetail2">Free of gluten, parabens, phthalates, sodium lauryl sulfate, propylene glycol, mineral oil, DEA, petrolatum,paraffin, polyethylene beads, formaldehyde &amp; animal ingredients</li></ul>'
-        div_li.append(div)
+        div.innerHTML = '<ul><li class="prodDetail2"> An instant moisture - boosting facial mask</li><li class="prodDetail2"> Formulated with new Glacier Water, Hyaluronic Acid &amp; Apricot</li><li class="prodDetail2"> Instantly boosts moisture levels in just ten minutes</li><li class="prodDetail2"> Quenches thirsty skin &amp; delivers superfood-infused hydration to extra dry spots</li><li class="prodDetail2">Leaves skin soft, smooth, comfortable, conditioned &amp; healthy-looking</li><li class="prodDetail2">100% vegetarian &amp; vegan</li><li class="prodDetail2">Free of gluten, parabens, phthalates, sodium lauryl sulfate, propylene glycol, mineral oil, DEA, petrolatum,paraffin, polyethylene beads, formaldehyde &amp; animal ingredients</li></ul>';
+        div_li.append(div);
     }

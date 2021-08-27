@@ -322,22 +322,26 @@ function filterDeals() {
 }
 
 const addToBAg = async (e) => {
+    for (let i = 0; i < bagged.length; i++) {
+        if (bagged[i]._id == e._id) {
+            alert("Product Already In the Bag");
+            return false;
+        }
+    }
     bagged.push(e);
     let data = {
     _id: user.id,
     bag: bagged
     }
-    console.log(data);
     try {
-        const res = await fetch('http://localhost:2345/users', {
+        await fetch('http://localhost:2345/users/bag', {
             method: "PATCH",
+            body: JSON.stringify(data),
             headers: {
-                Accept: 'application/json',
+                'Accept': 'application/json',
                 'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
+            }
         });
-        data = await res.json();
     }
     catch (err) {
         console.log(err);
