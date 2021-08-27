@@ -303,7 +303,7 @@ function filterByCategory(categoryType) {
 
 var prod = [];
 function filterBrands(value) {
-    products;
+    products = wishlistProducts;
     let i = 0;
     var valueChecked = document.getElementById(value);
     if (valueChecked.checked == true) {
