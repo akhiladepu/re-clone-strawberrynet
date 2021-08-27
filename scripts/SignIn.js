@@ -27,7 +27,6 @@ var userData;
     connect();
 
     function signIn() {
-        console.log("uosfhuoasofjoasd");
         const form = document.getElementById('myForm');
         const email = form.email.value;
         if (email.length == 0) {
@@ -44,7 +43,8 @@ var userData;
             if (users[i].email === email && users[i].password === password) {
                 bool = false;
                 userData = { id: users[i]._id, name: users[i].first_name };
-                window.location.href = "\pages\home.html";
+                localStorage.setItem("userId", JSON.stringify(userData));
+                window.location.href = '../pages/home.html';
                 break;
             }
 
@@ -52,5 +52,4 @@ var userData;
         if (bool == true) {
             alert("Wrong Email or Password");
         }
-}
-    
+    }

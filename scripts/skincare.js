@@ -1,8 +1,13 @@
-// var user = JSON.parse(localStorage.getItem("users"));
+var user = JSON.parse(localStorage.getItem("userId"));
+if (user != null) {
+    var userNameDisplay = document.getElementById("userNameDisplay");
+    userNameDisplay.innerHTML = `${user.name}`;
+}
 
 var products;
+var bag;
 
-const connect = async () => {
+let connect = async () => {
     try {
         res = await fetch('http://localhost:2345/products');
         products = await res.json();
@@ -13,11 +18,21 @@ const connect = async () => {
     }
 }
 connect();
-// if (user != null) {
-//     var userNameDisplay = document.getElementById("userNameDisplay");
-//     userNameDisplay.innerHTML = `${user[0].fName}`;
-// }
-
+let getBag = async () => {
+    try {
+        const res = await fetch('http://localhost:2345/users');
+        const data = await res.json();
+        data.forEach((el) => {
+            if (el._id === user.id) {
+                bag = el.bag;
+            }
+        })
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+getBag();
 
 
 window.onscroll = function () { myFunction() };
@@ -42,7 +57,6 @@ var body = document.getElementById('productContainer');
 var singleContainer = document.getElementById('single-container');
 
 function showProducts(p) {
-    console.log(p);
     numProd = 0;
     singleContainer.innerHTML = null;
     p.forEach(function (el) {
@@ -132,7 +146,6 @@ function appendProduct(el) {
     btn_add.textContent = "ADD TO BAG";
     btn_add.addEventListener('click', function () {
         addToBAg(el);
-        console.log(el);
     })
     buttonContainer.append(btn_add);
 
@@ -308,20 +321,26 @@ function filterDeals() {
     showProducts(prod);
 }
 
-var bag;
-function addToBAg(e) {
-
-    bag = JSON.parse(localStorage.getItem('bag'));
-
-    if (bag == null) {
-        bag = [];
-    } else {
-        bag = JSON.parse(localStorage.getItem('bag'));
-    }
-
+const addToBAg = async (e) => {
     bag.push(e);
-    
-    localStorage.setItem('bag', JSON.stringify(bag));
+    const data = {
+        _id: user.id,
+        bag: bag
+    }
+    try {
+        const res = await fetch('http://localhost:2345/users', {
+            method: "PATCH",
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        const data = await res.json();
+    }
+    catch (err) {
+        console.log(err);
+    }
 }
 
 function leadToProductPage(e) {
@@ -329,3 +348,4 @@ function leadToProductPage(e) {
     localStorage.setItem('singleProduct', JSON.stringify(singleProduct));
     window.location.href = "productDetails.html";
 }
+

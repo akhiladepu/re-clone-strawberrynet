@@ -1,10 +1,9 @@
-// var user = JSON.parse(localStorage.getItem("users"));
-// if (user != null) {
-//     var userNameDisplay = document.getElementById("userNameDisplay");
-//     userNameDisplay.innerHTML = `${user[0].fName}`;
-// }
-import userData from '../scripts/SignIn';
-console.log(userData);
+var user = JSON.parse(localStorage.getItem("userId"));
+if (user != null) {
+    var userNameDisplay = document.getElementById("userNameDisplay");
+    userNameDisplay.innerHTML = `${user.name}`;
+}
+
 window.onscroll = function () { myFunction() };
 
 var navbar = document.getElementById("sample");
