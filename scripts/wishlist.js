@@ -1,4 +1,4 @@
-const userId = "6128ace108662939a099c540";
+const userId = "61291231e0b0bd573466ca6b";
 var brandsObject = {};
 var categoryObject = {};
 
@@ -243,6 +243,7 @@ async function removeFromWishlist(objName, objBrand, objPrice, objCategory, user
     }
 
     await updateUser(newWishlistProducts, userId, "wishlist");
+    window.location.href = "wishlist.html";
 }
 
 
@@ -252,8 +253,6 @@ async function addToBag(obj, userId) {
     // console.log(obj);
 
     bagProducts.push(obj);
-
-    console.log('bagProducts:', bagProducts);
 
     await updateUser(bagProducts, userId, "bag");
 
@@ -437,4 +436,4 @@ function productAZ() {
         }
     }
     showProducts(productsAZ);
-}
+    }

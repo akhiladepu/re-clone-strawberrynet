@@ -231,6 +231,7 @@ background: rgb(0, 0, 0);
     height: 530px;
     width: 250px;
     transition: .2s;
+    background-color: white;
     margin: 15px 15px 15px;
     transition: 0.3s;
 }
@@ -316,7 +317,6 @@ background: rgb(0, 0, 0);
 }
 
 #addbag{
-    margin-top: 13px;
     float: left;
     margin-left: 80px;
     height: 30px;
@@ -342,7 +342,7 @@ background: rgb(0, 0, 0);
     font-size: 10px;
     color: red;
     float: left;
-    margin-left: 80px;
+    margin-left: 76px;
     text-align: center;
 }
 
@@ -377,6 +377,32 @@ background: rgb(0, 0, 0);
     background-position: 0 0, 100% 0;
     background-repeat: no-repeat;
     transition: .2s;
+}
+
+#best_product_deals .productBox{
+    height: 580px;
+    width: 275px;
+    margin: auto;
+    background-color: white;
+    border-radius: 2px;
+    border-top: 8px solid #662d91;
+    border-bottom: 8px solid #e2195c;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#662d91), to(#e2195c));
+    background-image: -webkit-linear-gradient(#662d91, #e2195c);
+    background-image: -moz-linear-gradient(#662d91, #e2195c), -moz-linear-gradient(#662d91, #e2195c);
+    background-image: -o-linear-gradient(#662d91, #e2195c), -o-linear-gradient(#662d91, #e2195c);
+    background-image: linear-gradient(#662d91, #e2195c), linear-gradient(#662d91, #e2195c);
+    -moz-background-size: 3px 100%;
+    background-size: 8px 100%;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+    transition: .2s;
+
+}
+
+#best_product_deals img{
+    margin-left:10px;
+    width:250px;
 }
 
 #bestProducts:hover{
@@ -422,8 +448,9 @@ background: rgb(0, 0, 0);
 
 .rate-area {
 float: left;
-margin-top: 10px;margin-bottom:10px;
-margin-left: 50px;
+margin-top: 10px;
+margin-bottom:10px;
+margin-left: 45px;
 
 
 }
@@ -739,4 +766,91 @@ hr.pink {
 
 .btnYoutube, .btnYoutube:link {
     background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -153px -112px no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.productButton{    
+    color: #fff;
+    background-color: #00a69c;
+    padding: 5px 10px;
+    font-size: 18px;
+    letter-spacing: .05em;
+    font-weight: 700;
+    box-shadow: 0 2px 5px 2px rgb(0 0 0 / 18%);
+    display: inline-block;
+    margin: 2% 30%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 3px 5px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.heartimg > button{
+    border:0px;
+    margin:0px;
+    float:right;
+    width:22.5px !important;
+    margin-top: 18px !important;
+    margin-right: 12px !important;
+    height:26px;
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -23px -616px no-repeat;
+}
+
+.heartimg > button:hover{
+    border:0px;
+    margin:0px;
+    float:right;
+    width:22.5px !important;
+    margin-top: 18px !important;
+    margin-right: 12px !important;
+    height:26px;
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -1px -616px no-repeat;
+}
+
+.heartimg1{
+    border:0px;
+    margin:0px;
+    float:right;
+    width:22.5px !important;
+    margin-top: 18px !important;
+    margin-right: 12px !important;
+    height:26px;
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -1px -616px no-repeat;
+}
+
+.heartimg1 > button{
+    border:0px;
+    margin:0px;
+    float:right;
+    margin-top: 24px !important;
+    margin-right: 12px !important;
+    background-color: white;
 }
