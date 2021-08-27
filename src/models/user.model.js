@@ -5,8 +5,8 @@ const userSchema = new mongoose.Schema({
     last_name: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    wishlist: [{ type: String, required: false}],
-    bag: [{ type: String, required: false}],
+    wishlist: [{ type: Object, required: false}],
+    bag: [{ type: Object, required: false}],
 }, {
     versionKey: false,
     timestamps: true
