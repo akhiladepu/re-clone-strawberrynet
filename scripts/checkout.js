@@ -1,23 +1,34 @@
+const userId = "6128ace108662939a099c540";
 
-var user = JSON.parse(localStorage.getItem("users"));
-if (user != null) {
-    var userNameDisplay = document.getElementById("userNameDisplay");
-    userNameDisplay.innerHTML = `${user[0].fName}`;
+async function getUser(id) {
+    
+    try {
+            
+        var res = await fetch("http://localhost:2345/users");
+        
+        var reqData = await res.json();
+
+        let user = [];
+
+        for (let i = 0; i < reqData.length; i++){
+            if (reqData[i]._id == id) {
+                user = reqData[i];
+                break;
+            }
+        }
+        
+        return user.bag;
+
+    } catch (err) {
+        
+    }
+
 }
-
-
-        window.onscroll = function () { myFunction() };
+window.onscroll = function () { myFunction() };
 
 var navbar = document.getElementById("sample");
 var sticky = navbar.offsetTop;
 
-function myFunction() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-    } else {
-        navbar.classList.remove("sticky");
-    }
-}
 
 
 
@@ -79,8 +90,9 @@ function appendprod(e) {
         div_app.append(div_final)
 
     }
-    function showlocation() {
-            let data = JSON.parse(localStorage.getItem('bag'))
+    async function showlocation() {
+            let data = await getUser(userId);
+             console.log('data:', data)
             div_app.innerHTML = null
             total = data.length
             sum = 0;
@@ -130,9 +142,10 @@ function appendprod(e) {
         }
 
         showlocation();
-        function getCheckoutContent(){
+        async function getCheckoutContent(){
             console.log("bwshyqw")
-            let data = JSON.parse(localStorage.getItem('bag'))
+             let data = await getUser(userId);
+            
                 sum = 0;
             for (i = 0; i < data.length; i++) {
                 sum += Number(data[i].price)
