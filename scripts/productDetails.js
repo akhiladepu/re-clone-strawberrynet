@@ -1,9 +1,8 @@
-var user = JSON.parse(localStorage.getItem("users"));
+var user = JSON.parse(localStorage.getItem("userId"));
 if (user != null) {
     var userNameDisplay = document.getElementById("userNameDisplay");
-    userNameDisplay.innerHTML = `${user[0].fName}`;
+    userNameDisplay.innerHTML = `${user.name}`;
 }
-
 
 
 

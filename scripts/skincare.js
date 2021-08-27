@@ -5,7 +5,7 @@ if (user != null) {
 }
 
 var products;
-var bag;
+var bagged;
 
 let connect = async () => {
     try {
@@ -24,7 +24,7 @@ let getBag = async () => {
         const data = await res.json();
         data.forEach((el) => {
             if (el._id === user.id) {
-                bag = el.bag;
+                bagged = el.bag;
             }
         })
     }
@@ -322,11 +322,12 @@ function filterDeals() {
 }
 
 const addToBAg = async (e) => {
-    bag.push(e);
-    const data = {
-        _id: user.id,
-        bag: bag
+    bagged.push(e);
+    let data = {
+    _id: user.id,
+    bag: bagged
     }
+    console.log(data);
     try {
         const res = await fetch('http://localhost:2345/users', {
             method: "PATCH",
@@ -336,7 +337,7 @@ const addToBAg = async (e) => {
             },
             body: JSON.stringify(data)
         });
-        const data = await res.json();
+        data = await res.json();
     }
     catch (err) {
         console.log(err);
