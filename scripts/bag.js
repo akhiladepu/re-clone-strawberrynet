@@ -42,8 +42,9 @@ function myFunction() {
 let div_app = document.getElementById("js")
 let div_app2 = document.getElementById("js2")
 let div_app3 = document.getElementById("js3")
-function appendprod(e) {
-    var array = ["1", "2", "3", "4"];
+async function appendprod(e) {
+    var data = await getUser(userId);
+    
     let image = document.createElement('img')
     image.src = e.image
     image.setAttribute('class', 'img1')
@@ -60,12 +61,34 @@ function appendprod(e) {
     div2.setAttribute('class', 'demo2')
     div2.append(brand, name, price)
     let selectlist = document.createElement('select');
-    for (i = 0; i < array.length; i++) {
+    //var option = document.createElement('option')
+    //var option = document.createElement('option')
+    for (i = 1; i < 6; i++) {
         var option = document.createElement('option')
-        option.value = array[i]
-        option.text = array[i];
+        
+        option.value = i
+        option.innerHTML = i
         selectlist.append(option)
     }
+    selectlist.addEventListener('change', async () => {
+        var p = Number(selectlist.options[selectlist.selectedIndex].text);
+        div4.innerHTML = `INR${p * (e.price)}`
+        let data = await getUser(userId);
+
+        sum = 0;
+    for (i = 0; i < data.length; i++) {
+         sum += Number(data[i].price)
+         }
+        
+        total_p.innerHTML = `INR  ${sum + (p * (e.price)) - (e.price)}`;
+        total = data.length
+        item.innerHTML = `Item Total:${(total + p) - 1}item(s)`
+        final_repo.innerHTML = `Order Total:${(total + p) - 1}item(s)`
+        final_repo1.innerHTML = `<span class="span1">INR</span> ${(sum + (p * (e.price)) - (e.price)) + 81.20 + 773}`
+    })
+    
+
+
     let div3 = document.createElement('div')
     div3.setAttribute('class', 'demo3')
     div3.innerHTML = "Qty"
@@ -81,8 +104,15 @@ function appendprod(e) {
     div_final.setAttribute('class', 'div_final')
     div_final.append(div, div2, div3, div4)
     div_app.append(div_final, hr)
+    //......................................................check..........................................
+    
+    
+    //............................................................................
+
+
 }
 async function showlocation(userId) {
+     
     let data = await getUser(userId);
     console.log('data:', data)
     div_app.innerHTML = null
@@ -91,9 +121,9 @@ async function showlocation(userId) {
     for (i = 0; i < data.length; i++) {
         sum += Number(data[i].price)
     }
-    let item = document.createElement('h3')
+    item = document.createElement('h3')
     item.innerHTML = `Item Total:${total}item(s)`
-    let total_p = document.createElement('p')
+     total_p = document.createElement('p')
     total_p.innerHTML = `INR  ${sum}`
     total_p.setAttribute('class', 'total_prices')
     div = document.createElement('div')
@@ -130,5 +160,8 @@ async function showlocation(userId) {
     data.forEach(function (e) {
         appendprod(e)
     })
+    
 }
+
+ 
 showlocation(userId);
