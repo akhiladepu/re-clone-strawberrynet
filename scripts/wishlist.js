@@ -1,4 +1,4 @@
-const userId = "6128846b3883541e980dee48";
+const userId = "61288cee20ca382384218389";
 var brandsObject = {};
 var categoryObject = {};
 
@@ -18,7 +18,7 @@ function myFunction() {
 var data_div = document.getElementById("wishlistProductsShowCase");
 
 var wishlistProducts;
-var bagProducts = [];
+var bagProducts;
 
 async function getUser(id) {
     
@@ -64,7 +64,7 @@ async function main(userId) {
         wishlistProducts.push(user.wishlist[i]);
 
     }
-
+    bagProducts = [];
     for (let i = 0; i < user.bag.length; i++) {
 
         bagProducts.push(user.bag[i]);
