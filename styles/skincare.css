@@ -330,7 +330,7 @@ body {
   margin-top: 5px;
 }
 
-.scrollSection .filter {
+.scrollSection #filter-brands {
   margin-left: 70px;
   max-height: 260px;
   overflow-y: scroll;
@@ -343,7 +343,7 @@ body {
   margin-bottom: 20px;
 }
 
-.scrollSection .filter .checkbox {
+.scrollSection #filter-brands .checkbox {
   display: block;
   font-size: 14px;
   line-height: 1.3;

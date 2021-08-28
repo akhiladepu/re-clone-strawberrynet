@@ -12,6 +12,7 @@ let connect = async () => {
         res = await fetch('http://localhost:2345/products');
         products = await res.json();
         showProducts(products);
+        filterProducts(products);
     }
     catch(err) {
         console.log(err.message);
@@ -56,11 +57,17 @@ var body = document.getElementById('productContainer');
 
 var singleContainer = document.getElementById('single-container');
 
+let params = new URLSearchParams(location.search);
+let cat = params.get('category');
+
+let heading = document.getElementById('heading');
+heading.innerHTML = cat;
+
 function showProducts(p) {
     numProd = 0;
     singleContainer.innerHTML = null;
     p.forEach(function (el) {
-        if (el.category == "Skincare")
+        if (el.category == cat)
             appendProduct(el);
     });
 }
@@ -152,10 +159,10 @@ function appendProduct(el) {
     frame.append(brand_name, image_button, discountContainer, priceContainer, buttonContainer);
     singleContainer.append(frame);
 }
-
+//////////////////////////////// Sort Products //////////////////////////////////////
 function lowestPrice() {
     let prod = products.sort(function (a, b) {
-        if (a.category == 'Skincare')
+        if (a.category == cat)
             return a.price - b.price;
     });
     showProducts(prod);
@@ -170,7 +177,8 @@ function biggestDiscount() {
 }
 
 function brandAZ() {
-        if (a.category == 'Skincare') {
+    let prod = products.sort(function (a, b) {
+        if (a.category == cat) {
             let A = a.brand.toLowerCase();
             let B = b.brand.toLowerCase();
             if (A < B) {
@@ -181,12 +189,13 @@ function brandAZ() {
             }
             return 0;
         }
+    });
     showProducts(prod);
 }
 
 function nameAZ() {
     let prod = products.sort(function (a, b) {
-        if (a.category == 'Skincare') {
+        if (a.category == cat) {
             let A = a.name.toLowerCase();
             let B = b.name.toLowerCase();
             if (A < B) {
@@ -201,93 +210,55 @@ function nameAZ() {
     showProducts(prod);
 }
 
-// showProducts(products);
+const filterProducts = (prod) => {
+    prod = prod.filter(el => el.category == cat );
+    let filter = {};
+    prod.forEach((el) => {
+        if (filter[el.brand] == undefined)
+            filter[el.brand] = 1;
+        else
+            filter[el.brand]++;
+    })
+    showFilters(filter,prod);
+}
 
-function filterLine(n) {
-    let clarins = document.getElementById('Clarins');
-    let eltamd = document.getElementById('EltaMD');
-    let elizabethArden = document.getElementById('Elizabeth Arden');
-    let filorga = document.getElementById('Filorga');
-    let clinique = document.getElementById('Clinique');
-    let timelessSkinCare = document.getElementById('Timeless Skin Care');
-    let marvis = document.getElementById('Marvis');
-    let dermadoctor = document.getElementById('DERMAdoctor');
-    let laRocheyPosay = document.getElementById('La Rochey Posay');
-    let prod = [];
-    let i = 0;
-    if (clarins.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "Clarins") {
-                prod.push(products[i]);
-            }
-        }
-    }
-    if (eltamd.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "EltaMD") {
-                prod.push(products[i]);
-            }
-        }
-    }
-    if (elizabethArden.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "Elizabeth Arden") {
-                prod.push(products[i]);
-            }
-        }
-    }
-    if (clinique.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "Clinique") {
-                prod.push(products[i]);
-            }
-        }
-    }
-    if (timelessSkinCare.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "Timeless Skin Care") {
-                prod.push(products[i]);
-            }
-        }
-    }
+const showFilters = (filter,prod) => {
+    let doc = document.getElementById('filter-brands');
+    Object.keys(filter).forEach((el) => {
+        let label = document.createElement('label');
+        label.setAttribute('class', 'checkbox');
+        let input = document.createElement('input');
+        input.setAttribute('type', 'checkbox');
+        input.setAttribute('class', 'filterBrands');
+        input.setAttribute('value', el);
+        input.setAttribute('id', el);
+        input.addEventListener('click', () => {
+            filtering(filter,prod);
+        });
+         let labelName = document.createElement('a');
+        labelName.innerHTML = `${el}(${filter[el]})`;
+        label.append(input,labelName); 
+        doc.append(label);
+    })
+}
 
-    if (filorga.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "Filorga") {
-                prod.push(products[i]);
+var p = [];
+function filtering(filter, prod) {
+    for (let key in filter) {
+        let valueChecked = document.getElementById(key);
+        if (valueChecked.checked == true) {
+            for (let i = 0; i < prod.length; i++) {
+                if (prod[i].brand == key)
+                    p.push(prod[i]);
             }
         }
     }
-    if (marvis.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "Marvis") {
-                prod.push(products[i]);
-            }
-        }
+    if (p.length > 0) {
+        showProducts(p);
+        p = [];
     }
-    if (dermadoctor.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "DERMAdoctor") {
-                prod.push(products[i]);
-            }
-        }
-    }
-    if (laRocheyPosay.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "La Rochey Posay") {
-                prod.push(products[i]);
-            }
-        }
-    }
-
-    if (clarins.checked == false && eltamd.checked == false && elizabethArden.checked == false && clinique.checked == false && timelessSkinCare.checked == false && filorga.checked == false && marvis.checked == false && dermadoctor.checked == false && laRocheyPosay.checked == false) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare') {
-                prod.push(products[i]);
-            }
-        }
-    }
-    showProducts(prod);
+    else
+        showProducts(prod);
 }
 
 function filterDeals() {
