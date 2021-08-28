@@ -171,6 +171,24 @@ async function main(userId) {
 
     }
 
+    if (bagProducts == undefined || bagProducts.length == 0 || bagProducts == null) {
+    let div = document.getElementById("contain_bag");
+
+    let bagCount = document.createElement("div");
+    bagCount.setAttribute("id", "bagCount")
+    bagCount.textContent = "0";
+
+    div.append(bagCount);
+} else{
+    let div = document.getElementById("contain_bag");
+
+    let bagCount = document.createElement("div");
+    bagCount.setAttribute("id", "bagCount")
+    bagCount.textContent = bagProducts.length;
+
+    div.append(bagCount);
+}
+
     slideshow();
  
     products = await getProducts();

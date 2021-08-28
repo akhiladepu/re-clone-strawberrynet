@@ -42,7 +42,7 @@ body {
 
 #contain_signin{
     height: 40px;
-    width: 140px;
+    width: 100px;
     float: right;
     text-align: center;
     border-radius: 8px;
@@ -68,21 +68,21 @@ body {
 }
 
 #contain_bag:hover{
-    background-color: #662d91;
+    background-color: #b53788;
     color: white;
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #contain_wishlist:hover{
-    background-color: #662d91;
+    background-color: #b53788;
     color: white;
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #contain_signin:hover{
-    background-color: #662d91;
+    background-color: #b53788;
     color: white;
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -492,9 +492,13 @@ color: #662d91;
 
 
 #userNameDisplay{
-    float: left;
+    /* float: left; */
+    overflow: hidden;
+    width: 50%;
+    text-align: left;
+    max-height: 20px;
     margin-top: 14px;
-    margin-left: 5px;
+    padding-left: 6px;
     font-size: 12px;
     font-weight: 540;
 }
@@ -853,4 +857,24 @@ hr.pink {
     margin-top: 24px !important;
     margin-right: 12px !important;
     background-color: white;
+}
+
+#bagCount{
+    margin-right:19px;
+    margin-top:-38px;
+    float:left;
+    width:20px;
+    height:20px !important;
+    position: relative;
+    z-index : 100;
+    background-color:#b53788;
+    padding:0px;
+    font-size:8px;
+    color:white;
+    text-align:center;
+    border-radius:50%;
+}
+
+#bagCount:hover{
+    background-color:#662d91;
 }
