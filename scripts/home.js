@@ -153,11 +153,10 @@ async function getProducts() {
 async function main(userId) {
 
     var user = await getUser(userId);
-
-    if (user != null) {
+    // console.log(user)
+    if (user.length != 0) {
         var userNameDisplay = document.getElementById("userNameDisplay");
         userNameDisplay.innerHTML = `${user.first_name}`;
-    }
     wishlistProducts = [];
     for (let i = 0; i < user.wishlist.length; i++) {
 
@@ -169,6 +168,8 @@ async function main(userId) {
 
         bagProducts.push(user.bag[i]);
 
+        }
+        
     }
 
     if (bagProducts == undefined || bagProducts.length == 0 || bagProducts == null) {

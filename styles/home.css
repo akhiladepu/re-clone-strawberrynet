@@ -503,7 +503,6 @@ color: #662d91;
     font-weight: 540;
 }
 #userNameDisplay:hover{
-  
     cursor: pointer;
     text-decoration: underline;
 }

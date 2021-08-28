@@ -68,6 +68,23 @@ async function main(userId) {
         bagProducts.push(user.bag[i]);
 
     }
+    if (bagProducts == undefined || bagProducts.length == 0 || bagProducts == null) {
+    let div = document.getElementById("contain_bag");
+
+    let bagCount = document.createElement("div");
+    bagCount.setAttribute("id", "bagCount")
+    bagCount.textContent = "0";
+
+    div.append(bagCount);
+} else{
+    let div = document.getElementById("contain_bag");
+
+    let bagCount = document.createElement("div");
+    bagCount.setAttribute("id", "bagCount")
+    bagCount.textContent = bagProducts.length;
+
+    div.append(bagCount);
+}
 
     showProducts(wishlistProducts, userId);
 }
