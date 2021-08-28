@@ -62,12 +62,14 @@ async function main(userId) {
         wishlistProducts.push(user.wishlist[i]);
 
     }
+    
     bagProducts = [];
     for (let i = 0; i < user.bag.length; i++) {
 
         bagProducts.push(user.bag[i]);
 
     }
+    //console.log(wishlistProducts,"check")
 
     showProducts(wishlistProducts, userId);
 }

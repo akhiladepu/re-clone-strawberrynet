@@ -24,6 +24,107 @@ async function getUser(id) {
     }
 
 }
+async function upDateName(id) {
+    
+    try {
+            
+        var res = await fetch(`http://localhost:2345/users/${id}`);
+        
+        var reqData = await res.json();
+        let div = document.getElementById('checkoutAs')
+        p=document.createElement('p')
+        p.innerHTML = `checkout as ${reqData.first_name}`
+        div.append(p);
+
+        let div1 = document.getElementById('not?')
+        p1=document.createElement('p')
+        p1.innerHTML = `Not ${reqData.first_name}?`
+        div1.append(p1);
+        
+
+
+        
+        
+
+    } catch (err) {
+        
+    }
+
+}
+upDateName(userId)
+//...............................................remove...................................
+async function removefrmcart(object, userId) {
+   
+    var data = await getUser(userId)
+    for (i = 0; i < data.length; i++) {
+        if (data[i]._id == object._id) {
+            data.splice(i,1)
+
+        }
+        
+
+      
+    }
+    await updateUser(data, userId, "bag");
+
+    
+    
+
+
+    
+}
+async function updateUser(newProductsArray, userId, str) {
+    console.log(newProductsArray, userId, str);
+
+    var data;
+    
+    if (str == "wishlist") {
+        data = {
+            _id: userId,
+            wishlist: newProductsArray
+        }        
+    }else if (str == "bag") {
+        data = {
+            _id: userId,
+            bag: newProductsArray
+        }        
+    }
+
+    try {
+        
+        await fetch(`http://localhost:2345/users/${str}`, {
+
+           
+            cache: 'default',
+            credentials:'same-origin',
+        
+            method: "PATCH",
+        
+            body: JSON.stringify(data),
+
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+
+            },
+           
+
+
+        });
+        console.log("patch")
+        
+        
+        showlocation(userId);
+
+    }
+    catch (err) {
+
+        console.log(err);
+        console.log("error piyush nhi ho paya")
+
+    }
+
+}
 
 
 window.onscroll = function () { myFunction() };
@@ -42,7 +143,7 @@ function myFunction() {
 let div_app = document.getElementById("js")
 let div_app2 = document.getElementById("js2")
 let div_app3 = document.getElementById("js3")
-async function appendprod(e) {
+async function appendprod(e,userId) {
     var data = await getUser(userId);
     
     let image = document.createElement('img')
@@ -96,26 +197,30 @@ async function appendprod(e) {
     let div4 = document.createElement('div')
     div4.setAttribute('class', 'demo4')
     div4.innerHTML = `INR${e.price}`
-
+    del = document.createElement('button')
+    del.innerHTML = "X"
+    del.setAttribute('class', 'del')
+    del.addEventListener('click', () => {
+        
+        removefrmcart(e,userId)
+    })
     
     let hr = document.createElement('hr');
 
     div_final = document.createElement('div')
     div_final.setAttribute('class', 'div_final')
-    div_final.append(div, div2, div3, div4)
+    div_final.append(div, div2, div3, div4,del)
     div_app.append(div_final, hr)
-    //......................................................check..........................................
-    
-    
-    //............................................................................
-
-
+   
 }
+
 async function showlocation(userId) {
      
     let data = await getUser(userId);
     console.log('data:', data)
     div_app.innerHTML = null
+    div_app2.innerHTML = null
+    div_app3.innerHTML=null
     total = data.length
     sum = 0;
     for (i = 0; i < data.length; i++) {
@@ -158,7 +263,7 @@ async function showlocation(userId) {
     div_app3.append(div_final_repo, div_final_repo1)
     div_app2.append(div, div3, div4)
     data.forEach(function (e) {
-        appendprod(e)
+        appendprod(e,userId)
     })
     
 }

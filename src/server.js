@@ -7,6 +7,8 @@ const productController = require("./controllers/product.controller")
 const userController = require("./controllers/user.controller")
 
 const app = express();
+ const cors = require("cors")
+ app.use(cors())
 
 app.use(express.json());
 
