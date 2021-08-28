@@ -223,12 +223,22 @@ body {
   margin: auto;
 }
 
+<<<<<<< HEAD
 .productBox {
   height: 530px;
   width: 250px;
   transition: 0.2s;
   margin: 15px 15px 15px;
   transition: 0.3s;
+=======
+.productBox{
+    height: 530px;
+    width: 250px;
+    transition: .2s;
+    background-color: white;
+    margin: 15px 15px 15px;
+    transition: 0.3s;
+>>>>>>> 089375942695fd5f04cac0047eee8e9bdb92ad9d
 }
 
 .productBox:hover {
@@ -269,6 +279,7 @@ body {
 
 .header__center::before,
 .header__center::after {
+<<<<<<< HEAD
   content: "";
   height: 5px;
   background-color: currentColor;
@@ -406,6 +417,166 @@ body {
   margin-top: 10px;
   color: white;
   margin-left: 10px;
+=======
+    content: "";
+    height: 5px;
+    background-color: currentColor;
+}
+#pro_name{
+    font-size: 18px;
+    font-weight: 560;
+    float: left;
+    margin-left: 22px;
+    margin-bottom: 5px;
+    
+ 
+}
+#prod_description{
+    float: left;
+    margin-left: 22px;
+    font-size: 13.5px;
+}
+#save{
+    color: red;
+    float: left;
+    margin-top: 20px;
+    margin-left: 22px;
+    font-size: 12px;
+   
+}
+#rupees{
+    font-size: 22px;
+    font-weight: 700;
+    float: right;
+    margin-right: 110px;
+    margin-top: 10px;
+    
+}
+#strike{
+    float: left;
+    font-size: 13px;
+    margin-left: 22px;
+    margin-top: 6px;
+}
+
+#addbag{
+    float: left;
+    margin-left: 80px;
+    height: 30px;
+    width: 90px;
+    background-color: teal;
+    text-align: center;
+    border-radius: 6px;
+    transition: .2s;   
+    font-size: 16px;
+    font-weight: 520;
+}
+#addbag:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 black;
+}
+#innertxt{
+    margin-top: 6px;
+    color: white;
+}
+#extra{
+    white-space: nowrap;
+    margin-top: 20px;
+    font-size: 10px;
+    color: red;
+    float: left;
+    margin-left: 76px;
+    text-align: center;
+}
+
+.bestdealsbackground{
+    height: 780px;
+    width: 100%;
+    background-color: #ebe5f1;
+}
+.bestdealsproducts{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 30px;;
+    height: auto;
+    width: 80%;
+    margin: auto;
+}
+#bestProducts{
+    height: 580px;
+    width: 275px;
+    margin: auto;
+    background-color: white;
+    border-radius: 2px;
+    border-top: 8px solid #662d91;
+    border-bottom: 8px solid #e2195c;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#662d91), to(#e2195c));
+    background-image: -webkit-linear-gradient(#662d91, #e2195c);
+    background-image: -moz-linear-gradient(#662d91, #e2195c), -moz-linear-gradient(#662d91, #e2195c);
+    background-image: -o-linear-gradient(#662d91, #e2195c), -o-linear-gradient(#662d91, #e2195c);
+    background-image: linear-gradient(#662d91, #e2195c), linear-gradient(#662d91, #e2195c);
+    -moz-background-size: 3px 100%;
+    background-size: 8px 100%;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+    transition: .2s;
+}
+
+#best_product_deals .productBox{
+    height: 580px;
+    width: 275px;
+    margin: auto;
+    background-color: white;
+    border-radius: 2px;
+    border-top: 8px solid #662d91;
+    border-bottom: 8px solid #e2195c;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#662d91), to(#e2195c));
+    background-image: -webkit-linear-gradient(#662d91, #e2195c);
+    background-image: -moz-linear-gradient(#662d91, #e2195c), -moz-linear-gradient(#662d91, #e2195c);
+    background-image: -o-linear-gradient(#662d91, #e2195c), -o-linear-gradient(#662d91, #e2195c);
+    background-image: linear-gradient(#662d91, #e2195c), linear-gradient(#662d91, #e2195c);
+    -moz-background-size: 3px 100%;
+    background-size: 8px 100%;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+    transition: .2s;
+
+}
+
+#best_product_deals img{
+    margin-left:10px;
+    width:250px;
+}
+
+#bestProducts:hover{
+    box-shadow: 0 4px 8px 0 #623381, 0 4px 8px 0 #623381;
+}
+
+#bestProducts img{
+    margin-left: 25px;
+    height: 38%;
+    width: 80%;
+    margin-top: 25px;
+    margin-bottom: 0%;
+}
+#bestdealsbox{
+    height: 30px;
+    font-size: 10px;
+    margin-left: 90px;
+    width: 80px;
+    background-color: orange;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: .2s;
+}
+#bestdealsboxtxt{
+    float: left;
+    margin-top: 10px;
+    color: white;
+    margin-left: 10px;
+   
+>>>>>>> 089375942695fd5f04cac0047eee8e9bdb92ad9d
 }
 
 #bestdealsbox:hover {
@@ -420,10 +591,19 @@ body {
 }
 
 .rate-area {
+<<<<<<< HEAD
   float: left;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 50px;
+=======
+float: left;
+margin-top: 10px;
+margin-bottom:10px;
+margin-left: 45px;
+
+
+>>>>>>> 089375942695fd5f04cac0047eee8e9bdb92ad9d
 }
 
 .rate-area:not(:checked) > input {
@@ -738,4 +918,91 @@ hr.pink {
 .btnYoutube:link {
   background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -153px -112px
     no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.productButton{    
+    color: #fff;
+    background-color: #00a69c;
+    padding: 5px 10px;
+    font-size: 18px;
+    letter-spacing: .05em;
+    font-weight: 700;
+    box-shadow: 0 2px 5px 2px rgb(0 0 0 / 18%);
+    display: inline-block;
+    margin: 2% 30%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 3px 5px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.heartimg > button{
+    border:0px;
+    margin:0px;
+    float:right;
+    width:22.5px !important;
+    margin-top: 18px !important;
+    margin-right: 12px !important;
+    height:26px;
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -23px -616px no-repeat;
+}
+
+.heartimg > button:hover{
+    border:0px;
+    margin:0px;
+    float:right;
+    width:22.5px !important;
+    margin-top: 18px !important;
+    margin-right: 12px !important;
+    height:26px;
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -1px -616px no-repeat;
+}
+
+.heartimg1{
+    border:0px;
+    margin:0px;
+    float:right;
+    width:22.5px !important;
+    margin-top: 18px !important;
+    margin-right: 12px !important;
+    height:26px;
+    background: url(https://a.cdnsbn.com/images/common/2016CommonSprite.png) -1px -616px no-repeat;
+}
+
+.heartimg1 > button{
+    border:0px;
+    margin:0px;
+    float:right;
+    margin-top: 24px !important;
+    margin-right: 12px !important;
+    background-color: white;
 }

@@ -1,4 +1,5 @@
 var user = JSON.parse(localStorage.getItem("userId"));
+
 if (user != null) {
     var userNameDisplay = document.getElementById("userNameDisplay");
     userNameDisplay.innerHTML = `${user.name}`;
@@ -233,6 +234,7 @@ const addToWishList = async (e) => {
         div_c.style["margin-left"] = "0px";
         div_li.innerHTML = null
         div = document.createElement('div')
-        div.innerHTML = '<ul><li class="prodDetail2"> An instant moisture - boosting facial mask</li><li class="prodDetail2"> Formulated with new Glacier Water, Hyaluronic Acid &amp; Apricot</li><li class="prodDetail2"> Instantly boosts moisture levels in just ten minutes</li><li class="prodDetail2"> Quenches thirsty skin &amp; delivers superfood-infused hydration to extra dry spots</li><li class="prodDetail2">Leaves skin soft, smooth, comfortable, conditioned &amp; healthy-looking</li><li class="prodDetail2">100% vegetarian &amp; vegan</li><li class="prodDetail2">Free of gluten, parabens, phthalates, sodium lauryl sulfate, propylene glycol, mineral oil, DEA, petrolatum,paraffin, polyethylene beads, formaldehyde &amp; animal ingredients</li></ul>';
-        div_li.append(div);
+        div.innerHTML = '<ul><li class="prodDetail2"> An instant moisture - boosting facial mask</li><li class="prodDetail2"> Formulated with new Glacier Water, Hyaluronic Acid &amp; Apricot</li><li class="prodDetail2"> Instantly boosts moisture levels in just ten minutes</li><li class="prodDetail2"> Quenches thirsty skin &amp; delivers superfood-infused hydration to extra dry spots</li><li class="prodDetail2">Leaves skin soft, smooth, comfortable, conditioned &amp; healthy-looking</li><li class="prodDetail2">100% vegetarian &amp; vegan</li><li class="prodDetail2">Free of gluten, parabens, phthalates, sodium lauryl sulfate, propylene glycol, mineral oil, DEA, petrolatum,paraffin, polyethylene beads, formaldehyde &amp; animal ingredients</li></ul>'
+        div_li.append(div)
     }
+

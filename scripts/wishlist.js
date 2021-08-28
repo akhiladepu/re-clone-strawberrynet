@@ -1,4 +1,4 @@
-const userId = "61288cee20ca382384218389";
+const userId = "61291231e0b0bd573466ca6b";
 var brandsObject = {};
 var categoryObject = {};
 
@@ -52,8 +52,6 @@ async function main(userId) {
 
     var user = await getUser(userId);
 
-    console.log('user:', user)
-
     if (user != null) {
         var userNameDisplay = document.getElementById("userNameDisplay");
         userNameDisplay.innerHTML = `${user.first_name}`;
@@ -75,13 +73,17 @@ async function main(userId) {
 }
 
 main(userId);
-
+var countSample = 1;
 function showProducts(data, userId) {
-
+    data_div.innerHTML = "";
     data.forEach(function (object) {
         addProductsToBrowser(object, userId);
     });
 
+    if (countSample == 1) {
+        filterSection();
+        countSample++;
+    }
 }
 
 function addProductsToBrowser(object, userId) {
@@ -110,6 +112,7 @@ function addProductsToBrowser(object, userId) {
         let prev = brandsObject[object.brand];
         brandsObject[object.brand] += 1;
     }
+
 
     if (categoryObject[object.category] == undefined) {
         categoryObject[object.category] = 1;
@@ -240,6 +243,7 @@ async function removeFromWishlist(objName, objBrand, objPrice, objCategory, user
     }
 
     await updateUser(newWishlistProducts, userId, "wishlist");
+    window.location.href = "wishlist.html";
 }
 
 
@@ -250,29 +254,43 @@ async function addToBag(obj, userId) {
 
     bagProducts.push(obj);
 
-    console.log('bagProducts:', bagProducts);
-
     await updateUser(bagProducts, userId, "bag");
 
 }
 
 
+async function filterSection() {
+    var append_div = document.getElementById("wishListShowTotalProductsDiv");
+    append_div.innerHTML = "";
+    var sample = document.createElement("div");
+    for (key in categoryObject) {
+        let ele = document.createElement("a");
 
-var append_div = document.getElementById("wishListShowTotalProductsDiv");
-var sample = document.createElement("div");
-for (key in categoryObject) {
-    let ele = document.createElement("a");
+        ele.innerHTML = `<a onclick='filterByCategory("${key}")' class="categoryHover">${key} (${categoryObject[key]})</a><br>`;
 
-    ele.innerHTML = `<a onclick='filterByCategory("${key}")' class="categoryHover">${key} (${categoryObject[key]})</a><br>`;
+        sample.append(ele);
+    }
 
-    sample.append(ele);
+    append_div.append(sample);
+
+    var append_div = document.getElementById("scrollSectionBrands");
+    append_div.innerHTML = "";
+    var sample = document.createElement("div");
+
+    for (key in brandsObject) {
+        let ele = document.createElement("a");
+
+        ele.innerHTML = `<label class="checkbox"><input type="checkbox"  class="filterBrands" onclick="filterBrands('${key}')" value="${key}" id="${key}"><span>${key} (${brandsObject[key]})</span></label>`;
+
+        sample.append(ele);
+    }
+
+    append_div.append(sample);
 }
-
-append_div.append(sample);
 
 function filterByCategory(categoryType) {
 
-    products;
+    products = wishlistProducts;
     var reqCategory = [];
     for (var i = 0; i < products.length; i++) {
         if (products[i].category == categoryType) {
@@ -282,25 +300,9 @@ function filterByCategory(categoryType) {
     showProducts(reqCategory);
 }
 
-
-
-var append_div = document.getElementById("scrollSectionBrands");
-var sample = document.createElement("div");
-
-for (key in brandsObject) {
-    let ele = document.createElement("a");
-
-    ele.innerHTML = `<label class="checkbox"><input type="checkbox"  class="filterBrands" onclick="filterBrands('${key}')" value="${key}" id="${key}"><span>${key} (${brandsObject[key]})</span></label>`;
-
-    sample.append(ele);
-}
-
-append_div.append(sample);
-
-
 var prod = [];
 function filterBrands(value) {
-    products;
+    products = wishlistProducts;
     let i = 0;
     var valueChecked = document.getElementById(value);
     if (valueChecked.checked == true) {
@@ -349,7 +351,7 @@ function popularity() {
     var buttonName = document.getElementById("sortButtonName");
     buttonName.innerHTML = `SORT BY POPULARITY <a id="glyphicon">`;
     var popular = [];
-    var productsData = products;
+    var productsData = wishlistProducts;
     for (var i = 0; i < productsData.length; i++) {
         if (productsData[i].rating == 5) {
             popular.push(productsData[i]);
@@ -362,7 +364,7 @@ function biggestDiscount() {
     var buttonName = document.getElementById("sortButtonName");
     buttonName.innerHTML = `SORT BY BIGGEST DISCOUNT <a id="glyphicon">`;
     var bigDiscount = [];
-    var productsData = products;
+    var productsData = wishlistProducts;
     for (var i = 0; i < productsData.length; i++) {
         if (productsData[i].discount >= 30) {
             bigDiscount.push(productsData[i]);
@@ -374,7 +376,7 @@ function biggestDiscount() {
 function lowestPrice() {
     var buttonName = document.getElementById("sortButtonName");
     buttonName.innerHTML = `SORT BY LOWEST PRICE <a id="glyphicon">`;
-    var productsData = products;
+    var productsData = wishlistProducts;
 
     productsData.sort(function (a, b) {
         return a.price - b.price;
@@ -386,8 +388,8 @@ function brandAZ() {
     var buttonName = document.getElementById("sortButtonName");
     buttonName.innerHTML = `SORT BY BRAND: A-Z<a id="glyphicon">`;
     brandsObject;
-    products;
-    var brandsArray = []
+    var products = wishlistProducts;
+    var brandsArray = [];
 
     for (key in brandsObject) {
         brandsArray.push(key);
@@ -409,11 +411,29 @@ function brandAZ() {
 
     showProducts(brandsAZ);
 }
+
 function productAZ() {
     var buttonName = document.getElementById("sortButtonName");
     buttonName.innerHTML = `SORT BY PRODUCT: A-Z <a id="glyphicon">`;
 
-    products;
+    var products = wishlistProducts;
+    var productsArray = [];
 
-    showProducts(products);
-}
+    for (let i = 0; i < products.length; i++) {
+        productsArray.push(products[i].name);
+    }
+
+    productsArray = productsArray.sort()
+
+    var productsAZ = [];
+
+    for (var i = 0; i < productsArray.length; i++){
+        for (var j = 0; j < products.length; j++){
+            if (productsArray[i] == products[j].name) {
+                productsAZ.push(products[j]);
+                break;
+            }
+        }
+    }
+    showProducts(productsAZ);
+    }
