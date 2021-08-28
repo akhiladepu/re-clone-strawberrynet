@@ -1,5 +1,7 @@
-const userId = "6128ace108662939a099c540";
+const userId = "61291231e0b0bd573466ca6b";
 
+var bagProducts;
+var sampleNumber = 1;
 async function getUser(id) {
     
     try {
@@ -17,6 +19,36 @@ async function getUser(id) {
             }
         }
         
+    if (user != null) {
+        var userNameDisplay = document.getElementById("userNameDisplay");
+        userNameDisplay.innerHTML = `${user.first_name}`;
+    }
+    
+        bagProducts = user.bag;
+        
+        if (sampleNumber == 1) {
+            if (bagProducts == undefined || bagProducts.length == 0 || bagProducts == null) {
+                let div = document.getElementById("contain_bag");
+                div.innerHTML = "";
+
+                let bagCount = document.createElement("div");
+                bagCount.setAttribute("id", "bagCount")
+                bagCount.textContent = "0";
+
+                div.append(bagCount);
+            } else {
+                let div = document.getElementById("contain_bag");
+
+                let bagCount = document.createElement("div");
+                bagCount.setAttribute("id", "bagCount")
+                bagCount.textContent = bagProducts.length;
+
+                div.append(bagCount);
+                sampleNumber++;
+            }
+        }
+
+        
         return user.bag;
 
     } catch (err) {
@@ -33,7 +65,7 @@ async function upDateName(id) {
         var reqData = await res.json();
         let div = document.getElementById('checkoutAs')
         p=document.createElement('p')
-        p.innerHTML = `checkout as ${reqData.first_name}`
+        p.innerHTML = `Checkout as ${reqData.first_name}`
         div.append(p);
 
         let div1 = document.getElementById('not?')
@@ -64,7 +96,7 @@ async function removefrmcart(object, userId) {
         
 
       
-    }
+    }sampleNumber = 1
     await updateUser(data, userId, "bag");
 
     
@@ -198,7 +230,7 @@ async function appendprod(e,userId) {
     div4.setAttribute('class', 'demo4')
     div4.innerHTML = `INR${e.price}`
     del = document.createElement('button')
-    del.innerHTML = "X"
+    del.innerHTML = "x"
     del.setAttribute('class', 'del')
     del.addEventListener('click', () => {
         
@@ -227,7 +259,7 @@ async function showlocation(userId) {
         sum += Number(data[i].price)
     }
     item = document.createElement('h3')
-    item.innerHTML = `Item Total:${total}item(s)`
+    item.innerHTML = `Item Total: ${total} Item(s)`
      total_p = document.createElement('p')
     total_p.innerHTML = `INR  ${sum}`
     total_p.setAttribute('class', 'total_prices')
@@ -251,7 +283,7 @@ async function showlocation(userId) {
     div4.append(div_extra1, div_extra_p1)
     div4.setAttribute('class', 'div4')
     final_repo = document.createElement('h3')
-    final_repo.innerHTML = `Order Total:${data.length}item(s)`
+    final_repo.innerHTML = `Order Total: ${data.length} Item(s)`
     div_final_repo = document.createElement('div')
     div_final_repo.append(final_repo)
     div_final_repo.setAttribute('class', 'final_repo')

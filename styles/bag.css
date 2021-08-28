@@ -48,7 +48,7 @@ body {
 
 #contain_signin {
   height: 40px;
-  width: 140px;
+  width: 100px;
   float: right;
   text-align: center;
   border-radius: 8px;
@@ -245,7 +245,7 @@ j #js img {
 }
 
 .demo2 {
-  width: 515px;
+  width: 500px;
   min-height: 8px;
   padding-left: 24.5px;
   padding-right: 7.5px;
@@ -273,7 +273,8 @@ j #js img {
   letter-spacing: 0.09em;
   font-family: Lato, sans-serif;
   font-weight: bold;
-  margin-left: 85px;
+  margin-left: 70px;
+  width:100px;
   margin-top: 23px;
 }
 
@@ -305,6 +306,14 @@ j #js img {
 
 h3 {
   font-size: 20px;
+}
+
+.final_repo h3{
+  width:220px;
+}
+
+.final_repo1 h3{
+  width:120px;
 }
 
 .div3,
@@ -353,11 +362,12 @@ h3 {
 }
 
 .final_repo {
-  margin-right: 69%;
+  margin-right: 56%;
+  width:250px;
 }
 
 .final_repo1 {
-  margin-right: 6%;
+  margin-right: 2%;
 }
 
 .finaltouch {
@@ -369,7 +379,7 @@ h3 {
   height: 274px;
   width: 20%;
   text-align: center;
-  padding-top: 4%;
+  /* padding-top: 4%; */
   margin-top: 6%;
   margin-left: 3%;
   background-color: white;
@@ -381,12 +391,17 @@ h3 {
 
 .checkout {
   font-size: 22px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+}
+
+#checkoutAs{
+  max-height:55px;
+  overflow: hidden;
 }
 
 .signout {
   font-size: 22px;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 button {
@@ -706,6 +721,9 @@ hr.pink {
 
 #userNameDisplay {
   float: left;
+  width:50px;
+  height:20px;
+  overflow: hidden;
   margin-top: 14px;
   margin-left: 5px;
   font-size: 12px;
@@ -716,14 +734,34 @@ hr.pink {
   text-decoration: underline;
 }
 .del {
+  float:right;
   height: 35px;
   min-width: 30px;
   color: #000;
+  font-size: 8px !important;
   background-color: white;
-  margin-left: 2%;
+  /* margin-left: 2%; */
+  border:none;
 }
 .del:hover {
   cursor: pointer;
-  color: white;
-  background-color: #702f80;
+  color: #702f80;
+}
+
+
+
+#bagCount{
+    margin-right:19px;
+    margin-top:-38px;
+    float:left;
+    width:20px;
+    height:20px !important;
+    position: relative;
+    z-index : 100;
+    background-color:#b53788;
+    padding:0px;
+    font-size:8px;
+    color:white;
+    text-align:center;
+    border-radius:50%;
 }
