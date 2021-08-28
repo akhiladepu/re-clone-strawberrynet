@@ -1,6 +1,6 @@
 const userId = "61291231e0b0bd573466ca6b";
-var brandsObject = {};
-var categoryObject = {};
+var brandsObject;
+var categoryObject;
 
 window.onscroll = function () { myFunction() };
 
@@ -75,6 +75,12 @@ async function main(userId) {
 main(userId);
 var countSample = 1;
 function showProducts(data, userId) {
+
+    
+    
+    brandsObject = {};
+    categoryObject = {};
+
     data_div.innerHTML = "";
     data.forEach(function (object) {
         addProductsToBrowser(object, userId);
@@ -243,7 +249,8 @@ async function removeFromWishlist(objName, objBrand, objPrice, objCategory, user
     }
 
     await updateUser(newWishlistProducts, userId, "wishlist");
-    window.location.href = "wishlist.html";
+    // window.location.href = "wishlist.html";
+    filterSection();
 }
 
 

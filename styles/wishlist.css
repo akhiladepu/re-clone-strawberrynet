@@ -161,6 +161,9 @@ body {
     color: #623381;
     transition: 0.2s;
 }
+#navbar{
+    padding-left:90px;
+}
 
 .sticky {
     position: fixed;
@@ -911,10 +914,6 @@ body {
   font-size: 11px;
   color: #662d91;
 } 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
 
 .dropdown-content {
   display: none;
@@ -948,6 +947,12 @@ body {
   display: block;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding:0px !important;
+  margin:0px 0px 0px 700px;
+}
 
 
 
