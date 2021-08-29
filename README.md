@@ -10,6 +10,7 @@ Project: make a clone of https://strawberrynet.com/en-in site
 - HTML
 - CSS
 - JavaScript
+- MongoDB
 
 For storing user data we also used LocalStorage (aka browser storage).
 
@@ -19,7 +20,8 @@ All the image and icon links have been taken from the main website ( https://str
 ## Snapshots 📷
 - Landing Page (Home Page):
   
-![Home Page](https://user-images.githubusercontent.com/35700009/129468592-4bcc5b60-447d-4555-a8f5-925fe4562c54.png)
+![Home Page](https://user-images.githubusercontent.com/81949743/131253226-bbd5fc26-fcc7-4ce4-a4da-937dc6a2a784.png)
+
 
 - Category Page:
   
@@ -32,6 +34,10 @@ All the image and icon links have been taken from the main website ( https://str
 - Wishlist Page:
   
 ![Wishlist Page](https://user-images.githubusercontent.com/35700009/129468664-045f9e71-3e68-4002-a2c7-5a895b9b265e.png)
+
+- Bag Page:
+  
+![Bag Page](https://user-images.githubusercontent.com/81949743/131253266-a3882ffd-dcbf-4717-b366-b294ba2afe76.png)
 
 - Checkout Page:
   
