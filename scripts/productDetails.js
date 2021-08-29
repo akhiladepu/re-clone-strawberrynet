@@ -1,3 +1,4 @@
+var user = JSON.parse(localStorage.getItem("userId"));
 
 if (user != null) {
     var userNameDisplay = document.getElementById("userNameDisplay");

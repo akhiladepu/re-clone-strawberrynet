@@ -1,3 +1,7 @@
+let divContainer = document.createElement('div');
+divContainer.setAttribute('id', 'divContainer');
+let list = document.getElementById('searchBox');
+
 window.onscroll = function () { myFunction() };
 
 var navbar = document.getElementById("sample");
@@ -448,20 +452,12 @@ function productDisplay() {
     sample();
 }
 
-let divContainer = document.createElement('div');
-divContainer.setAttribute('id', 'divContainer');
-    let list = document.getElementById('searchBox');
-
     function throttle() {
        search();
     }
 
     async function search() {
         let data = await getProducts();
-        showData(data);
-    }
-
-let showData = (data) => {
     divContainer.innerHTML = null;
     let query = document.getElementById('search').value;
     if (query.length == 0)
