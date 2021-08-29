@@ -1,4 +1,5 @@
 var user = JSON.parse(localStorage.getItem("userId"));
+var userId = user.id;
 if (user != null) {
     var userNameDisplay = document.getElementById("userNameDisplay");
     userNameDisplay.innerHTML = `${user.name}`;
@@ -68,44 +69,44 @@ async function updateUser(newProductsArray, userId, str) {
 }
 
 
-function slideshow() {
+// function slideshow() {
 
-    const arr = ['https://a.cdnsbn.com/images/English/banner_RewardProgramBP_1140_1.jpg',
-        "https://a.cdnsbn.com/images/English/banner_BeautyBreakSale8offJul21_1170_1.jpg",
-        "https://a.cdnsbn.com/images/English/banner_Jul21SpecialPurchase_1170_1.jpg",
-        "https://a.cdnsbn.com/images/English/banner_SkincareAntiPollutionJul21_1170_1.jpg?v=3",
-        "https://a.cdnsbn.com/images/English/banner_MakeupEyeMakeupJul21_1170_1.jpg?v=3",
-        "https://a.cdnsbn.com/images/English/banner_MedicalMask28Sep20_1140_1.jpg",
-        "https://a.cdnsbn.com/images/English/banner_VeganBeautyNov20_1170_1.jpg",
-        "https://a.cdnsbn.com/images/English/banner_AshiyaMay21_1170_1.jpg",
-        "https://a.cdnsbn.com/images/English/banner_WeekendDeals02Jul21_1170_1.jpg",
-        "https://a.cdnsbn.com/images/English/banner_Jul21top40_1170_1.jpg",
-        "https://a.cdnsbn.com/images/English/banner_Jul21NewLines_1170_1.jpg",
-        "https://a.cdnsbn.com/images/English/banner_BrandTacticalDemonFeb20_1140_1.jpg"
-    ];
+//     const arr = ['https://a.cdnsbn.com/images/English/banner_RewardProgramBP_1140_1.jpg',
+//         "https://a.cdnsbn.com/images/English/banner_BeautyBreakSale8offJul21_1170_1.jpg",
+//         "https://a.cdnsbn.com/images/English/banner_Jul21SpecialPurchase_1170_1.jpg",
+//         "https://a.cdnsbn.com/images/English/banner_SkincareAntiPollutionJul21_1170_1.jpg?v=3",
+//         "https://a.cdnsbn.com/images/English/banner_MakeupEyeMakeupJul21_1170_1.jpg?v=3",
+//         "https://a.cdnsbn.com/images/English/banner_MedicalMask28Sep20_1140_1.jpg",
+//         "https://a.cdnsbn.com/images/English/banner_VeganBeautyNov20_1170_1.jpg",
+//         "https://a.cdnsbn.com/images/English/banner_AshiyaMay21_1170_1.jpg",
+//         "https://a.cdnsbn.com/images/English/banner_WeekendDeals02Jul21_1170_1.jpg",
+//         "https://a.cdnsbn.com/images/English/banner_Jul21top40_1170_1.jpg",
+//         "https://a.cdnsbn.com/images/English/banner_Jul21NewLines_1170_1.jpg",
+//         "https://a.cdnsbn.com/images/English/banner_BrandTacticalDemonFeb20_1140_1.jpg"
+//     ];
 
-    let div = document.getElementById('slideshow');
-    let img = document.createElement('img');
-    let i = 0;
+//     let div = document.getElementById('slideshow');
+//     let img = document.createElement('img');
+//     let i = 0;
 
-    img.src = arr[0];
+//     img.src = arr[0];
 
-    div.append(img);
+//     div.append(img);
 
-    setInterval(function () {
+//     setInterval(function () {
 
-        img.src = arr[i]
+//         img.src = arr[i]
 
-        i++;
+//         i++;
 
-        if (i == arr.length) {
-            i = 0;
-        }
+//         if (i == arr.length) {
+//             i = 0;
+//         }
         
 
-    }, 2000)
+//     }, 2000)
 
-}
+// }
 
 var products;
 var wishlistProducts;
@@ -176,7 +177,7 @@ async function main(userId) {
 
     }
 
-    slideshow();
+    // slideshow();
  
     products = await getProducts();
 
@@ -335,3 +336,5 @@ async function addToWishlist(name, brand, price, category, userId, str) {
 
 
 main(userId);
+
+

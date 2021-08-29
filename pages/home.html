@@ -22,28 +22,131 @@
     <div id="sample" class="sticky">
         <div class="head">
             <img src="\images\header-logo.jfif">
-            <input  type="search" placeholder="SEARCH BRAND / PRODUCT" />
+            <div class="main_search_box" id="searchBox">
+                <input  type="search" oninput="throttle()" id="search" placeholder="SEARCH BRAND / PRODUCT" >
+                <button id="searchButton" type="submit"><i class="fa fa-search" aria-hidden="true" style="font-size: 180%;color: #623381;"></i></button>
+            </div>
             <div class="contain_rs">
                 <div id="tracking">Rs. INR India: English <i class="fas fa-angle-down"></i></div>
                 <div style="font-size: small;"> | </div>
                 <div id="rs" onclick="window.location.href='orderTracking.html'">Order Tracking</div>
             </div>
             <div class="contain_elements">
-                <div id="contain_bag" onclick="window.location.href='bag.html'"><i class="fa fa-shopping-bag" style="font-size: 30px;margin-top: 5px; float: left;margin-left: 10px;"></i><div id="contain_elements_text"> Bag</div></div>
+                <div id="contain_signin" onclick="location.href='SignIn.html'"><i class="fas fa-user-circle" style="font-size: 30px;margin-top: 5px;float: left;margin-left: 10px;"></i><div id="userNameDisplay">Sign In</div></div>
                 <div id="contain_wishlist" onclick="window.location.href='wishlist.html'"><i class="fas fa-heart" style="font-size: 30px;margin-top: 5px;float: left; margin-left: 10px;"></i><div id="contain_elements_text"> Wishlist</div></div>
-                <div id="contain_signin" onclick="location.href='SignIn.html'"><i class="fas fa-user-circle" style="font-size: 30px;margin-top: 5px;float: left;margin-left: 10px;"></i><div id="userNameDisplay"></div></div>
+
+                <div id="contain_bag" onclick="window.location.href='bag.html'"><i class="fa fa-shopping-bag" style="font-size: 30px;margin-top: 5px; float: left;margin-left: 10px;"></i><div id="contain_elements_text"> Bag</div></div>
    
             </div>
         </div>
     
          <div class="nav">
             <ul id="navbar">
+<!-- <<<<<<< HEAD
                 <li><a href="\pages\skincare.html"><i class="fas fa-bars"></i> BY BRAND</a></li>
                 <li><a href='\pages\skincare.html?category=Skincare'>SKINCARE</a></li>
                 <li><a href="\pages\skincare.html?category=Make Up">MAKEUP</a></li>
                 <li><a href="\pages\skincare.html?category=Hair Care">HAIRCARE</a></li>
                 <li><a href="\pages\skincare.html?category=Perfume">PERFUME</a></li>
                 <li><a href="\pages\skincare.html?category=Men's Skincare">MEN SKINCARE</a></li>
+======= -->
+                <li class="dropdown">
+                    <a href="\pages\skincare.html" class="dropbtn">
+                        <i class="fas fa-bars"></i> BY BRAND
+                    </a>
+                    <!-- DROP DOWN FOR BY BRAND -->
+                    <div class="dropdown-content">
+                        <div style="display: grid; grid-template-columns: auto auto;">
+                        <div id="dropSearch" >
+                            <input type="search" placeholder="SEARCH BRAND" id="search">
+                            <button id="searchButton" type="submit"><i class="fa fa-search" aria-hidden="true" style="font-size: 180%;color: #623381;"></i></button>
+                        </div>
+                       
+                        <div id="topbrandssticky"><div>TOPBRANDS</div></div>
+                    </div>
+                    <div style="display: grid;grid-template-columns: 50px 200px auto;">
+                        <div id="column_1">
+                            <a href="#">A</a>
+                            <a href="#">B</a>
+                            <a href="#">C</a>
+                            <a href="#">D</a>
+                            <a href="#">F</a>
+                            <a href="#">G</a>
+                            <a href="#">H</a>
+                            <a href="#">I</a>
+                            <a href="#">J</a>
+                            <a href="#">K</a>
+                            <a href="#">L</a>
+                            <a href="#">M</a>
+                            <a href="#">N</a>
+                            <a href="#">O</a>
+                            <a href="#">P</a>
+                            <a href="#">Q</a>
+                            <a href="#">R</a>
+                            <a href="#">S</a>
+                            <a href="#">T</a>
+                            <a href="#">U</a>
+                            <a href="#">V</a>
+                            <a href="#">W</a>
+                            <a href="#">X</a>
+                            <a href="#">Y</a>
+                            <a href="#">Z</a>
+                        </div>
+                        <div id="column_2">
+                                <a href="#">BIOTHERM</a>
+                                <a href="#">BVLGARI</a>
+                                <a href="#">CALVIN KLEIN</a>
+                                <a href="#">CHRISTIAN DIOR</a>
+                                <a href="#">CLARINS</a>
+                                <a href="#">CLINIQUE</a>
+                                <a href="#">DERMALOGICA</a>
+                                <a href="#">ELIZABETH ARDEN</a>
+                                <a href="#">ESTEE LAUDER</a>
+                                <a href="#">GIORGIO ARMANI</a>
+                                <a href="#">GUERLAIN</a>                                             
+                                <a href="#">KERASTASE</a>                                             
+                                <a href="#">KIEHL'S</a>                                             
+                                <a href="#">L'OCCIATANE</a>                                             
+                                <a href="#">LA PRAIRIE</a>                                             
+                                <a href="#">LANCOME</a>                                             
+                                <a href="#">NARS</a>                                             
+                                <a href="#">NARS</a>                                             
+                                <a href="#">NARS</a>                                             
+                                <a href="#">NARS</a>
+                        </div>
+
+                        <div id="column_3">
+                            <a href="#">BIOTHERM</a>
+                            <a href="#">BVLGARI</a>
+                            <a href="#">CALVIN KLEIN</a>
+                            <a href="#">CHRISTIAN DIOR</a>
+                            <a href="#">CLARINS</a>
+                            <a href="#">CLINIQUE</a>
+                            <a href="#">DERMALOGICA</a>
+                            <a href="#">ELIZABETH ARDEN</a>
+                            <a href="#">ESTEE LAUDER</a>
+                            <a href="#">GIORGIO ARMANI</a>
+                            <a href="#">GUERLAIN</a>                                             
+                            <a href="#">KERASTASE</a>                                             
+                            <a href="#">KIEHL'S</a>                                             
+                            <a href="#">L'OCCIATANE</a>                                             
+                            <a href="#">LA PRAIRIE</a>                                             
+                            <a href="#">LANCOME</a>                                             
+                            <a href="#">NARS</a>                                             
+                            <a href="#">NARS</a>                                             
+                            <a href="#">NARS</a>                                             
+                            <a href="#">NARS</a>                                             
+                    </div>
+                    </div>
+                </div>
+                <!-- DROP DOWN ENDS HERE -->
+                </li>
+                <li><a href="\pages\skincare.html?category=Skincare">SKINCARE</a></li>
+                <li><a href="\pages\skincare.html?category=Make Up">MAKEUP</a></li>
+                <li><a href="\pages\skincare.html?category=Hair Care">HAIRCARE</a></li>
+                <li><a href="\pages\skincare.html?category=Perfume">PERFUME</a></li>
+                <li><a href="\pages\skincare.html?category=Men's Skincare">MEN SKINCARE</a></li>
+<!-- >>>>>>> f925e75c7817b4d1504d2e105bcc21c14fb01b4d -->
                 <li><a href="\pages\skincare.html">COLONGE</a></li>
                 <li><a href="\pages\skincare.html?category=Home Scents">SCENTS</a></li>
                 <li><a href="\pages\skincare.html">NATURAL</a></li>
@@ -53,22 +156,30 @@
         </div> 
     </div>
  
-    <div id="slideshow"></div>
-
-    <div id="dt" style="text-align:center">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+    <!-- SLIDE SHOW  -->
+<!-- this slider can be used multiple times on the same page -->
+<!-- don't change class names because slider will not work -->
+<div class="slider">
+    <div class="imgs">
+      <!-- you can add divs with class img here and they will be 
+           automatically added to slider -->
+      <!-- style="left: 0;" in case JS is disabled -->
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
     </div>
-    
+    <div class="dots"></div>
+  </div>
+  <script src="/scripts/slideshow.js" ></script>
+    <!-- SLIDE SHOW ENDS HERE -->
+
+    <!-- DAILY SPECIALS -->
     <div class="hrline">
         <header>
             <div class="header__center">DAILY  SPECIALS</div>
@@ -76,8 +187,9 @@
         <div style="float: right;">Max .3 Per Order</div>
     </div>
     <div class="containDaily" id="daily_special_products"></div>
-    <!-- <script src="\scripts\daily_specials.js"></script> -->
+    <!-- DAILY SPECIALS ENDS HERE -->
 
+    <!-- BEST DEALS -->
     <div class="bestdealsbackground" >
         <div class="bestdeals">
             <div class="hrline" style="color:#623381;margin-bottom: 0%;">
@@ -87,40 +199,45 @@
             </div>
         </div>
          <div class="bestdealsproducts"id="best_product_deals"></div>
-         <!-- <script src="\scripts\best_deals.js"></script> -->
+         <!-- BEST DEALS ENDS HERE -->
 
+         <!-- TOP 40 SPECIALS -->
          <div class="hrline">
             <header>
                 <div class="header__center">TOP 40 SPECIALS</div>
             </header>
         </div>
         <div class="containDaily" id="top_40_specials"></div>
-        <!-- <script src="\scripts\top_40_specials.js"></script> -->
+        <!-- TOP 40 SPECIALS ENDS HERE -->
 
+        <!-- BEST SELLERS STARTS HERE -->
         <div class="hrline">
             <header>
                 <div class="header__center">BEST SELLERS</div>
             </header>
         </div>
         <div class="containDaily" id="best_sell"></div>
-        <!-- <script src="\scripts\best_seller.js"></script> -->
+        <!-- BEST SELER ENDS HERE -->
 
+        <!-- NEW ARRIVALS -->
         <div class="hrline">
             <header>
                 <div class="header__center">NEW ARRIVALS</div>
             </header>
         </div>
         <div class="containDaily" id="new_arrivals"></div>
-        <!-- <script src="\scripts\new_arrivals.js"></script> -->
+        <!-- NEW ARRIVALS ENDS HERE -->
 
+        <!-- YOU MAY LIKE THESE -->
         <div class="hrline">
             <header>
                 <div class="header__center">YOU MAY LIKE THESE</div>
             </header>
         </div>
         <div class="containDaily" id="you_may_like_these"></div>
-        <!-- <script src="\scripts\you_may_like_these.js"></script> -->
+        <!-- YOU MAY LIKE THESE ENDS HERE -->
 
+        <!-- FOOTER -->
         <div class="cont">
             <div class="first">
                 <h5>STAY CONNECTED</h5>
