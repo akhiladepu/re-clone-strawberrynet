@@ -59,6 +59,7 @@ var singleContainer = document.getElementById('single-container');
 
 let params = new URLSearchParams(location.search);
 let cat = params.get('category');
+let brand = params.get('brand');
 
 let heading = document.getElementById('heading');
 heading.innerHTML = cat;
@@ -66,10 +67,18 @@ heading.innerHTML = cat;
 function showProducts(p) {
     numProd = 0;
     singleContainer.innerHTML = null;
-    p.forEach(function (el) {
+    if (cat == null) {
+        p.forEach(function (el) {
+        if (el.brand == brand)
+            appendProduct(el);
+        });
+    }
+    else{
+         p.forEach(function (el) {
         if (el.category == cat)
             appendProduct(el);
-    });
+        });
+     }
 }
 
 function appendProduct(el) {
@@ -161,17 +170,29 @@ function appendProduct(el) {
 }
 //////////////////////////////// Sort Products //////////////////////////////////////
 function lowestPrice() {
-    let prod = products.sort(function (a, b) {
-        if (a.category == cat)
-            return a.price - b.price;
+       let prod = products.sort(function (a, b) {
+        if (cat != null) {
+            if (a.category == cat)
+                return a.price - b.price;
+        }
+        else {
+            if (a.brand == brand)
+                return a.price - b.price;
+        }
     });
     showProducts(prod);
 }
 
 function biggestDiscount() {
-    let prod = products.sort(function (a, b) {
-        if (a.category == 'Skincare' && a.discount != '0' && a.discount != 'None')
-            return b.discount - a.discount;
+     let prod = products.sort(function (a, b) {
+        if (cat != null) {
+            if (a.category == cat && a.discount != '0' && a.discount != 'None')
+                return b.discount - a.discount;
+        }
+        else {
+            if (a.brand == brand && a.discount != '0' && a.discount != 'None')
+                return b.discount - a.discount;
+        }
     });
     showProducts(prod);
 }
@@ -195,17 +216,33 @@ function brandAZ() {
 
 function nameAZ() {
     let prod = products.sort(function (a, b) {
-        if (a.category == cat) {
-            let A = a.name.toLowerCase();
-            let B = b.name.toLowerCase();
-            if (A < B) {
-                return -1;
+        if (cat != null) {
+            if (a.category == cat) {
+                let A = a.name.toLowerCase();
+                let B = b.name.toLowerCase();
+                if (A < B) {
+                    return -1;
+                }
+                else if (A > B) {
+                    return 1;
+                }
+                return 0;
             }
-            else if (A > B) {
-                return 1;
-            }
-            return 0;
         }
+        else {
+             if (a.brand == brand) {
+                let A = a.name.toLowerCase();
+                let B = b.name.toLowerCase();
+                if (A < B) {
+                    return -1;
+                }
+                else if (A > B) {
+                    return 1;
+                }
+                return 0;
+            }
+        }
+        
     });
     showProducts(prod);
 }

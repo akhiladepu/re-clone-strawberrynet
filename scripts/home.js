@@ -447,3 +447,45 @@ function productDisplay() {
 
     sample();
 }
+
+let divContainer = document.createElement('div');
+divContainer.setAttribute('id', 'divContainer');
+    let list = document.getElementById('searchBox');
+
+    function throttle() {
+       search();
+    }
+
+    async function search() {
+        let data = await getProducts();
+        showData(data);
+    }
+
+let showData = (data) => {
+    divContainer.innerHTML = null;
+    let query = document.getElementById('search').value;
+    if (query.length == 0)
+        return;
+        let len = query.length;
+        let ans = [];
+        data.forEach((el) => {
+            if (el.brand.slice(0,len).toLowerCase() == query.toLowerCase())
+                ans.push(el);
+        })
+    let fil = {};
+    for (let i = 0; i < ans.length; i++)
+    {
+        if (fil[ans.brand] == undefined)
+            fil[ans[i].brand] = true
+    }
+    Object.keys(fil).forEach((el) => {
+        let div = document.createElement('div');
+        div.setAttribute('class', 'dropItem');
+        div.innerHTML = el;
+        div.addEventListener('click', () => {
+            window.location.href = `skincare.html?brand=${el}`
+        })
+        divContainer.append(div);
+        })
+        list.append(divContainer);
+    }
