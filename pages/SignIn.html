@@ -365,46 +365,4 @@ input+a{
 </body>
 </html>
 
-<script>
-
-window.onscroll = function () { myFunction() };
-
-var navbar = document.getElementById("sample");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-    } else {
-        navbar.classList.remove("sticky");
-    }
-}
-
-    function signIn() {
-        const form = document.getElementById('myForm');
-        const email = form.email.value;
-        if (email.length == 0) {
-            alert("Email Field is Empty");
-            return false;
-        }
-        const password = form.password.value;
-        if (password.length == 0) {
-            alert("Password Field is Empty");
-            return false;
-        }
-
-        let users = JSON.parse(localStorage.getItem('users'));
-        let bool = true;
-        for (let i = 0; i < users.length; i++) {
-            if (users[i].email === email && users[i].password === password) {
-                bool = false;
-                window.location.href = "home.html";
-                break;
-            }
-
-        }
-        if (bool == true) {
-            alert("Wrong Email or Password");
-        }
-    }
-</script>
+<script src="\scripts\SignIn.js"></script>

@@ -61,7 +61,7 @@ body {
 
 #contain_signin{
     height: 40px;
-    width: 140px;
+    width: 100px;
     float: right;
     text-align: center;
     border-radius: 8px;
@@ -587,8 +587,11 @@ hr.pink {
 
 #userNameDisplay{
     float: left;
+    width:50px;
+    height:30px;
+    overflow: hidden;
     margin-top: 14px;
-    margin-left: 5px;
+    /* margin-left: 5px; */
     font-size: 12px;
     font-weight: 540;
 }
@@ -717,7 +720,7 @@ hr.pink {
                     </div>
                     <div style="margin-left: 5%;" >
                         <div style="margin-top:18px !important;margin-bottom:0px !important; height:40px;color:gray;">Estimated Delivery Date</div>
-                        <p  style="margin-top: 0px;color: rgb(93, 93, 223);">July 27</p>
+                        <p  style="margin-top: 0px;color: rgb(93, 93, 223);">Sept 03</p>
                     </div>
                     
             </div>
@@ -888,12 +891,12 @@ hr.pink {
 <script>
 
     
-        var user = JSON.parse(localStorage.getItem("users"));
+    var user = JSON.parse(localStorage.getItem("userId"));
         // console.log(user);
         if (user != null) {
             // console.log(user[0].fName);
             var userNameDisplay = document.getElementById("userNameDisplay");
-            userNameDisplay.innerHTML = `${user[0].fName}`;
+            userNameDisplay.innerHTML = `${user.name}`;
         }
 
             // Navigation Bar Script Starts Here

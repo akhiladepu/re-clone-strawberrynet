@@ -43,7 +43,7 @@ body {
 
 #contain_signin{
     height: 40px;
-    width: 140px;
+    width: 120px;
     float: right;
     text-align: center;
     border-radius: 8px;
@@ -212,6 +212,11 @@ body{
     padding-left: 24.5px;
     padding-right: 7.5px;
 }
+
+.demo2 p{
+    margin-top:8px;
+    line-height: 16px;
+}
 .demo4{
     letter-spacing: .09em;
     font-family: Lato,sans-serif;
@@ -222,6 +227,8 @@ body{
 }
 #js h2{
     letter-spacing: 0.1em;
+    margin-bottom:0px;
+    font-size: 16px;
     font-family: Lato,sans-serif;
 }
 #js{
@@ -687,7 +694,10 @@ hr.pink {
 #userNameDisplay{
     float: left;
     margin-top: 14px;
-    margin-left: 5px;
+    width:50px;
+    height:30px;
+    overflow: hidden;
+    /* margin-left: 5px; */
     font-size: 12px;
     font-weight: 540;
 }

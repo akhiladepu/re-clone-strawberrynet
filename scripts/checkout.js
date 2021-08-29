@@ -1,12 +1,9 @@
+var user = JSON.parse(localStorage.getItem("userId"));
 
-var user = JSON.parse(localStorage.getItem("users"));
-if (user != null) {
-    var userNameDisplay = document.getElementById("userNameDisplay");
-    userNameDisplay.innerHTML = `${user[0].fName}`;
-}
+const userId = user.id;
 
 
-        window.onscroll = function () { myFunction() };
+window.onscroll = function () { myFunction() };
 
 var navbar = document.getElementById("sample");
 var sticky = navbar.offsetTop;
@@ -18,6 +15,40 @@ function myFunction() {
         navbar.classList.remove("sticky");
     }
 }
+
+async function getUser(id) {
+    
+    try {
+            
+        var res = await fetch("http://localhost:2345/users");
+        
+        var reqData = await res.json();
+
+        let user = [];
+
+        for (let i = 0; i < reqData.length; i++){
+            if (reqData[i]._id == id) {
+                user = reqData[i];
+                break;
+            }
+        }
+
+        if (user != null) {
+            var userNameDisplay = document.getElementById("userNameDisplay");
+            userNameDisplay.innerHTML = `${user.first_name}`;
+        }
+        
+        return user.bag;
+
+    } catch (err) {
+        
+    }
+
+}
+
+var navbar = document.getElementById("sample");
+var sticky = navbar.offsetTop;
+
 
 
 
@@ -79,8 +110,8 @@ function appendprod(e) {
         div_app.append(div_final)
 
     }
-    function showlocation() {
-            let data = JSON.parse(localStorage.getItem('bag'))
+    async function showlocation() {
+            let data = await getUser(userId);
             div_app.innerHTML = null
             total = data.length
             sum = 0;
@@ -130,9 +161,10 @@ function appendprod(e) {
         }
 
         showlocation();
-        function getCheckoutContent(){
+        async function getCheckoutContent(){
             console.log("bwshyqw")
-            let data = JSON.parse(localStorage.getItem('bag'))
+             let data = await getUser(userId);
+            
                 sum = 0;
             for (i = 0; i < data.length; i++) {
                 sum += Number(data[i].price)

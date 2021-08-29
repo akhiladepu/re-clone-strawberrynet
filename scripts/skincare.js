@@ -1,13 +1,42 @@
-
-var user = JSON.parse(localStorage.getItem("users"));
+var user = JSON.parse(localStorage.getItem("userId"));
 if (user != null) {
     var userNameDisplay = document.getElementById("userNameDisplay");
-    userNameDisplay.innerHTML = `${user[0].fName}`;
+    userNameDisplay.innerHTML = `${user.name}`;
 }
 
+var products;
+var bagged;
+
+let connect = async () => {
+    try {
+        res = await fetch('http://localhost:2345/products');
+        products = await res.json();
+        showProducts(products);
+        filterProducts(products);
+    }
+    catch(err) {
+        console.log(err.message);
+    }
+}
+connect();
+let getBag = async () => {
+    try {
+        const res = await fetch('http://localhost:2345/users');
+        const data = await res.json();
+        data.forEach((el) => {
+            if (el._id === user.id) {
+                bagged = el.bag;
+            }
+        })
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+getBag();
 
 
-        window.onscroll = function () { myFunction() };
+window.onscroll = function () { myFunction() };
 
 var navbar = document.getElementById("sample");
 var sticky = navbar.offsetTop;
@@ -20,7 +49,6 @@ function myFunction() {
     }
 }
 
-var products = JSON.parse(localStorage.getItem('products'));
 var i = 0;
 var numProd = 0;
 var singleProduct;
@@ -29,12 +57,17 @@ var body = document.getElementById('productContainer');
 
 var singleContainer = document.getElementById('single-container');
 
+let params = new URLSearchParams(location.search);
+let cat = params.get('category');
+
+let heading = document.getElementById('heading');
+heading.innerHTML = cat;
+
 function showProducts(p) {
-    let mov = p;
     numProd = 0;
     singleContainer.innerHTML = null;
-    mov.forEach(function (el) {
-        if (el.category == "Skincare")
+    p.forEach(function (el) {
+        if (el.category == cat)
             appendProduct(el);
     });
 }
@@ -99,7 +132,7 @@ function appendProduct(el) {
     let price = document.createElement('p');
     price.setAttribute('class', 'price');
 
-    let price_comma = el.price.trim().split("");
+    let price_comma = String(el.price).split("");
     if (price_comma.length > 6) {
         price_comma = price_comma[0] + "," + price_comma[1] + price_comma[2] + price_comma[3] + price_comma[4] + price_comma[5] + price_comma[6];
     }
@@ -120,36 +153,32 @@ function appendProduct(el) {
     btn_add.textContent = "ADD TO BAG";
     btn_add.addEventListener('click', function () {
         addToBAg(el);
-        console.log(el);
     })
     buttonContainer.append(btn_add);
 
     frame.append(brand_name, image_button, discountContainer, priceContainer, buttonContainer);
     singleContainer.append(frame);
 }
-
+//////////////////////////////// Sort Products //////////////////////////////////////
 function lowestPrice() {
-    let products = JSON.parse(localStorage.getItem('products'));
-    products = products.sort(function (a, b) {
-        if (a.category == 'Skincare')
+    let prod = products.sort(function (a, b) {
+        if (a.category == cat)
             return a.price - b.price;
     });
-    showProducts(products);
+    showProducts(prod);
 }
 
 function biggestDiscount() {
-    let products = JSON.parse(localStorage.getItem('products'));
-    products = products.sort(function (a, b) {
+    let prod = products.sort(function (a, b) {
         if (a.category == 'Skincare' && a.discount != '0' && a.discount != 'None')
             return b.discount - a.discount;
     });
-    showProducts(products);
+    showProducts(prod);
 }
 
 function brandAZ() {
-    let products = JSON.parse(localStorage.getItem('products'));
     let prod = products.sort(function (a, b) {
-        if (a.category == 'Skincare') {
+        if (a.category == cat) {
             let A = a.brand.toLowerCase();
             let B = b.brand.toLowerCase();
             if (A < B) {
@@ -165,9 +194,8 @@ function brandAZ() {
 }
 
 function nameAZ() {
-    let products = JSON.parse(localStorage.getItem('products'));
     let prod = products.sort(function (a, b) {
-        if (a.category == 'Skincare') {
+        if (a.category == cat) {
             let A = a.name.toLowerCase();
             let B = b.name.toLowerCase();
             if (A < B) {
@@ -182,100 +210,60 @@ function nameAZ() {
     showProducts(prod);
 }
 
-showProducts(products);
+const filterProducts = (prod) => {
+    prod = prod.filter(el => el.category == cat );
+    let filter = {};
+    prod.forEach((el) => {
+        if (filter[el.brand] == undefined)
+            filter[el.brand] = 1;
+        else
+            filter[el.brand]++;
+    })
+    showFilters(filter,prod);
+}
 
-function filterLine(n) {
-    let clarins = document.getElementById('Clarins');
-    let eltamd = document.getElementById('EltaMD');
-    let elizabethArden = document.getElementById('Elizabeth Arden');
-    let filorga = document.getElementById('Filorga');
-    let clinique = document.getElementById('Clinique');
-    let timelessSkinCare = document.getElementById('Timeless Skin Care');
-    let marvis = document.getElementById('Marvis');
-    let dermadoctor = document.getElementById('DERMAdoctor');
-    let laRocheyPosay = document.getElementById('La Rochey Posay');
-    let products = JSON.parse(localStorage.getItem('products'));
-    let prod = [];
-    let i = 0;
-    if (clarins.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "Clarins") {
-                prod.push(products[i]);
-            }
-        }
-    }
-    if (eltamd.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "EltaMD") {
-                prod.push(products[i]);
-            }
-        }
-    }
-    if (elizabethArden.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "Elizabeth Arden") {
-                prod.push(products[i]);
-            }
-        }
-    }
-    if (clinique.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "Clinique") {
-                prod.push(products[i]);
-            }
-        }
-    }
-    if (timelessSkinCare.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "Timeless Skin Care") {
-                prod.push(products[i]);
-            }
-        }
-    }
+const showFilters = (filter,prod) => {
+    let doc = document.getElementById('filter-brands');
+    Object.keys(filter).forEach((el) => {
+        let label = document.createElement('label');
+        label.setAttribute('class', 'checkbox');
+        let input = document.createElement('input');
+        input.setAttribute('type', 'checkbox');
+        input.setAttribute('class', 'filterBrands');
+        input.setAttribute('value', el);
+        input.setAttribute('id', el);
+        input.addEventListener('click', () => {
+            filtering(filter,prod);
+        });
+         let labelName = document.createElement('a');
+        labelName.innerHTML = `${el}(${filter[el]})`;
+        label.append(input,labelName); 
+        doc.append(label);
+    })
+}
 
-    if (filorga.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "Filorga") {
-                prod.push(products[i]);
+var p = [];
+function filtering(filter, prod) {
+    for (let key in filter) {
+        let valueChecked = document.getElementById(key);
+        if (valueChecked.checked == true) {
+            for (let i = 0; i < prod.length; i++) {
+                if (prod[i].brand == key)
+                    p.push(prod[i]);
             }
         }
     }
-    if (marvis.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "Marvis") {
-                prod.push(products[i]);
-            }
-        }
+    if (p.length > 0) {
+        showProducts(p);
+        p = [];
     }
-    if (dermadoctor.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "DERMAdoctor") {
-                prod.push(products[i]);
-            }
-        }
-    }
-    if (laRocheyPosay.checked == true) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare' && products[i].brand == "La Rochey Posay") {
-                prod.push(products[i]);
-            }
-        }
-    }
-
-    if (clarins.checked == false && eltamd.checked == false && elizabethArden.checked == false && clinique.checked == false && timelessSkinCare.checked == false && filorga.checked == false && marvis.checked == false && dermadoctor.checked == false && laRocheyPosay.checked == false) {
-        for (i = 0; i < products.length; i++) {
-            if (products[i].category == 'Skincare') {
-                prod.push(products[i]);
-            }
-        }
-    }
-    showProducts(prod);
+    else
+        showProducts(prod);
 }
 
 function filterDeals() {
     let low = document.getElementById('Low');
     let best = document.getElementById('Best');
-    let products = JSON.parse(localStorage.getItem('products'));
     let prod = [];
     let i = 0;
     if (low.checked == true) {
@@ -304,20 +292,31 @@ function filterDeals() {
     showProducts(prod);
 }
 
-var bag;
-function addToBAg(e) {
-
-    bag = JSON.parse(localStorage.getItem('bag'));
-
-    if (bag == null) {
-        bag = [];
-    } else {
-        bag = JSON.parse(localStorage.getItem('bag'));
+const addToBAg = async (e) => {
+    for (let i = 0; i < bagged.length; i++) {
+        if (bagged[i]._id == e._id) {
+            alert("Product Already In the Bag");
+            return false;
+        }
     }
-
-    bag.push(e);
-    
-    localStorage.setItem('bag', JSON.stringify(bag));
+    bagged.push(e);
+    let data = {
+    _id: user.id,
+    bag: bagged
+    }
+    try {
+        await fetch('http://localhost:2345/users/bag', {
+            method: "PATCH",
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
 }
 
 function leadToProductPage(e) {
@@ -325,3 +324,4 @@ function leadToProductPage(e) {
     localStorage.setItem('singleProduct', JSON.stringify(singleProduct));
     window.location.href = "productDetails.html";
 }
+
