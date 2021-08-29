@@ -1,4 +1,7 @@
-const userId = "61291231e0b0bd573466ca6b";
+var user = JSON.parse(localStorage.getItem("userId"));
+
+const userId = user.id;
+
 var brandsObject;
 var categoryObject;
 

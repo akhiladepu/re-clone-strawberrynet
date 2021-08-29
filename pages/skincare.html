@@ -42,17 +42,17 @@
     
     <div class="nav">
         <ul id="navbar">
-            <li><a href="\pages\skincare.html"><i class="fas fa-bars"></i> BY BRAND</a></li>
-            <li><a href="\pages\skincare.html">SKINCARE</a></li>
-            <li><a href="\pages\skincare.html">MAKEUP</a></li>
-            <li><a href="\pages\skincare.html">HAIRCARE</a></li>
-            <li><a href="\pages\skincare.html">PERFUME</a></li>
-            <li><a href="\pages\skincare.html">SKINCARE</a></li>
+           <li><a href="\pages\skincare.html"><i class="fas fa-bars"></i> BY BRAND</a></li>
+            <li><a href='\pages\skincare.html?category=Skincare'>SKINCARE</a></li>
+            <li><a href="\pages\skincare.html?category=Make Up">MAKEUP</a></li>
+            <li><a href="\pages\skincare.html?category=Hair Care">HAIRCARE</a></li>
+            <li><a href="\pages\skincare.html?category=Perfume">PERFUME</a></li>
+            <li><a href="\pages\skincare.html?category=Men's Skincare">MEN SKINCARE</a></li>
             <li><a href="\pages\skincare.html">COLONGE</a></li>
-            <li><a href="\pages\skincare.html">SCENTS</a></li>
+            <li><a href="\pages\skincare.html?category=Home Scents">SCENTS</a></li>
             <li><a href="\pages\skincare.html">NATURAL</a></li>
             <li><a href="\pages\skincare.html"><i class="fas fa-gift"></i> SPECIALS</a></li>
-            <li><a href="\pages\skincare.html"><i class="fas fa-star"></i> NEW</a></li>
+            <li><a href="\pages\skincare.html?category=New Arrivals"><i class="fas fa-star"></i> NEW</a></li>
         </ul>
     </div>
     </div>
@@ -61,58 +61,9 @@
 <div id="skincareContainer">
     <div class="scrollSection">
         <p class="filter-heading">Refine by Brands</p>
-        <div class="filter">
-            <label class="checkbox">
-                <input type="checkbox" onclick="filterLine(value);" class="filterBrands" id="Clarins"
-                    value='Clarins'>Clarins<span>(2)</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" onclick="filterLine(value);" class="filterBrands" id="EltaMD"
-                    value='EltaMD'>EltaMD<span>(1)</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" onclick="filterLine(value);" class="filterBrands" id="Elizabeth Arden"
-                    value='Elizabeth Arden'>Elizabeth
-                Arden<span>(3)</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" onclick="filterLine(value);" value='Filorga' id="Filorga">Filorga<span>(2)</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" onclick="filterLine(value);" value='Clinique'
-                    id="Clinique">Clinique<span>(1)</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" onclick="filterLine(value);" value='Timeless Skin Care'
-                    id="Timeless Skin Care">Timeless
-                Skin
-                Care<span>(2)</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" onclick="filterLine(value);" value='Marvis' id="Marvis">Marvis<span>(1)</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" onclick="filterLine(value);" value='DERMAdoctor'
-                    id="DERMAdoctor">DERMAdoctor<span>(2)</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" onclick="filterLine(value);" value='La Rochey Posay' id="La Rochey Posay">La
-                Rochey
-                Posay<span>(1)</span>
-            </label>
+        <div id="filter-brands">
         </div>
-        <p class="filter-heading">Refine by Specials</p>
-        <div class="filter">
-            <label class="checkbox">
-                <input type="checkbox" onclick="filterDeals(value);" class="filterBrands" value='Low' id="Low">Low
-                Price
-                Picks<span>(6)</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" onclick="filterDeals(value);" class="filterBrands" value='Best' id="Best">Best
-                Deals<span>(1)</span>
-            </label>
-        </div>
+        
     </div>
     <div id="productContainer">
         <div id="topImage">
@@ -147,7 +98,7 @@
                 </div>
             </div>
         </div>
-        <div id="heading">Skincare</div>
+        <div id="heading"></div>
         <div id="single-container">
 
         </div>

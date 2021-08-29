@@ -42,7 +42,7 @@ body {
 
 #contain_signin{
     height: 40px;
-    width: 140px;
+    width: 100px;
     float: right;
     text-align: center;
     border-radius: 8px;
@@ -663,8 +663,11 @@ hr.pink {
 
 #userNameDisplay{
     float: left;
+    width:50px;
+    height:30px;
+    overflow: hidden;
     margin-top: 14px;
-    margin-left: 5px;
+    /* margin-left: 5px; */
     font-size: 12px;
     font-weight: 540;
 }

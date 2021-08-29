@@ -5,15 +5,25 @@ const Product = require('../models/product.model');
 const router = express.Router();
 
 router.post("", async (req, res) => {
-    const product = await Product.create(req.body);
+    try {
+        const product = await Product.create(req .body);
 
-    return res.send(product)
+        return res.send(product);
+    }
+    catch (err) {
+        return res.status(400).send(err.message);
+    }
 });
 
 router.get("", async (req, res) => {
-    const products = await Product.find().lean().exec();
+    try {
+        const product = await Product.find().lean().exec();
 
-    return res.send(products);
+        return res.send(product);
+    }
+    catch (err) {
+        return res.status(400).send(err.message);
+    }
 });
 
 router.delete("/:id", async (req, res) => {
