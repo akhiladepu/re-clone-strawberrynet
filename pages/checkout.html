@@ -135,157 +135,164 @@
             </div>
 
         </div>
-        <h2 style="text-align: center;
-    margin-right: 29%;">Shipping information</h2>
         
-        <div class="address">
-           
-            <div id="shippingInfo" class="">
-                <h3 style="margin-right: 8%;">SHIPPING ADDRESS</h3>
-            
-                <input type="hidden" name="scheckoutAddrId" id="scheckoutAddrId" value="0" autocomplete="off">
-            
-            
-            
-            
-            
-            
-                <div class="form-group">
-                    <input class="form-control" type="text" placeholder="First Name *" id="sfirstname" name="sfirstname" value=""
-                        autocorrect="off" autocapitalize="words" maxlength="40">
-                </div>
-            
-            
-            
-                <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Last Name *" id="slastname" name="slastname" value=""
-                        autocorrect="off" autocapitalize="words" maxlength="40">
-                </div>
-            
-            
-                <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Company" id="scompany" name="scompany" value=""
-                        autocorrect="off" autocapitalize="words" maxlength="100">
-                </div>
-            
-                <div class="form-group ">
-                    <select autocomplete="off" class="form-control custom-arrow-select" name="scountry" id="ddlsCountry"
-                        onchange="getCheckoutContent();">
-                        <optgroup label="Please select">
-                            <option value="Australia">INDIA</option>
-                            <option value="Australia">Australia</option>
-            
-                            <option value="Brazil">Brazil</option>
-            
-                            <option value="China">China 中国</option>
-            
-                            <option value="Uzbekistan">Uzbekistan</option>
-            
-                            <option value="Vanuatu">Vanuatu</option>
-            
-                            <option value="Venezuela">Venezuela</option>
-            
-                            <option value="Vietnam">Vietnam</option>
-            
-                            <option value="Virgin Island, UK">Virgin Island, UK</option>
-            
-                            <option value="Virgin Island, USA">Virgin Island, USA</option>
-            
-                            <option value="Wallis &amp; Futana Islands">Wallis &amp; Futana Islands</option>
-            
-                            <option value="Western Samoa">Western Samoa</option>
-            
-                            <option value="Yemen">Yemen</option>
-            
-                            <option value="Zaire">Zaire</option>
-            
-                            <option value="Zambia">Zambia</option>
-            
-                            <option value="Zimbabwe">Zimbabwe</option>
-                        </optgroup>
-                    </select>
-                    <input type="hidden" name="oscountry" autocomplete="off" id="oscountry" value="India">
-            
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Address *" id="saddress1" name="saddress1" value=""
-                        autocorrect="off" autocapitalize="words" maxlength="50">
-            
-                    <input class="form-control" type="text" id="saddress2" name="saddress2" value="" autocorrect="off"
-                        autocapitalize="words" maxlength="50">
-            
-                    <input class="form-control" type="text" id="saddress3" name="saddress3" value="" autocorrect="off"
-                        autocapitalize="words" maxlength="50">
-                </div>
-                <div class="form-group" id="scityContainer">
-            
-            
-            
-                    <input class="form-control" type="text" placeholder="City/town *" name="scity" id="scity" value=""
-                        maxlength="60" autocorrect="off" autocapitalize="words">
-            
-                </div>
-                <div class="form-group" id="sstateContainer">
-            
-            
-            
-            
-                    <input class="form-control" type="text" placeholder="State/province" name="sstate" id="sstate" value=""
-                        maxlength="60">
-            
-            
-                </div>
-                <div class="form-group" id="spostcodeContainer">
-            
-                    <input class="form-control" type="text" placeholder="Zip/postcode *" name="spostcode" id="spostcode" value=""
-                        maxlength="25">
-            
-            
-                </div>
-                <div class="form-group  row">
-                    <div class="col-xs-3">
-                        <div class="CountryCode form-control">+91</div>
+        <div id="fixed"></div>
+        
+        
+        <div id="ship">
+            <h2 style="text-align: center;
+                            margin-right: 29%;">Shipping information</h2>
+        
+            <div class="address">
+        
+                <div id="shippingInfo" class="">
+                    <h3 style="margin-right: 8%;">SHIPPING ADDRESS</h3>
+        
+                    <input type="hidden" name="scheckoutAddrId" id="scheckoutAddrId" value="0" autocomplete="off">
+        
+        
+        
+        
+        
+        
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="First Name *" id="sfirstname" name="sfirstname"
+                            value="" autocorrect="off" autocapitalize="words" maxlength="40">
                     </div>
-                    <div class="col-xs-1">-</div>
-                    <div class="col-xs-8">
-                        <input class="form-control" type="text" id="smobile" placeholder="Mobile *" name="smobile" value="">
+        
+        
+        
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Last Name *" id="slastname" name="slastname"
+                            value="" autocorrect="off" autocapitalize="words" maxlength="40">
                     </div>
+        
+        
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Company" id="scompany" name="scompany" value=""
+                            autocorrect="off" autocapitalize="words" maxlength="100">
+                    </div>
+        
+                    <div class="form-group ">
+                        <select autocomplete="off" class="form-control custom-arrow-select" name="scountry" id="ddlsCountry"
+                            onchange="getCheckoutContent();">
+                            <optgroup label="Please select">
+                                <option value="Australia">INDIA</option>
+                                <option value="Australia">Australia</option>
+        
+                                <option value="Brazil">Brazil</option>
+        
+                                <option value="China">China 中国</option>
+        
+                                <option value="Uzbekistan">Uzbekistan</option>
+        
+                                <option value="Vanuatu">Vanuatu</option>
+        
+                                <option value="Venezuela">Venezuela</option>
+        
+                                <option value="Vietnam">Vietnam</option>
+        
+                                <option value="Virgin Island, UK">Virgin Island, UK</option>
+        
+                                <option value="Virgin Island, USA">Virgin Island, USA</option>
+        
+                                <option value="Wallis &amp; Futana Islands">Wallis &amp; Futana Islands</option>
+        
+                                <option value="Western Samoa">Western Samoa</option>
+        
+                                <option value="Yemen">Yemen</option>
+        
+                                <option value="Zaire">Zaire</option>
+        
+                                <option value="Zambia">Zambia</option>
+        
+                                <option value="Zimbabwe">Zimbabwe</option>
+                            </optgroup>
+                        </select>
+                        <input type="hidden" name="oscountry" autocomplete="off" id="oscountry" value="India">
+        
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Address *" id="saddress1" name="saddress1" value=""
+                            autocorrect="off" autocapitalize="words" maxlength="50">
+        
+                        <input class="form-control" type="text" id="saddress2" name="saddress2" value="" autocorrect="off"
+                            autocapitalize="words" maxlength="50">
+        
+                        <input class="form-control" type="text" id="saddress3" name="saddress3" value="" autocorrect="off"
+                            autocapitalize="words" maxlength="50">
+                    </div>
+                    <div class="form-group" id="scityContainer">
+        
+        
+        
+                        <input class="form-control" type="text" placeholder="City/town *" name="scity" id="scity" value=""
+                            maxlength="60" autocorrect="off" autocapitalize="words">
+        
+                    </div>
+                    <div class="form-group" id="sstateContainer">
+        
+        
+        
+        
+                        <input class="form-control" type="text" placeholder="State/province" name="sstate" id="sstate" value=""
+                            maxlength="60">
+        
+        
+                    </div>
+                    <div class="form-group" id="spostcodeContainer">
+        
+                        <input class="form-control" type="text" placeholder="Zip/postcode *" name="spostcode" id="spostcode"
+                            value="" maxlength="25">
+        
+        
+                    </div>
+                    <div class="form-group  row">
+                        <div class="col-xs-3">
+                            <div class="CountryCode form-control">+91</div>
+                        </div>
+                        <div class="col-xs-1">-</div>
+                        <div class="col-xs-8">
+                            <input class="form-control" type="text" id="smobile" placeholder="Mobile *" name="smobile" value="">
+                        </div>
+                    </div>
+        
+                    <div class="form-group" id="stownContainer" style="display: none;">
+        
+        
+        
+                        <input class="form-control" type="text" placeholder="Town" name="stown" id="stown" value=""
+                            maxlength="60" autocorrect="off" autocapitalize="words">
+        
+        
+        
+                    </div>
+        
+                    <div class="form-group" id="sownpoboxcontainer" style="display: none;">
+                        <input class="form-control" type="text" placeholder="Own PO Box" name="sownpobox" id="sownpobox"
+                            value="" maxlength="30">
+                    </div>
+        
+                    <div class="form-group" id="sPOBoxContainer" style="display: none;">
+                        <select class="form-control custom-arrow-select" name="spobox" id="spobox">
+        
+                        </select>
+                    </div>
+        
+        
+        
+        
+        
+        
+                    <div id="btnNewcustSave" class="text-center ">
+                        <input id="btnbtnSaveAddr" class="btnbtnSaveAddr" type="button" onclick="saveAddr(); return false;"
+                            value="Save &amp; Continue">
+                    </div>
+        
                 </div>
-            
-                <div class="form-group" id="stownContainer" style="display: none;">
-            
-            
-            
-                    <input class="form-control" type="text" placeholder="Town" name="stown" id="stown" value="" maxlength="60"
-                        autocorrect="off" autocapitalize="words">
-            
-            
-            
-                </div>
-            
-                <div class="form-group" id="sownpoboxcontainer" style="display: none;">
-                    <input class="form-control" type="text" placeholder="Own PO Box" name="sownpobox" id="sownpobox" value=""
-                        maxlength="30">
-                </div>
-            
-                <div class="form-group" id="sPOBoxContainer" style="display: none;">
-                    <select class="form-control custom-arrow-select" name="spobox" id="spobox">
-            
-                    </select>
-                </div>
-            
-            
-            
-            
-            
-            
-                <div id="btnNewcustSave" class="text-center ">
-                    <input class="btnbtnSaveAddr" type="button" onclick="saveAddr(); return false;"
-                        value="Save &amp; Continue">
-                </div>
-            
             </div>
         </div>
+        
            <div class="gift">
                <div>Delivery option & Gift Message</div>
            </div>
