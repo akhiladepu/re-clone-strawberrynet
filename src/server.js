@@ -6,9 +6,25 @@ const productController = require("./controllers/product.controller")
 
 const userController = require("./controllers/user.controller")
 
+const homePageController = require("./controllers/home.controller")
+
 const app = express();
 
 app.use(express.json());
+
+app.get("/", (req, res) => {
+    // res.sendFile("/sampleProject/pages" + '/home.html');
+    // res.sendFile('home.html', { root: sampleProject });
+    res.sendFile('/pages/home.html', { root: '.' });
+});
+
+app.get("/:folder/:pageName", (req, res) => {
+        console.log('pageName:', req.params.pageName)
+
+    // res.sendFile("/sampleProject/pages" + '/home.html');
+    // res.sendFile('home.html', { root: sampleProject });
+    res.sendFile(`/${req.params.folder}/${req.params.pageName}`, { root: '.' });
+});
 
 app.use("/products", productController);
 
