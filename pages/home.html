@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="https://www.strawberrynet.com/favicon.ico" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-<title>Discount Perfume, Skincare &amp; Makeup - StrawberryNET.comStrawberrynet INEN | Free Worldwide Shipping
-</title>
-<script src="https://kit.fontawesome.com/2c8c344524.js" crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://www.strawberrynet.com/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <title>Discount Perfume, Skincare &amp; Makeup - StrawberryNET.comStrawberrynet INEN | Free Worldwide Shipping
+    </title>
+    <script src="https://kit.fontawesome.com/2c8c344524.js" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" type="text/css" href="/styles/home.css">
+    <link rel="stylesheet" type="text/css" href="/styles/home.css">
 </head>
 
 
@@ -21,8 +22,9 @@
         <div class="head">
             <img src="\images\header-logo.jfif">
             <div class="main_search_box" id="searchBox">
-                <input  type="search" oninput="throttle()" id="search" placeholder="SEARCH BRAND / PRODUCT" >
-                <button id="searchButton" type="submit"><i class="fa fa-search" aria-hidden="true" style="font-size: 180%;color: #623381;"></i></button></input>
+                <input type="search" oninput="throttle()" id="search" placeholder="SEARCH BRAND / PRODUCT">
+                <button id="searchButton" type="submit"><i class="fa fa-search" aria-hidden="true"
+                        style="font-size: 180%;color: #623381;"></i></button></input>
             </div>
             <div class="contain_rs">
                 <div id="tracking">Rs. INR India: English <i class="fas fa-angle-down"></i></div>
@@ -30,17 +32,27 @@
                 <div id="rs" onclick="window.location.href='/pages/orderTracking.html'">Order Tracking</div>
             </div>
             <div class="contain_elements">
-                <div id="contain_signin" onclick="window.location.href='/pages/SignIn.html'"><i class="fas fa-user-circle" style="font-size: 30px;margin-top: 5px;float: left;margin-left: 10px;"></i><div id="userNameDisplay">Sign In</div></div>
-                <div id="contain_wishlist" onclick="window.location.href='/pages/wishlist.html'"><i class="fas fa-heart" style="font-size: 30px;margin-top: 5px;float: left; margin-left: 10px;"></i><div id="contain_elements_text"> Wishlist</div></div>
+                <div id="contain_signin" onclick="window.location.href='/pages/SignIn.html'"><i
+                        class="fas fa-user-circle"
+                        style="font-size: 30px;margin-top: 5px;float: left;margin-left: 10px;"></i>
+                    <div id="userNameDisplay">Sign In</div>
+                </div>
+                <div id="contain_wishlist" onclick="window.location.href='/pages/wishlist.html'"><i class="fas fa-heart"
+                        style="font-size: 30px;margin-top: 5px;float: left; margin-left: 10px;"></i>
+                    <div id="contain_elements_text"> Wishlist</div>
+                </div>
 
-                <div id="contain_bag" onclick="window.location.href='/pages/bag.html'"><i class="fa fa-shopping-bag" style="font-size: 30px;margin-top: 5px; float: left;margin-left: 10px;"></i><div id="contain_elements_text"> Bag</div></div>
-   
+                <div id="contain_bag" onclick="window.location.href='/pages/bag.html'"><i class="fa fa-shopping-bag"
+                        style="font-size: 30px;margin-top: 5px; float: left;margin-left: 10px;"></i>
+                    <div id="contain_elements_text"> Bag</div>
+                </div>
+
             </div>
         </div>
-    
-         <div class="nav">
+
+        <div class="nav">
             <ul id="navbar">
-<!-- <<<<<<< HEAD
+                <!-- <<<<<<< HEAD
                 <li><a href="\pages\skincare.html"><i class="fas fa-bars"></i> BY BRAND</a></li>
                 <li><a href='\pages\skincare.html?category=Skincare'>SKINCARE</a></li>
                 <li><a href="\pages\skincare.html?category=Make Up">MAKEUP</a></li>
@@ -55,42 +67,68 @@
                     <!-- DROP DOWN FOR BY BRAND -->
                     <div class="dropdown-content">
                         <div style="display: grid; grid-template-columns: auto auto;">
-                        <div id="dropSearch" >
-                            <input type="search" placeholder="SEARCH BRAND" id="search">
-                            <button id="searchButton" type="submit"><i class="fa fa-search" aria-hidden="true" style="font-size: 180%;color: #623381;"></i></button>
+                            <div id="dropSearch">
+                                <input type="search" placeholder="SEARCH BRAND" id="search">
+                                <button id="searchButton" type="submit"><i class="fa fa-search" aria-hidden="true"
+                                        style="font-size: 180%;color: #623381;"></i></button>
+                            </div>
+
+                            <div id="topbrandssticky">
+                                <div>TOPBRANDS</div>
+                            </div>
                         </div>
-                       
-                        <div id="topbrandssticky"><div>TOPBRANDS</div></div>
-                    </div>
-                    <div style="display: grid;grid-template-columns: 50px 200px auto;">
-                        <div id="column_1">
-                            <a href="#">A</a>
-                            <a href="#">B</a>
-                            <a href="#">C</a>
-                            <a href="#">D</a>
-                            <a href="#">F</a>
-                            <a href="#">G</a>
-                            <a href="#">H</a>
-                            <a href="#">I</a>
-                            <a href="#">J</a>
-                            <a href="#">K</a>
-                            <a href="#">L</a>
-                            <a href="#">M</a>
-                            <a href="#">N</a>
-                            <a href="#">O</a>
-                            <a href="#">P</a>
-                            <a href="#">Q</a>
-                            <a href="#">R</a>
-                            <a href="#">S</a>
-                            <a href="#">T</a>
-                            <a href="#">U</a>
-                            <a href="#">V</a>
-                            <a href="#">W</a>
-                            <a href="#">X</a>
-                            <a href="#">Y</a>
-                            <a href="#">Z</a>
-                        </div>
-                        <div id="column_2">
+                        <div style="display: grid;grid-template-columns: 50px 200px auto;">
+                            <div id="column_1">
+                                <a href="#">A</a>
+                                <a href="#">B</a>
+                                <a href="#">C</a>
+                                <a href="#">D</a>
+                                <a href="#">F</a>
+                                <a href="#">G</a>
+                                <a href="#">H</a>
+                                <a href="#">I</a>
+                                <a href="#">J</a>
+                                <a href="#">K</a>
+                                <a href="#">L</a>
+                                <a href="#">M</a>
+                                <a href="#">N</a>
+                                <a href="#">O</a>
+                                <a href="#">P</a>
+                                <a href="#">Q</a>
+                                <a href="#">R</a>
+                                <a href="#">S</a>
+                                <a href="#">T</a>
+                                <a href="#">U</a>
+                                <a href="#">V</a>
+                                <a href="#">W</a>
+                                <a href="#">X</a>
+                                <a href="#">Y</a>
+                                <a href="#">Z</a>
+                            </div>
+                            <div id="column_2">
+                                <a href="/pages/skincare.html?brand=Biotherm">BIOTHERM</a>
+                                <a href="#">BVLGARI</a>
+                                <a href="#">CALVIN KLEIN</a>
+                                <a href="#">CHRISTIAN DIOR</a>
+                                <a href="#">CLARINS</a>
+                                <a href="#">CLINIQUE</a>
+                                <a href="#">DERMALOGICA</a>
+                                <a href="#">ELIZABETH ARDEN</a>
+                                <a href="#">ESTEE LAUDER</a>
+                                <a href="#">GIORGIO ARMANI</a>
+                                <a href="#">GUERLAIN</a>
+                                <a href="#">KERASTASE</a>
+                                <a href="#">KIEHL'S</a>
+                                <a href="#">L'OCCIATANE</a>
+                                <a href="#">LA PRAIRIE</a>
+                                <a href="#">LANCOME</a>
+                                <a href="#">NARS</a>
+                                <a href="#">NARS</a>
+                                <a href="#">NARS</a>
+                                <a href="#">NARS</a>
+                            </div>
+
+                            <div id="column_3">
                                 <a href="#">BIOTHERM</a>
                                 <a href="#">BVLGARI</a>
                                 <a href="#">CALVIN KLEIN</a>
@@ -101,86 +139,63 @@
                                 <a href="#">ELIZABETH ARDEN</a>
                                 <a href="#">ESTEE LAUDER</a>
                                 <a href="#">GIORGIO ARMANI</a>
-                                <a href="#">GUERLAIN</a>                                             
-                                <a href="#">KERASTASE</a>                                             
-                                <a href="#">KIEHL'S</a>                                             
-                                <a href="#">L'OCCIATANE</a>                                             
-                                <a href="#">LA PRAIRIE</a>                                             
-                                <a href="#">LANCOME</a>                                             
-                                <a href="#">NARS</a>                                             
-                                <a href="#">NARS</a>                                             
-                                <a href="#">NARS</a>                                             
+                                <a href="#">GUERLAIN</a>
+                                <a href="#">KERASTASE</a>
+                                <a href="#">KIEHL'S</a>
+                                <a href="#">L'OCCIATANE</a>
+                                <a href="#">LA PRAIRIE</a>
+                                <a href="#">LANCOME</a>
                                 <a href="#">NARS</a>
+                                <a href="#">NARS</a>
+                                <a href="#">NARS</a>
+                                <a href="#">NARS</a>
+                            </div>
                         </div>
-
-                        <div id="column_3">
-                            <a href="#">BIOTHERM</a>
-                            <a href="#">BVLGARI</a>
-                            <a href="#">CALVIN KLEIN</a>
-                            <a href="#">CHRISTIAN DIOR</a>
-                            <a href="#">CLARINS</a>
-                            <a href="#">CLINIQUE</a>
-                            <a href="#">DERMALOGICA</a>
-                            <a href="#">ELIZABETH ARDEN</a>
-                            <a href="#">ESTEE LAUDER</a>
-                            <a href="#">GIORGIO ARMANI</a>
-                            <a href="#">GUERLAIN</a>                                             
-                            <a href="#">KERASTASE</a>                                             
-                            <a href="#">KIEHL'S</a>                                             
-                            <a href="#">L'OCCIATANE</a>                                             
-                            <a href="#">LA PRAIRIE</a>                                             
-                            <a href="#">LANCOME</a>                                             
-                            <a href="#">NARS</a>                                             
-                            <a href="#">NARS</a>                                             
-                            <a href="#">NARS</a>                                             
-                            <a href="#">NARS</a>                                             
                     </div>
-                    </div>
-                </div>
-                <!-- DROP DOWN ENDS HERE -->
+                    <!-- DROP DOWN ENDS HERE -->
                 </li>
                 <li><a href="../pages/skincare.html?category=Skincare">SKINCARE</a></li>
                 <li><a href="\pages\skincare.html?category=Make Up">MAKEUP</a></li>
                 <li><a href="\pages\skincare.html?category=Hair Care">HAIRCARE</a></li>
                 <li><a href="\pages\skincare.html?category=Perfume">PERFUME</a></li>
                 <li><a href="\pages\skincare.html?category=Men's Skincare">MEN SKINCARE</a></li>
-<!-- >>>>>>> f925e75c7817b4d1504d2e105bcc21c14fb01b4d -->
+                <!-- >>>>>>> f925e75c7817b4d1504d2e105bcc21c14fb01b4d -->
                 <li><a href="\pages\skincare.html">COLONGE</a></li>
                 <li><a href="\pages\skincare.html?category=Home Scents">SCENTS</a></li>
                 <li><a href="\pages\skincare.html">NATURAL</a></li>
                 <li><a href="\pages\skincare.html"><i class="fas fa-gift"></i> SPECIALS</a></li>
                 <li><a href="\pages\skincare.html?category=New Arrivals"><i class="fas fa-star"></i> NEW</a></li>
             </ul>
-        </div> 
+        </div>
     </div>
- 
+
     <!-- SLIDE SHOW  -->
-<!-- this slider can be used multiple times on the same page -->
-<!-- don't change class names because slider will not work -->
-<div class="slider">
-    <div class="imgs">
-      <!-- you can add divs with class img here and they will be 
+    <!-- this slider can be used multiple times on the same page -->
+    <!-- don't change class names because slider will not work -->
+    <div class="slider">
+        <div class="imgs">
+            <!-- you can add divs with class img here and they will be 
            automatically added to slider -->
-      <!-- style="left: 0;" in case JS is disabled -->
-      <div class="img"></div>
-      <div class="img"></div>
-      <div class="img"></div>
-      <div class="img"></div>
-      <div class="img"></div>
-      <div class="img"></div>
-      <div class="img"></div>
-      <div class="img"></div>
-      <div class="img"></div>
+            <!-- style="left: 0;" in case JS is disabled -->
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+        </div>
+        <div class="dots"></div>
     </div>
-    <div class="dots"></div>
-  </div>
-  <script src="/scripts/slideshow.js" ></script>
+    <script src="/scripts/slideshow.js"></script>
     <!-- SLIDE SHOW ENDS HERE -->
 
     <!-- DAILY SPECIALS -->
     <div class="hrline">
         <header>
-            <div class="header__center">DAILY  SPECIALS</div>
+            <div class="header__center">DAILY SPECIALS</div>
         </header>
         <div style="float: right;">Max .3 Per Order</div>
     </div>
@@ -188,7 +203,7 @@
     <!-- DAILY SPECIALS ENDS HERE -->
 
     <!-- BEST DEALS -->
-    <div class="bestdealsbackground" >
+    <div class="bestdealsbackground">
         <div class="bestdeals">
             <div class="hrline" style="color:#623381;margin-bottom: 0%;">
                 <header>
@@ -196,11 +211,11 @@
                 </header>
             </div>
         </div>
-         <div class="bestdealsproducts"id="best_product_deals"></div>
-         <!-- BEST DEALS ENDS HERE -->
+        <div class="bestdealsproducts" id="best_product_deals"></div>
+        <!-- BEST DEALS ENDS HERE -->
 
-         <!-- TOP 40 SPECIALS -->
-         <div class="hrline">
+        <!-- TOP 40 SPECIALS -->
+        <div class="hrline">
             <header>
                 <div class="header__center">TOP 40 SPECIALS</div>
             </header>
@@ -240,9 +255,10 @@
             <div class="first">
                 <h5>STAY CONNECTED</h5>
                 <div class="signup">
-                    <div class="form-group input-group"><input type="email" class="inputEmail" id="signUp" maxlength="50"
-                            size="30" name="signUp" placeholder="Enter your email for exclusive offers"><span
-                            class="input-group-btn"><a id="subscribe">Sign
+                    <div class="form-group input-group"><input type="email" class="inputEmail" id="signUp"
+                            maxlength="50" size="30" name="signUp"
+                            placeholder="Enter your email for exclusive offers"><span class="input-group-btn"><a
+                                id="subscribe">Sign
                                 Up</a></span></div>
                 </div>
                 <span id="social-media-links">
@@ -250,16 +266,16 @@
                         class="btnFacebook social-media-icon" target="_blank" title="Facebook">Facebook</a>
                     <a href="https://twitter.com/strawberrynet" rel="noreferrer" class="btnTwitter social-media-icon"
                         target="_blank" title="Twitter">Twitter</a>
-                    <a href="https://www.pinterest.com/strawberrynet/" rel="noreferrer" class="btnPinterest social-media-icon"
-                        target="_blank" title="pinterest">pinterest</a>
+                    <a href="https://www.pinterest.com/strawberrynet/" rel="noreferrer"
+                        class="btnPinterest social-media-icon" target="_blank" title="pinterest">pinterest</a>
                     <a href="https://www.instagram.com/strawberrynetofficial/" rel="noreferrer"
                         class="btnInstagram social-media-icon" target="_blank" title="Instagram">Instagram</a>
                     <a href="https://www.youtube.com/user/TheStrawberryNET" rel="noreferrer"
                         class="btnYoutube social-media-icon" target="_blank" title="Youtube">Youtube</a>
                 </span>
             </div>
-        
-        
+
+
             <div class="second">
                 <div>
                     <div class="img-bottle"></div>
@@ -267,7 +283,7 @@
                         brands
                     </div>
                 </div>
-        
+
             </div>
             <div class="third">
                 <div class="col-xs-4 hidden-xs">
@@ -299,27 +315,31 @@
                     <div class="col">
                         <div class="payment-imgs">
                             <h6>Pay With:</h6>
-        
-                            <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/Visa_16.png" alt="Visa" width="62"
-                                height="43" src="https://a.cdnsbn.com/images/common/Visa_16.png">
-                            <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/Master_16.png" alt="Master"
-                                width="62" height="43" src="https://a.cdnsbn.com/images/common/Master_16.png">
-                            <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/Paypal_16.png" alt="Paypal"
-                                width="62" height="43" src="https://a.cdnsbn.com/images/common/Paypal_16.png">
-                            <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/JCB_16.png" alt="JCB" width="62"
-                                height="43" src="https://a.cdnsbn.com/images/common/JCB_16.png">
-                            <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/AmericanExpress_16.png" alt="AMEX"
-                                width="62" height="43" src="https://a.cdnsbn.com/images/common/AmericanExpress_16.png">
-        
-                            <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/Discover_16.png" alt="Discover"
-                                width="62" height="43" src="https://a.cdnsbn.com/images/common/Discover_16.png">
+
+                            <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/Visa_16.png" alt="Visa"
+                                width="62" height="43" src="https://a.cdnsbn.com/images/common/Visa_16.png">
+                            <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/Master_16.png"
+                                alt="Master" width="62" height="43"
+                                src="https://a.cdnsbn.com/images/common/Master_16.png">
+                            <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/Paypal_16.png"
+                                alt="Paypal" width="62" height="43"
+                                src="https://a.cdnsbn.com/images/common/Paypal_16.png">
+                            <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/JCB_16.png" alt="JCB"
+                                width="62" height="43" src="https://a.cdnsbn.com/images/common/JCB_16.png">
+                            <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/AmericanExpress_16.png"
+                                alt="AMEX" width="62" height="43"
+                                src="https://a.cdnsbn.com/images/common/AmericanExpress_16.png">
+
+                            <img class="imagep2" data-src="https://a.cdnsbn.com/images/common/Discover_16.png"
+                                alt="Discover" width="62" height="43"
+                                src="https://a.cdnsbn.com/images/common/Discover_16.png">
                             <a href="/en-in/customer-service/price-and-payment/" title="see more >"><img
                                     data-src="https://a.cdnsbn.com/images/common/DiscoverMore.png"
                                     alt="Discover More beauty products Button" width="62" height="43"
                                     src="https://a.cdnsbn.com/images/common/DiscoverMore.png"></a>
                         </div>
                     </div>
-        
+
                 </div>
                 <div class="part2-class2">
                     <div class="col-2">
@@ -328,10 +348,10 @@
                         <div>Order History</div>
                         <div>My Reviews</div>
                         <div>Birthday Treat Program</div>
-        
-        
+
+
                     </div>
-        
+
                 </div>
                 <div class="part2-class3">
                     <div class="col-3">
@@ -341,10 +361,10 @@
                         <div>Affiliates</div>
                         <div>Partners</div>
                         <div>Student Discount</div>
-        
-        
+
+
                     </div>
-        
+
                 </div>
                 <div class="part2-class4">
                     <div class="col4">
@@ -353,7 +373,7 @@
                         <br>
                         <div class="androidapp"></div>
                     </div>
-        
+
                 </div>
                 <div class="part2-class5">
                     <div class="col5">
@@ -366,16 +386,16 @@
                                 <b>9.0 out of 10</b>
                             </div>
                             <div><img src="https://a.cdnsbn.com/images/common/HK-Trust-Mark_resize.png" alt=""></div>
-        
+
                         </div>
                         <div style="display: flex;">
                             <div><img src="https://a.cdnsbn.com/images/common/2021Premiumeshop.png" alt=""></div>
                             <div><img src="https://a.cdnsbn.com/images/common/2021TRUSTeshop.jpg" alt=""></div>
                         </div>
                     </div>
-        
+
                 </div>
-        
+
             </div>
             <div class="last">
                 <hr class="pink">
@@ -383,11 +403,11 @@
                     <a>Privacy &amp; Security</a> | <a>Terms &amp; Conditions</a> | <a>Point Rewards Program Terms &amp;
                         Conditions</a><br>
                     <span class="light">1998 - 2021 © StrawberryNET.com All Rights Reserved.</span>
-        
+
                 </p>
             </div>
         </div>
-        </div>
+    </div>
 </body>
 
 </html>
