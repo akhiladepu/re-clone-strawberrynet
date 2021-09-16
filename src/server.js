@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:folder/:pageName", (req, res) => {
-        console.log('pageName:', req.params.pageName)
+        // console.log('pageName:', req.params.pageName)
 
     // res.sendFile("/sampleProject/pages" + '/home.html');
     // res.sendFile('home.html', { root: sampleProject });

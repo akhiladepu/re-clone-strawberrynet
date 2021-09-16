@@ -48,7 +48,7 @@ All the image and icon links have been taken from the main website ( https://str
 ## How to run the Project:
 
 1. Run the command `npm run server` in terminal to start the app at port `2345`.
-2. Go to the browser enter `https://localhost:2345` in the url box, you will land home page and signup if you are a new user or signin through your credentials (if doesn't work try out in incognito mode).
+2. Go to the browser enter `https://localhost:2345` in the url box, you will land home page and signup if you are a new user or signin through your credentials (if doesn't work, please disable ad blocker or try out in incognito mode).
 3. In our website you can search about the product and add product directly to bag or even to wishlist and purchase it.
 
 ### End Notes 📑
