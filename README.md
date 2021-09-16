@@ -43,6 +43,12 @@ All the image and icon links have been taken from the main website ( https://str
   
 ![Checkout Page](https://user-images.githubusercontent.com/35700009/129468699-71e1556a-0c7c-48b3-a5cf-42b0135686e1.png)
 
+## How to run the Project:
+
+1. Run the command ```npm run start``` in terminal to start the app at port ```3000```.
+2. Go to the browser enter ``` https://localhost:3000 ``` in the url box, you will land home page and signup if you are a new user or signin through your credentials.
+3. In our website you can search about the product and add product directly to bag or even to wishlist and purchase it.
+
 ### End Notes 📑
 In this project we were tried to achieve a near to perfect clone of the original website as much as possible. This entire journey of this construct week has given us experiences and we have learned lots of things by applying to the real website and it gave us a lot of confidence. Most of the features are added and functionality of the website is achieved.
 
