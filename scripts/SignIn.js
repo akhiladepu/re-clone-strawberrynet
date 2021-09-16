@@ -29,12 +29,12 @@ var userData;
     function signIn() {
         const form = document.getElementById('myForm');
         const email = form.email.value;
-        if (email.length == 0) {
+        if (email.trim().length == 0) {
             alert("Email Field is Empty");
             return false;
         }
         const password = form.password.value;
-        if (password.length == 0) {
+        if (password.trim().length == 0) {
             alert("Password Field is Empty");
             return false;
         }

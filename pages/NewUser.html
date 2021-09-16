@@ -23,7 +23,7 @@
 
     <div id="sample" class="sticky">
         <div class="head">
-            <img src="\images\header-logo.jfif">
+            <img src="\images\header-logo.jfif" onclick="window.location.href='home.html'">
             <input id="inp" type="search" placeholder="SEARCH BRAND / PRODUCT" />
             <div class="contain_rs">
                 <div id="tracking">Rs. INR India: English <i class="fas fa-angle-down"></i></div>
@@ -180,38 +180,6 @@
         }
     }
 
-
-    //   function ReloadCaptchaImage(captchaImageId) 
-    //   {
-    //     var obj = document.getElementById(captchaImageId);
-    //     var src = '' + obj.src;
-    //     obj.src = '';
-    //     var date = new Date();
-    //     var pos = src.indexOf('&rad=');
-    //     if (pos >= 0) { src = src.substr(0, pos); }
-    //     obj.src = src + '&rad=' + date.getTime();
-    //     return false;
-    // }
-
-    // async function postData(url = '', data = {}) {
-    //         // Default options are marked with *
-    //         const response = await fetch(url, {
-    //             method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    //             mode: 'cors', // no-cors, *cors, same-origin
-    //             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    //             credentials: 'same-origin', // include, *same-origin, omit
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //                 // 'Content-Type': 'application/x-www-form-urlencoded',
-    //             },
-    //             redirect: 'follow', // manual, *follow, error
-    //             referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    //             body: JSON.stringify(data) // body data type must match "Content-Type" header
-    //         });
-    //         return response.json(); // parses JSON response into native JavaScript objects
-    //     }
-
-
     async function sendData(user) {
 
         try {
@@ -251,7 +219,7 @@
 
         const form = document.getElementById('myForm');
         const fName = form.fName.value;
-        if (fName.length == 0) {
+        if (fName.trim().length == 0) {
             alert("First Name Field is Empty");
             return false;
         }
@@ -262,12 +230,12 @@
             return false;
         }
         const email = form.email.value;
-        if (email.length == 0) {
+        if (email.trim().length == 0) {
             alert("Email Field is Empty");
             return false;
         }
         const password = form.password.value;
-        if (password.length == 0) {
+        if (password.trim().length == 0) {
             alert("Password Field is Empty");
             return false;
         }
@@ -281,17 +249,5 @@
         };
 
         sendData(user);
-
-        //      let arr;
-        //     if (localStorage.getItem('users') == null) {
-        //         arr = [];
-        //     }
-        //     else {
-        //         arr = JSON.parse(localStorage.getItem('users'));
-        //     }
-        //     arr.push(user);
-        //     localStorage.setItem('users', JSON.stringify(arr));
-        //     alert("Form Submitted");
-        //     window.location.href = "SignIn.html";
     }
 </script>

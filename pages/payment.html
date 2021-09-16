@@ -238,18 +238,62 @@ body{
 </body>
 </html>
 <script>
-    const data = [
-            {
-                cardno: "1234 1234 1234 1234",
-                cvv: "123",
-                expiredate: "12/34"
+    var user = JSON.parse(localStorage.getItem("userId"));
+
+    const userId = user.id;
+    async function updateUser(newProductsArray, userId, str) {
+
+            var data;
+
+            if (str == "wishlist") {
+                data = {
+                    _id: userId,
+                    wishlist: newProductsArray
+                }
+            } else if (str == "bag") {
+                data = {
+                    _id: userId,
+                    bag: newProductsArray
+                }
+            }
+            try {
+                await fetch(`http://localhost:2345/users/${str}`, {
+
+
+                    cache: 'default',
+                    credentials: 'same-origin',
+
+                    method: "PATCH",
+
+                    body: JSON.stringify(data),
+
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+
+                    },
+
+
+
+                });
+            }
+            catch (err) {
+                console.log(err);
             }
 
-        ]
-
-        if (localStorage.getItem('card') == null) {
-            localStorage.setItem('card', JSON.stringify(data));
         }
+    // const data = [
+    //         {
+    //             cardno: "1234 1234 1234 1234",
+    //             cvv: "123",
+    //             expiredate: "12/34"
+    //         }
+
+    //     ]
+
+    //     if (localStorage.getItem('card') == null) {
+    //         localStorage.setItem('card', JSON.stringify(data));
+    //     }
         function proceed() {
             
 
@@ -262,10 +306,10 @@ body{
 
             flag = false;
 
-            for (i = 0; i < data.length; i++) {
-                let u = data[i].cardno;
-                let p = data[i].cvv;
-                if (u == cardno && p == cvv) {
+            // for (i = 0; i < data.length; i++) {
+                // let u = data[i].cardno;
+                // let p = data[i].cvv;
+                if (19 == cardno.length && 3 == cvv.length) {
                     prompt("Enter OTP")
                     cont.style.display='none'
                     none.style.display="flex"
@@ -278,19 +322,22 @@ body{
                             thank.style.display = "block"
                             thank.style.justifyContent = "center"
                           
-                           localStorage.removeItem("bag");
+                           updateUser([],userId,"bag");
 
 
                         }, 4000)
                     
                     flag = true;
-                    break;
+                    // break;
                 }
-            }
-            if (flag == false) {
-                alert("Check your card details");
+                else {
+                    alert("Check your card details");
+                }
+            // }
+            // if (flag == false) {
+            //     alert("Check your card details");
 
-            }
+            // }
        }
        function back2home(){
            window.location.href="home.html"
