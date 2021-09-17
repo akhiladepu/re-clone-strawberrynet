@@ -1,4 +1,5 @@
 const express = require('express');
+cors=require('cors')
 
 const connect = require("./configs/db");
 
@@ -9,6 +10,7 @@ const userController = require("./controllers/user.controller")
 const homePageController = require("./controllers/home.controller")
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
