@@ -201,88 +201,97 @@ function appendprod(e) {
             //window.location.href = 'payment.html'
             
             
-            let first = document.getElementById('sfirstname').value
-            let last = document.getElementById('slastname').value
-            let address = document.getElementById('saddress1').value
-            let address1 = document.getElementById('saddress2').value
-            let city = document.getElementById('scity').value
-            let pincode=document.getElementById('spostcode').value
-            let state = document.getElementById('sstate').value
-            let mobile = document.getElementById('smobile').value
+            let first = document.getElementById('sfirstname').value.trim()
+            let last = document.getElementById('slastname').value.trim()
+            let address = document.getElementById('saddress1').value.trim()
+            let address1 = document.getElementById('saddress2').value.trim()
+            let city = document.getElementById('scity').value.trim()
+            let pincode=document.getElementById('spostcode').value.trim()
+            let state = document.getElementById('sstate').value.trim()
+            let mobile = document.getElementById('smobile').value.trim()
             //console.log(first, last, address, address1, city, state, mobile);
-            let data1 = {
-                first,
-                last,
-                 address,
-                 address1,
-                 city,
-                state,
-                 pincode,
-                mobile
-            }
-            let arr;
-            arr = localStorage.getItem('address')
-            if (arr == null) {
-                arr=[]
-            }
-            else {
-                arr = JSON.parse(localStorage.getItem('address'))
+            if (first === "" || last === "" ||
+                address === "" ||
+                city === "" ||
+                state === "" ||
+                pincode === "" ||
+                mobile === "") {
+                alert("Check your Shipment Details !");
+                //window.location.href = "checkout.html"
+            } else {
+                let data1 = {
+                    first,
+                    last,
+                    address,
+                    address1,
+                    city,
+                    state,
+                    pincode,
+                    mobile
+                }
+                let arr;
+                arr = localStorage.getItem('address')
+                if (arr == null) {
+                    arr = []
+                }
+                else {
+                    arr = JSON.parse(localStorage.getItem('address'))
                 
+                }
+                arr.push(data1);
+                localStorage.setItem('address', JSON.stringify(arr))
+
+                let ship = document.getElementById('ship')
+                ship.style.display = 'none'
+
+
+                let div_f = document.getElementById('fixed');
+
+                h1 = document.createElement("h1")
+                h1.innerHTML = 'Shipping Address'
+                item = JSON.parse(localStorage.getItem('address'))
+                h4 = document.createElement("h4")
+                h4.innerHTML = `${item[item.length - 1].first} ${item[item.length - 1].last}`
+                p = document.createElement("p")
+                p.innerHTML = `${item[item.length - 1].address},${item[item.length - 1].address1}`
+
+                cross = document.createElement('Button')
+                cross.innerHTML = "X"
+                cross.setAttribute('class', 'cross1')
+                cross.addEventListener("click", function () {
+                    edit();
+                });
+
+
+            
+
+            
+
+            
+        
+                city = document.createElement("p")
+                city.innerHTML = `${item[item.length - 1].city}   ${item[item.length - 1].pincode}`
+                state = document.createElement("p")
+                state.innerHTML = item[item.length - 1].state
+            
+                Mobile = document.createElement("p")
+                Mobile.innerHTML = item[item.length - 1].mobile
+                btn = document.createElement('Button')
+                btn.innerHTML = 'Proceed'
+                btn.setAttribute('class', 'proceed')
+                btn.addEventListener("click", function () {
+                
+                    paypage();
+
+                });
+
+                div_f.append(cross, h1, h4, p, city, state, Mobile, btn)
+                console.log(item[item.length - 1].city);
+
             }
-            arr.push(data1);
-            localStorage.setItem('address', JSON.stringify(arr))
-
-            let ship = document.getElementById('ship')
-            ship.style.display='none'
-
-
-            let div_f = document.getElementById('fixed');
-
-            h1 = document.createElement("h1")
-            h1.innerHTML = 'Shipping Address'
-            item = JSON.parse(localStorage.getItem('address'))
-            h4 = document.createElement("h4")
-            h4.innerHTML = `${item[item.length-1].first} ${item[item.length-1].last}`
-            p = document.createElement("p")
-            p.innerHTML = `${item[item.length-1].address},${item[item.length-1].address1}`
-
-            cross = document.createElement('Button')
-            cross.innerHTML = "X"
-            cross.setAttribute('class','cross1')
-            cross.addEventListener("click", function () {
-             edit();
-            });
-
-
-            
-
-            
-
-            
-        
-            city = document.createElement("p")
-            city.innerHTML = `${item[item.length-1].city}   ${item[item.length-1].pincode}`
-            state = document.createElement("p")
-            state.innerHTML = item[item.length-1].state
-            
-            Mobile = document.createElement("p")
-            Mobile.innerHTML = item[item.length-1].mobile
-            btn = document.createElement('Button')
-            btn.innerHTML = 'Proceed'
-            btn.setAttribute('class', 'proceed')
-            btn.addEventListener("click", function () {
-             paypage();
-            });
-
-            div_f.append(cross,h1, h4, p, city, state, Mobile,btn)
-            console.log(item[item.length-1].city);
-             
-
-
-        
 }
-  function paypage() {
-     window.location.href = 'payment.html'
+function paypage() {
+    window.location.href = 'payment.html'
 }
 function edit() {
     
