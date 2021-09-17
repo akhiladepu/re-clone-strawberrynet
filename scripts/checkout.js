@@ -144,7 +144,7 @@ function appendprod(e) {
             div_p_detail.innerHTML=`<span class="currsymbol">INR</span>${sum}`
             div_10_discount.innerHTML=`<span class="currsymbol">INR</span>${Math.floor((sum/100)*10)}`
             div_10 = (sum / 100) * 10;
-            final_overall.innerHTML=`<span class="currsymbol">INR</span>${(sum+773+81.20)-div_10}`
+            final_overall.innerHTML=`<span class="currsymbol">INR</span>${Math.floor((sum+773+81.20)-div_10)}`
             
             final_repo = document.createElement('h3')
         final_repo.innerHTML = `Item Total(${data.length})`
@@ -214,8 +214,8 @@ function appendprod(e) {
                 address === "" ||
                 city === "" ||
                 state === "" ||
-                pincode === "" ||
-                mobile === "") {
+                pincode.length !== 6 ||
+                mobile.length !== 10) {
                 alert("Check your Shipment Details !");
                 //window.location.href = "checkout.html"
             } else {
